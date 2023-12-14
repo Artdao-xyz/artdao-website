@@ -1,0 +1,298 @@
+@font-face {
+    font-family: 'Clash Display';
+    src: url('/fonts/ClashDisplay-Regular.woff2') format('woff2');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Clash Display';
+    src: url('/fonts/ClashDisplay-Medium.woff2') format('woff2');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Clash Display';
+    src: url('/fonts/ClashDisplay-Bold.woff2') format('woff2');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Neue Power Variable';
+    src: url('/fonts/NeuePowerVariable-Ultra.woff2') format('woff2');
+    
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    scroll-behavior: smooth;
+}
+/*
+body {
+    overflow-x: hidden;
+    margin: 0px;
+    font-family: monospace;
+    color: black;
+}
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wrapper {
+    max-width: 1440px;
+    width: 100vw;
+    margin: auto;
+}
+
+header {
+    position: sticky;
+    top: 0px;
+    left: 0px ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 26px;
+    }
+
+nav ul {
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0px;
+}
+
+li {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+li > a > span {
+    color: white;
+    font-weight: 500;
+    visibility: hidden;
+}
+
+a.active {
+    filter: invert(1);
+}
+
+span.active {
+    visibility:visible;
+}
+
+a {
+    color: black;
+    text-align: center;
+    font-family: 'Clash Display';
+    font-size: 14px;
+    line-height: normal;
+    letter-spacing: 0.42px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+section {
+    min-height: 80vh;
+    padding: 20px;
+    font-size: 4vh;
+}
+
+h1 {
+    color: black;
+    font-family: 'Neue Power Variable';
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    margin: 92px auto 0px auto;
+}
+
+p {
+    color: black;
+    font-family: 'Clash Display';
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 110%; 
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin: 0px auto;
+}
+
+
+
+footer {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    height: 2vh;
+    border: 1px solid black;
+    border-bottom: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 35px;
+    transition: height 1s ease-in-out;
+}
+
+footer.active {
+    height: 80vh;
+    transition: height 1s ease-in-out;
+}
+
+footer > .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer > .head > .subheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+footer > .head > .social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+
+}
+
+.social > a {
+    font-family: 'Clash Display';
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+
+}
+
+
+footer > .content > p {
+    text-transform: none;
+    font-weight: 400;
+    margin-top: 35px;
+    display: none;
+}
+footer > .content > p.active {
+    text-transform: none;
+    font-weight: 400;
+    margin-top: 35px;
+    display: block;
+
+}
+footer > .content > h1 {
+    display: none;
+}
+footer > .content > h1.active {
+    display: block;
+}
+
+
+
+footer > .card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+footer > .card > .text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer > .card > .text > p {
+    margin: 0;
+}
+
+
+#scrollProgress {
+    color: black;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    z-index: 99;
+    font-size: 3vh;
+}
+
+.btn-material {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0px;
+}
+
+.btn-material > img {
+    border: 1px solid black;
+    border-radius: 9999px;
+    padding: 5px;
+}
+
+.progress-bar-container {
+    background-color: white;
+    font-family: "Clash Display";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#progress-bar {
+    width: 30%;
+    margin-top: 0.5%;
+    height: 2%;
+}
+label {
+    color: white;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+
+
+.btn {
+    background-color: black;
+    width: fit-content;
+    display: flex;
+    padding: 5px 25px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+    margin: auto;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+}  */
