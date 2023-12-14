@@ -5,7 +5,7 @@
     import * as config from '../lib/config.js'
     import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
     import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
-    import MetaSymbol from './metaSymbol.js'
+    import MetaSymbol from '../lib/MetaSymbol.js'
     import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
     let canvas, header, footer;
