@@ -59,7 +59,7 @@
             progress_bar_container.style.display = 'none';
         }
         config.default.estilos.map((estilo)=>{
-            textures.push(textureLoader.load(`./src/lib/matcap/${estilo.texture_name}`))
+            textures.push(textureLoader.load(`/matcap/${estilo.texture_name}`))
         })
 
         /* SCENE */
@@ -154,7 +154,7 @@
 
 </script>
 
-<canvas bind:this={canvas} class="fixed top-0 left-0 z-[-1]"></canvas>
+<canvas bind:this={canvas} class="fixed top-0 left-0 z-[-10]"></canvas>
 <div class='font-clash-display font-normal uppercase max-w-[1440px] w-screen m-auto'>
 
     <header bind:this={header} class="sticky top-0 left-0 flex justify-between items-center p-6">
@@ -193,7 +193,7 @@
     </main>
 
     {/if}
-    <footer bind:this={footer} class={isMoreInfo ? "transition-height duration-1000 ease-in-out sticky p-9 bottom-0 left-0 h-[90vh] border-solid border-b-0 border-[1px] border-black rounded-t-lg" : "transition-height duration-1000 ease-in-out sticky p-9 bottom-0 left-0 h-[10vh] truncate border-solid border-b-0 border-[1px] border-black rounded-t-lg pointer-events-none" }>
+    <footer bind:this={footer} class={isMoreInfo ? "transition-height duration-1000 ease-in-out sticky p-9 bottom-0 left-0 h-[90vh] border-solid border-b-0 border-[1px] border-black rounded-t-lg" : "transition-height duration-1000 ease-in-out sticky p-9 bottom-0 left-0 h-[10vh] truncate border-solid border-b-0 border-[1px] border-black rounded-t-lg" }>
         
         <div class="flex justify-between items-center">
             <div class="flex justify-between items-center gap-3">
