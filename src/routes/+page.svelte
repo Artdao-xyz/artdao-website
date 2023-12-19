@@ -1,12 +1,17 @@
 <script>
-    import { onDestroy, onMount } from 'svelte'
+    import '/src/style.css';
     import * as THREE from 'three';
-    import '/src/style.css'
-    import * as config from '../lib/config.js'
     import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
     import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
-    import MetaSymbol from '../lib/MetaSymbol.js'
     import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+    import { onDestroy, onMount } from 'svelte';
+    import * as config from '$lib/config.js';
+    import MetaSymbol from '$lib/MetaSymbol.js';
+	import Header from './Header.svelte';
+	import Live from './Live.svelte';
+    import Main from './Main.svelte';
+	import Loading from './Loading.svelte';
+    import section from '$lib/section.js'
 
     let canvas, header, footer;
     let index = 0;
@@ -27,11 +32,12 @@
     const manager = new THREE.LoadingManager()
     const textureLoader = new THREE.TextureLoader(manager);
 
+    let live_sticker = '/goat-psipsi.png';
+    let live_banner = '/banner-psipsikoko.png';
+    let live_assets = [live_sticker, live_banner]
 
     onMount (() => {
         console.log('mounted')
-
-
 
         setSection(0);
 
@@ -40,6 +46,7 @@
             width: window.innerWidth,
             height: window.innerHeight
         }
+
 
         header.style.backgroundColor = config.default.estilos[index].color;
         footer.style.backgroundColor = config.default.estilos[index].color;
@@ -50,7 +57,7 @@
             body = document.querySelector('body');
         }
         manager.onProgress = (url, itemsLoaded, itemsTotal) => {
-            progress_bar.value = itemsLoaded / itemsTotal * 100;
+            progress_bar = itemsLoaded / itemsTotal * 100;
         }
         manager.onLoad = (e) => {
             loaded = true;
@@ -77,11 +84,6 @@
         const renderPass = new RenderPass(scene, camera);
         const composer = new EffectComposer(renderer, renderTarget);
         composer.addPass(renderPass);
-        //add orbit controls
-        const controls = new OrbitControls(camera, renderer.domElement);
-        // controls.enableDamping = true;
-        // controls.enableZoom = false;
-        controls.update();
 
 
         /* ANIMATION */
@@ -89,8 +91,6 @@
             requestAnimationFrame(animate)
             
             loaded ? metaSymbol.update() : null;
-
-            controls.update();
             composer.render()
         };
         animate();
@@ -150,12 +150,18 @@
         footer.style.backgroundColor = config.default.estilos[index].color;
         canvas.style.backgroundColor = config.default.estilos[index].color;
         metaSymbol.changeTexture(index, scene)        
+        
     }
+
 
 </script>
 
+
 <canvas bind:this={canvas} class="fixed top-0 left-0 z-[-10]"></canvas>
+
 <div class='font-clash-display font-normal uppercase max-w-[1440px] w-screen m-auto'>
+
+    <!-- <Header /> -->
 
     <header bind:this={header} class="sticky top-0 left-0 flex justify-between items-center p-6">
         <div class="left-head">
@@ -163,36 +169,22 @@
         </div>
         <nav>
             <ul class="font-semibold m-0 flex justify-between items-center gap-5 p-0">
-                <li><a on:click={() => setSection(0)} class="{currentSection == 0 ? 'invert' : ''}" href={"#"}><img class="m-auto mb-2" src="/s2.svg" alt="Section 1"><span class="{currentSection == 0 ? 'invert' : 'invisible'}">Mission</span></a></li> 
-                <li><a on:click={() => setSection(1)} class="{currentSection == 1 ? 'invert' : ''}" href={"#"}><img class="m-auto mb-2" src="/s2.svg" alt="Section 2"><span class="{currentSection == 1 ? 'invert' : 'invisible'}">drops</span></a></li>
-                <li><a on:click={() => setSection(2)} class="{currentSection == 2 ? 'invert' : ''}" href={"#"}><img class="m-auto mb-2" src="/s3.svg" alt="Section 3"><span class="{currentSection == 2 ? 'invert' : 'invisible'}">Events</span></a></li>
-                <li><a on:click={() => setSection(3)} class="{currentSection == 3 ? 'invert' : ''}" href={"#"}><img class="m-auto mb-2" src="/s4.svg" alt="Section 4"><span class="{currentSection == 3 ? 'invert' : 'invisible'}">Research</span></a></li>
-                <li><a on:click={() => setSection(4)} class="{currentSection == 4 ? 'invert' : ''}" href={"#"}><img class="m-auto mb-2" src="/s5.svg" alt="Section 5"><span class="{currentSection == 4 ? 'invert' : 'invisible'}">Studio</span></a></li>
+                <li><a on:click={() => setSection(0)} class="{currentSection == 0 ? 'invert' : ''}" href={"#"}><img class="m-auto mb-2" src="/s1_white.svg" alt="Section 1"><span class="{currentSection == 0 ? 'invert' : 'invisible'}">Mission</span></a></li> 
+                <li><a on:click={() => setSection(1)} class="{currentSection == 1 ? 'invert' : ''}" href={"#"}><img class="m-auto mb-2" src="/s2_white.svg" alt="Section 2"><span class="{currentSection == 1 ? 'invert' : 'invisible'}">drops</span></a></li>
+                <li><a on:click={() => setSection(2)} class="{currentSection == 2 ? 'invert' : ''}" href={"#"}><img class="m-auto mb-2" src="/s3_white.svg" alt="Section 3"><span class="{currentSection == 2 ? 'invert' : 'invisible'}">Events</span></a></li>
+                <li><a on:click={() => setSection(3)} class="{currentSection == 3 ? 'invert' : ''}" href={"#"}><img class="m-auto mb-2" src="/s4_white.svg" alt="Section 4"><span class="{currentSection == 3 ? 'invert' : 'invisible'}">Research</span></a></li>
+                <li><a on:click={() => setSection(4)} class="{currentSection == 4 ? 'invert' : ''}" href={"#"}><img class="m-auto mb-2" src="/s5_white.svg" alt="Section 5"><span class="{currentSection == 4 ? 'invert' : 'invisible'}">Studio</span></a></li>
             </ul>
         </nav>
     </header>
+
+
     
     {#if loaded}
-
-    <main class="">
-        <section class="min-h-[100vh] p-5">
-            <h1 class="font-neue-power text-5xl font-medium tracking-wider mt-24">A laboratory<br>for emergent<br>culture</h1>
-        </section>
-        <section  class="min-h-[100vh] p-5">
-            <h1 class="font-neue-power text-5xl font-medium tracking-wider mt-24">Bridging the<br>physical &<br>digital</h1>
-        </section>
-        <section class="min-h-[100vh] p-5">
-            <h1 class="font-neue-power text-5xl font-medium tracking-wider mt-24">Embracing<br>new kinds of<br>art</h1>
-        </section>
-        <section class="min-h-[100vh] p-5">
-            <h1 class="font-neue-power text-5xl font-medium tracking-wider mt-24">Research</h1>
-        </section>
-        <section class="min-h-[100vh] p-5">
-            <h1 class="font-neue-power text-5xl font-medium tracking-wider mt-24">Studio</h1>
-        </section>
-    </main>
-
+        <Live source={live_assets} />
+        <Main />
     {/if}
+    
     <footer bind:this={footer} class={isMoreInfo ? "transition-height duration-1000 ease-in-out sticky p-9 bottom-0 left-0 h-[90vh] border-solid border-b-0 border-[1px] border-black rounded-t-lg" : "transition-height duration-1000 ease-in-out sticky p-9 bottom-0 left-0 h-[10vh] truncate border-solid border-b-0 border-[1px] border-black rounded-t-lg" }>
         
         <div class="flex justify-between items-center">
@@ -246,23 +238,13 @@
         </div>
 
     </footer>
-    <!-- <div class="card">
-        <div class="card text">
-            <p>Soon</p>
-            <img src="/live.svg" alt="Live">
-        </div>
-        <div>
-            <img src="" alt="">
-        </div>
-    </div> -->
 
 </div>
 
-<div class="bg-black absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full flex flex-col justify-center items-center" bind:this={progress_bar_container}>
-    <label class="text-white text-4xl h-[5%]" for="{progress_bar}">Loading...</label>
-    <progress class="w-1/3 h-[2%] mt-[0.5%]" bind:this={progress_bar} value="0" max="100"></progress>
+<div class="bg-black absolute left-0 top-0 w-full h-full flex flex-col justify-center items-center z-20" bind:this={progress_bar_container}>
+    <label class="text-white text-4xl h-[5%]" for="{progress_bar
+    }">Loading...</label>
+    <progress class="w-1/3 h-[2%] mt-[0.5%]" bind:this={progress_bar
+    } value="0" max="100"></progress>
 </div>
 
-<style>
-
-</style>

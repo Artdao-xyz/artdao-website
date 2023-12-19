@@ -9,24 +9,36 @@ export default
     "estilos":
     [
         {
-            "name":"estilo 0",
-            "texture_name":"matcap-metal.png",
-            "color":"#9f9f9f"
-        },
-        {
-            "name":"estilo 1",
-            "texture_name":"matcap-gum.png",
-            "color":"#8189ac"
-        },
-        {
-            "name":"estilo 2",
+            "name":"0",
             "texture_name":"matcap-black.png",
-            "color":"#FFFFFF"
+            "color":"#EFEFEF",
+            "font_color":"#000000",
+            "item_active": "",
+            "item_inactive": ""
         },
         {
-            "name":"estilo 3",
+            "name":"1",
+            "texture_name":"matcap-metal.png",
+            "color":"#B4B5A1",
+            "font_color": "#DBFF00",
+            "item_active": "",
+            "item_inactive": ""
+        },
+        {
+            "name":"2",
+            "texture_name":"matcap-gum.png",
+            "color":"#C9CEDE",
+            "font_color" : "#000000",
+            "item_active": "",
+            "item_inactive": ""
+        },
+        {
+            "name":"3",
             "texture_name":"matcap-blue.png",
-            "color":"#dddede"
+            "color":"#646262",
+            "font_color" : "#000000",
+            "item_active": "",
+            "item_inactive": ""
         }
     ]
 }
