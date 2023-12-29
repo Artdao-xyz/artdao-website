@@ -11,30 +11,40 @@
 	import Live from './Live.svelte';
     import Main from './Main.svelte';
 	import Loading from './Loading.svelte';
+    import Events from './Events.svelte';
     import section from '$lib/section.js'
+    import Drop from './Drop.svelte';
+    import Drops from './Drops.svelte';
+    import Studio from './Studio.svelte';
+	import Contact from './Contact.svelte';
+	import Mission from './Mission.svelte';
+    import { fade } from 'svelte/transition';
 
-    let canvas, header, footer;
+    let canvas, footer;
     let index = 0;
+    let progress = 0;
     let loaded = false;
     let metaSymbol = null;
     let textures = [];
-    let progress_bar;
-    let progress_bar_container;
-
-    let isMoreInfo = false;
-    let arrow;
-
-    let body;
-
-    let currentSection = 0;
-    let newSection = 0;
-    const scene = new THREE.Scene();
-    const manager = new THREE.LoadingManager()
-    const textureLoader = new THREE.TextureLoader(manager);
-
+    
     let live_sticker = '/goat-psipsi.png';
     let live_banner = '/banner-psipsikoko.png';
     let live_assets = [live_sticker, live_banner]
+
+    $: currentSection = 0;
+    $: newSection = 0;
+
+    $: if (canvas) {
+        canvas.style.backgroundColor = config.default.estilos[index].color;
+    }
+
+    $: if (footer) {
+        footer.style.backgroundColor = config.default.estilos[index].color;
+    }
+
+    const scene = new THREE.Scene();
+    const manager = new THREE.LoadingManager()
+    const textureLoader = new THREE.TextureLoader(manager);
 
     onMount (() => {
         console.log('mounted')
@@ -46,24 +56,16 @@
             width: window.innerWidth,
             height: window.innerHeight
         }
-
-
-        header.style.backgroundColor = config.default.estilos[index].color;
-        footer.style.backgroundColor = config.default.estilos[index].color;
-        canvas.style.backgroundColor = config.default.estilos[index].color;
-
         /* LOADERS */
         manager.onStart = (url, itemsLoaded, itemsTotal) => {
-            body = document.querySelector('body');
         }
         manager.onProgress = (url, itemsLoaded, itemsTotal) => {
-            progress_bar = itemsLoaded / itemsTotal * 100;
+            progress = Math.round(itemsLoaded / itemsTotal * 100);
         }
         manager.onLoad = (e) => {
             loaded = true;
             metaSymbol = new MetaSymbol(textures)
             scene.add(metaSymbol.getMesh());
-            progress_bar_container.style.display = 'none';
         }
         config.default.estilos.map((estilo)=>{
             textures.push(textureLoader.load(`/matcap/${estilo.texture_name}`))
@@ -119,9 +121,6 @@
                 currentSection = newSection
                 }
         };    
-        
-
-
     })
 
     onDestroy(() => {})
@@ -130,121 +129,44 @@
         newSection = index;
         window.scrollTo(0, newSection *  window.innerHeight)
     }
-    const moreInfo = (index) => {
-        currentSection = index;
-        if (isMoreInfo) {
-            isMoreInfo = false;
-            arrow.src = '/arrow-up.svg';
-        } else {
-            isMoreInfo = true;
-            arrow.src = '/arrow-down.svg';
-        }
-    }
     
-    const updateMatcap = _ => {
+    const handleMatcapUpdated = (e) => {
+        index = e.detail.matcap;
+        metaSymbol.changeTexture(index)        
+        console.log(index)
+        return index
+    };
 
-        index++;
-        index >= config.default.estilos.length ? index = 0 : null;
-
-        header.style.backgroundColor = config.default.estilos[index].color;
-        footer.style.backgroundColor = config.default.estilos[index].color;
-        canvas.style.backgroundColor = config.default.estilos[index].color;
-        metaSymbol.changeTexture(index, scene)        
-        
-    }
-
-
+    let isFooter = false;
+    const handleFooterUpdated = (e) => {
+       isFooter = e.detail.isFooter;
+    };
 </script>
 
-
 <canvas bind:this={canvas} class="fixed top-0 left-0 z-[-10]"></canvas>
-
 <div class='font-clash-display font-normal uppercase max-w-[1440px] w-screen m-auto'>
-
-    <!-- <Header /> -->
-
-    <header bind:this={header} class="sticky top-0 left-0 flex justify-between items-center p-6">
-        <div class="left-head">
-            <a href={'#'}><img src="/artdao-logo.svg" alt="Artdao Logo"></a>
-        </div>
-        <nav>
-            <ul class="font-semibold m-0 flex justify-between items-center gap-5 p-0">
-                <li><a on:click={() => setSection(0)} class="{currentSection == 0 ? 'invert' : ''}" href={"#"}><img class="m-auto mb-2" src="/s1_white.svg" alt="Section 1"><span class="{currentSection == 0 ? 'invert' : 'invisible'}">Mission</span></a></li> 
-                <li><a on:click={() => setSection(1)} class="{currentSection == 1 ? 'invert' : ''}" href={"#"}><img class="m-auto mb-2" src="/s2_white.svg" alt="Section 2"><span class="{currentSection == 1 ? 'invert' : 'invisible'}">drops</span></a></li>
-                <li><a on:click={() => setSection(2)} class="{currentSection == 2 ? 'invert' : ''}" href={"#"}><img class="m-auto mb-2" src="/s3_white.svg" alt="Section 3"><span class="{currentSection == 2 ? 'invert' : 'invisible'}">Events</span></a></li>
-                <li><a on:click={() => setSection(3)} class="{currentSection == 3 ? 'invert' : ''}" href={"#"}><img class="m-auto mb-2" src="/s4_white.svg" alt="Section 4"><span class="{currentSection == 3 ? 'invert' : 'invisible'}">Research</span></a></li>
-                <li><a on:click={() => setSection(4)} class="{currentSection == 4 ? 'invert' : ''}" href={"#"}><img class="m-auto mb-2" src="/s5_white.svg" alt="Section 5"><span class="{currentSection == 4 ? 'invert' : 'invisible'}">Studio</span></a></li>
-            </ul>
-        </nav>
-    </header>
-
-
     
     {#if loaded}
+
+        <Header currentSection={currentSection} setSection={setSection} matcapIndex={index} />
+
         <Live source={live_assets} />
-        <Main />
+        <Main section={currentSection} />
+
+        <footer bind:this={footer} class={isFooter ? "transition-height duration-1000 ease-in-out sticky py-9 px-20 bottom-0 left-0 h-[85vh] border-solid border-b-0 border-[1px] border-black rounded-t-lg" : "transition-height duration-1000 ease-in-out sticky py-9 px-20 bottom-0 left-0 h-[10vh] truncate border-solid border-b-0 border-[1px] border-black rounded-t-lg" }>
+            {#if currentSection == 0}
+                <Mission  on:footerUpdate={handleFooterUpdated} on:matcapUpdate={handleMatcapUpdated} index={index} isFooter={isFooter}/>
+            {:else if currentSection == 1}
+                <Drops on:footerUpdate={handleFooterUpdated} on:matcapUpdate={handleMatcapUpdated} index={index} isFooter={isFooter}/>
+            {:else if currentSection == 2}
+                <Events on:footerUpdate={handleFooterUpdated} on:matcapUpdate={handleMatcapUpdated} index={index}/>
+            {:else if currentSection == 3}
+                <Studio on:footerUpdate={handleFooterUpdated} on:matcapUpdate={handleMatcapUpdated} index={index}/>
+            {/if}
+        </footer>
+
     {/if}
-    
-    <footer bind:this={footer} class={isMoreInfo ? "transition-height duration-1000 ease-in-out sticky p-9 bottom-0 left-0 h-[90vh] border-solid border-b-0 border-[1px] border-black rounded-t-lg" : "transition-height duration-1000 ease-in-out sticky p-9 bottom-0 left-0 h-[10vh] truncate border-solid border-b-0 border-[1px] border-black rounded-t-lg" }>
-        
-        <div class="flex justify-between items-center">
-            <div class="flex justify-between items-center gap-3">
-                <p class="text-[24px] font-medium tracking-wider">By artists for artists</p>
-                <a on:click={() => moreInfo(currentSection)} href={'#'} class='bg-black w-fit py-1 px-6 rounded-3xl'><img bind:this={arrow} src="/arrow-up.svg" alt="hyperlink"></a>
-            </div>
-            <div class="flex justify-between items-center gap-6">
-                <button class="" on:click={()=> updateMatcap() }><img class="p-0.5 border-solid border-[1px] border-black rounded-full" src="/material.png" alt="Material"></button>
-                <a href={'https://twitter.com/Artdao_xyz'} target="_blank"><img class="" src="/x.svg" alt="X Logo"></a> 
-                <a href={'https://www.instagram.com/artdao.xyz/'} target="_blank"><img src="/instagram.svg" alt="Instagram Logo"></a> 
-                <a href={'#'} class='text-base underline font-medium flex gap-2'>Join our Discord<img src="/link-arrow.svg" alt="Link Arrow"></a>
-            </div>
-        </div>
-
-        <div class="{isMoreInfo ? "transition-opacity opacity-100" : "transition-opacity opacity-0"}">
-            <div class="{currentSection == 0 ? "" : "hidden"}">
-                <h1 class="font-neue-power text-[54px] font-semibold tracking-wider mt-36">Mission</h1>
-                <hr class="border-black	my-9 w-3/6	">
-                <p class="text-2xl normal-case leading-7 ">We believe in a world where artists are involved in the distribution of culture.
-                    Bridging the hyperlocal and global to form networked collectives 
-                    incubation/development of emergent artistry as it manifests across domains of digital art, experiential experiences and tangible objects
-                    have we can utilise new forms of self-sovereign technologies, put them in service of “art”.</p>
-            </div>
-            
-            <div class="{currentSection == 1 ? "" : "hidden"}">
-                <h1 class="font-neue-power text-[54px] font-semibold tracking-wider mt-36">Drops</h1>
-                <hr class="border-black	my-9 w-3/6	">
-                <p class="text-2xl normal-case leading-7 ">Drops are where artdao delves deep into developing artistic projects in ways that no one else can. Working closely with artists over the course of 3-6 months to develop their own ideas into a stand-alone drop, online experience and physical exhibition.  </p>
-            </div>
-
-            <div class="{currentSection == 2 ? "" : "hidden"}">
-                <h1 class="font-neue-power text-[54px] font-semibold tracking-wider mt-36">Embracing the future</h1>
-                <hr class="border-black	my-9 w-3/6	">
-                <p class="text-2xl normal-case leading-7 ">We believe in a world where artists are involved in the distribution of culture. 
-                    Bridging the hyperlocal and global to form networked collectives incubation/development of emergent artistry as it manifests across domains of digital art, experiential experiences and tangible objects have we can utilise new forms of self-sovereign technologies, put them in service of “art”.
-                </p>
-            </div>
-
-            <div class="{currentSection == 3 ? "" : "hidden"}">
-                <h1 class="font-neue-power text-[54px] font-semibold tracking-wider mt-36">Research</h1>
-                <hr class="border-black	my-9 w-3/6	">
-                <p class="text-2xl normal-case leading-7 ">Exhibitions are how we connect with the physical world and the collective experience of art. Working closely with those in the local scene to produce immersive experiences which bring together new audiences at the intersection of digital art, contemporary culture and self-sovereign technologies</p>
-            </div>
-
-            <div class="{currentSection == 4 ? "" : "hidden"}">
-                <h1 class="font-neue-power text-[54px] font-semibold tracking-wider mt-36">Studio</h1>
-                <hr class="border-black	my-9 w-3/6	">
-                <p class="text-2xl normal-case leading-7 ">Aesthetic resonances cut to the heart of cultural communication. a force of gravity upon the collective unconscious that pulls together ideas, energy and capital as new forms of human organisation. We work with the worlds leading digital artists. Balancing asset creation, style and composition to develop original brand identities that cut through the noise. Harness the mimetic powers of digital culture to drive your project forward. The Studio is where we direct artistic talent into the creation of identities for brands and projects. Involving a deep understanding of artistic expression in how we construct their affective communication.</p>
-            </div>
-        </div>
-
-    </footer>
 
 </div>
 
-<div class="bg-black absolute left-0 top-0 w-full h-full flex flex-col justify-center items-center z-20" bind:this={progress_bar_container}>
-    <label class="text-white text-4xl h-[5%]" for="{progress_bar
-    }">Loading...</label>
-    <progress class="w-1/3 h-[2%] mt-[0.5%]" bind:this={progress_bar
-    } value="0" max="100"></progress>
-</div>
-
+<Loading progress={progress}/>

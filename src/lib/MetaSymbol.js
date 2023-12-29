@@ -46,8 +46,8 @@ export default class MetaSymbol
         this.scrollPercentD = 0.0
         this.scrollDelta = 0.0
 
-        this.fondo0 = new THREE.Color(config.default.estilos[0].color)
-        this.fondo1 = new THREE.Color(config.default.estilos[1].color)
+        // this.fondo0 = new THREE.Color(config.default.estilos[0].color)
+        // this.fondo1 = new THREE.Color(config.default.estilos[1].color)
         const metaballScale = 35
         const res = 80
 
@@ -102,13 +102,13 @@ export default class MetaSymbol
         this.scrollPercentD = (_simbolId/(Symbols.default.simbols.length-1))*100
     }
 
-    changeTexture(_index,_scene)
+    changeTexture(_index)
     {
         if(this.textureMixD == 0.0)
         {
             this.materialUniforms.matcap2.value = this.textures[_index]
-            this.fondo0.set(_scene.background)
-            this.fondo1.set(config.default.estilos[_index].color)
+            // this.fondo0.set(_scene.background)
+            // this.fondo1.set(config.default.estilos[_index].color)
             this.textureMixD = 1.0
         }else if(this.textureMixD == 1.0)
         {
@@ -117,8 +117,8 @@ export default class MetaSymbol
         }
         this.backMixD = 1.0
         this.backMix = 0.0
-        this.fondo0.set(_scene.background)
-        this.fondo1.set(config.default.estilos[_index].color)
+        // this.fondo0.set(_scene.background)
+        // this.fondo1.set(config.default.estilos[_index].color)
 
       
     }
@@ -144,7 +144,7 @@ export default class MetaSymbol
         this.textureMix = THREE.MathUtils.clamp(this.textureMix,0.0,1.0)
         if(this.materialUniforms != undefined)
         {
-            this.fondo0.lerp(this.fondo1,this.backMix)
+            // this.fondo0.lerp(this.fondo1,this.backMix)
             this.materialUniforms.u_matcap_mix.value = this.textureMix
         }
         this.metaball.reset()
