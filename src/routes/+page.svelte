@@ -1,24 +1,24 @@
 <script>
-    import '/src/style.css';
+    import '/src/style.css';    
+    import { fade } from 'svelte/transition';
+    import { onDestroy, onMount } from 'svelte';
+
     import * as THREE from 'three';
     import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
     import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
-    import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-    import { onDestroy, onMount } from 'svelte';
+    
     import * as config from '$lib/config.js';
     import MetaSymbol from '$lib/MetaSymbol.js';
-	import Header from './Header.svelte';
-	import Live from './Live.svelte';
-    import Main from './Main.svelte';
-	import Loading from './Loading.svelte';
-    import Events from './Events.svelte';
-    import section from '$lib/section.js'
-    import Drop from './Drop.svelte';
-    import Drops from './Drops.svelte';
-    import Studio from './Studio.svelte';
-	import Contact from './Contact.svelte';
-	import Mission from './Mission.svelte';
-    import { fade } from 'svelte/transition';
+	
+    import Header from '$lib/components/Header.svelte';
+	import Live from '$lib/components/Live.svelte';
+    import Main from '$lib/components/Main.svelte';
+	import Loading from '$lib/components/Loading.svelte';
+    import Events from '$lib/components/Events.svelte';
+    import Drops from '$lib/components/Drops.svelte';
+    import Studio from '$lib/components/Studio.svelte';
+	import Mission from '$lib/components/Mission.svelte';
+    import Contact from '$lib/components/Contact.svelte';
 
     let canvas, footer;
     let index = 0;
@@ -28,7 +28,7 @@
     let textures = [];
     
     let live_sticker = '/goat-psipsi.png';
-    let live_banner = '/banner-psipsikoko.png';
+    let live_banner = '/drop-psipsikoko_main.png';
     let live_assets = [live_sticker, live_banner]
 
     $: currentSection = 0;
@@ -72,8 +72,14 @@
         })
 
         /* SCENE */
-        const camera = new THREE.PerspectiveCamera(30.0, sizes.width / sizes.height, 0.001, 1000.0);
-        camera.position.set(0.0, 0.0, 200.0);
+        const camera = new THREE.PerspectiveCamera(35.0, sizes.width / sizes.height, 0.001, 1000.0);
+        if (sizes.width < 1025) {
+            camera.position.y = 15;
+            camera.position.z = 300;
+        } else {
+            camera.position.z = 200;
+        }
+         
         const renderer = new THREE.WebGLRenderer({
             canvas, 
             antialias: true,
@@ -104,6 +110,15 @@
             sizes.width = window.innerWidth
             sizes.height = window.innerHeight
 
+            // Adjust camera position based on viewport size
+            if (sizes.width < 1025) {
+                camera.position.y = 15;
+                camera.position.z = 300;
+            } else {
+                camera.position.y = 0;
+                camera.position.z = 200;
+            }
+
             // Update camera
             camera.aspect = sizes.width / sizes.height
             camera.updateProjectionMatrix()
@@ -114,16 +129,22 @@
         };
 
         onscroll = (e) => {
-            console.log('scrolling')
             const scrollY = window.scrollY
             newSection = Math.round(scrollY / sizes.height)
             if (newSection != currentSection) {
                 currentSection = newSection
                 }
         };    
-    })
 
-    onDestroy(() => {})
+        return () => {
+            renderPass.dispose();
+            renderTarget.dispose();
+            metaSymbol.dispose();
+            canvas.remove();
+            canvas = null;
+
+        }
+    })
 
     const setSection = (index) => {
         newSection = index;
@@ -133,40 +154,91 @@
     const handleMatcapUpdated = (e) => {
         index = e.detail.matcap;
         metaSymbol.changeTexture(index)        
-        console.log(index)
         return index
     };
 
     let isFooter = false;
-    const handleFooterUpdated = (e) => {
-       isFooter = e.detail.isFooter;
-    };
+    let arrow = true;
+    const openFooter = _ => {
+        if (isFooter) {
+            console.log(isFooter)
+            isFooter = false;
+        } else {
+            console.log(isFooter)
+            isFooter = true;
+        }
+    }
+
+    const updateMatcap = _ => {
+        index++;
+        index >= config.default.estilos.length ? index = 0 : null;
+        metaSymbol.changeTexture(index)        
+    }
+
 </script>
-
+<!-- bg-black tb:bg-purple-500 lp:bg-green-600 dp:bg-blue-600  -->
 <canvas bind:this={canvas} class="fixed top-0 left-0 z-[-10]"></canvas>
-<div class='font-clash-display font-normal uppercase max-w-[1440px] w-screen m-auto'>
+{#if loaded}
+    <Header currentSection={currentSection} setSection={setSection} matcapIndex={index} />
     
-    {#if loaded}
+    <div class='text-{config.default.estilos[index].fontColor} font-clash-display font-normal uppercase mx-5 lp:mx-10 dp:max-w-[1440px] dp:mx-auto'>
+    
+        <Live source={live_assets}/>
+        <Main section={currentSection}/>
 
-        <Header currentSection={currentSection} setSection={setSection} matcapIndex={index} />
+        <button class="fixed left-1/2 transform -translate-x-1/2 top-3/4 lp:hidden" on:click={updateMatcap}>
+            <img class="p-0.5 border-solid border-[1px] border-{config.default.estilos[index].icon} rounded-full" src="/material.png" alt="Material">
+        </button>
 
-        <Live source={live_assets} />
-        <Main section={currentSection} />
+        <footer bind:this={footer} class="overflow-y-auto
+        lp:overflow-y-visible border-{config.default.estilos[index].icon} transition-height duration-1000 ease-in-out sticky px-8 lp:px-24 bottom-0 left-0 border-b-0 border-[1px] rounded-t-lg { isFooter ? "py-6 h-[75vh] lp:h-[85vh]" : "pt-6 h-[7.5vh]"}">
+            <a on:click={openFooter} href={'#'} class="flex items-center lp:hidden"><img bind:this={arrow} class="mx-auto bg-black py-1 px-6 rounded-3xl" src={`/arrow-${isFooter}.svg`} alt="hyperlink"></a>
 
-        <footer bind:this={footer} class={isFooter ? "transition-height duration-1000 ease-in-out sticky py-9 px-20 bottom-0 left-0 h-[85vh] border-solid border-b-0 border-[1px] border-black rounded-t-lg" : "transition-height duration-1000 ease-in-out sticky py-9 px-20 bottom-0 left-0 h-[10vh] truncate border-solid border-b-0 border-[1px] border-black rounded-t-lg" }>
             {#if currentSection == 0}
-                <Mission  on:footerUpdate={handleFooterUpdated} on:matcapUpdate={handleMatcapUpdated} index={index} isFooter={isFooter}/>
+
+                <div class="lp:flex lp:items-center lp:justify-between" in:fade={{ delay: 450, duration: 750 }} out:fade={{ delay: 250, duration: 150 }} >
+                    <p class="text-sm lp:text-xl text-center font-medium tracking-wider leading-5 mt-12 lp:mt-0 mb-6 lp:mb-0 {isFooter ? "" : "hidden lp:block" }">By artists for artists</p>
+                    <a on:click={openFooter} href={'#'} class="hidden lp:flex items-center"><img bind:this={arrow} class="mx-auto bg-black py-1 px-6 rounded-3xl" src={`/arrow-${isFooter}.svg`} alt="hyperlink"></a>
+                    <Contact on:matcapUpdate={handleMatcapUpdated} index={index}/>
+                </div>
+                <!-- {#if isFooter} -->
+                    <Mission isFooter={isFooter}/>
+                <!-- {/if} -->
             {:else if currentSection == 1}
-                <Drops on:footerUpdate={handleFooterUpdated} on:matcapUpdate={handleMatcapUpdated} index={index} isFooter={isFooter}/>
+            
+                <div class="lp:flex lp:items-center lp:justify-between" in:fade={{ delay: 450, duration: 750 }} out:fade={{ delay: 250, duration: 150 }} >
+                    <p class="text-sm lp:text-xl text-center font-medium tracking-wider leading-5 mt-12 lp:mt-0 mb-6 lp:mb-0 {isFooter ? "" : "hidden lp:block" }">Artists drive drops on fuel</p>
+                    <a on:click={openFooter} href={'#'} class="hidden lp:flex items-center"><img bind:this={arrow} class="mx-auto bg-black py-1 px-6 rounded-3xl" src={`/arrow-${isFooter}.svg`} alt="hyperlink"></a>
+                    <Contact on:matcapUpdate={handleMatcapUpdated} index={index}/>
+                </div>
+                <!-- {#if isFooter} -->
+                    <Drops isFooter={isFooter}/>
+                <!-- {/if} -->
             {:else if currentSection == 2}
-                <Events on:footerUpdate={handleFooterUpdated} on:matcapUpdate={handleMatcapUpdated} index={index}/>
+            
+                <div class="lp:flex lp:items-center lp:justify-between" in:fade={{ delay: 450, duration: 750 }} out:fade={{ delay: 250, duration: 150 }} >
+                    <p class="text-sm lp:text-xl text-center font-medium tracking-wider leading-5 mt-12 lp:mt-0 mb-6 lp:mb-0 {isFooter ? "" : "hidden lp:block" }">Immersive global experiences</p>
+                    <a on:click={openFooter} href={'#'} class="hidden lp:flex items-center"><img bind:this={arrow} class="mx-auto bg-black py-1 px-6 rounded-3xl" src={`/arrow-${isFooter}.svg`} alt="hyperlink"></a>
+                    <Contact on:matcapUpdate={handleMatcapUpdated} index={index}/>
+                </div>
+                <!-- {#if isFooter} -->
+                    <Events isFooter={isFooter}/>
+                <!-- {/if} -->
+                
             {:else if currentSection == 3}
-                <Studio on:footerUpdate={handleFooterUpdated} on:matcapUpdate={handleMatcapUpdated} index={index}/>
+            
+                <div class="h-fit lp:flex lp:items-center lp:justify-between" in:fade={{ delay: 450, duration: 750 }} out:fade={{ delay: 250, duration: 150 }} >
+                    <p class="text-sm lp:text-xl text-center font-medium tracking-wider leading-5 mt-12 lp:mt-0 mb-6 lp:mb-0 {isFooter ? "" : "hidden lp:block" } ">Between art and branding</p>
+                    <a on:click={openFooter} href={'#'} class="hidden  lp:flex items-center"><img bind:this={arrow} class="mx-auto bg-black py-1 px-6 rounded-3xl" src={`/arrow-${isFooter}.svg`} alt="hyperlink"></a>
+                    <Contact on:matcapUpdate={handleMatcapUpdated} index={index}/>
+                </div>
+                <!-- {#if isFooter} -->
+                    <Studio isFooter={isFooter}/>
+                <!-- {/if} -->
             {/if}
         </footer>
+    </div>
+{/if}
 
-    {/if}
-
-</div>
 
 <Loading progress={progress}/>

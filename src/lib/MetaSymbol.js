@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { MarchingCubes } from 'three/addons/objects/MarchingCubes.js';
-import * as Symbols from './symbols.js'
-import * as config from './config.js'
+import * as Symbols from '$lib/symbols.js'
+import * as config from '$lib/config.js'
 
 export default class MetaSymbol
 {
@@ -199,10 +199,24 @@ export default class MetaSymbol
 
     dispose() {
         // this.metaball.dispose()
-        console.log("dispose")
         this.material.dispose()
-    }
-  
-    
 
+        //dispose textures
+        this.textures.map((texture)=>{
+            texture.dispose()
+        })
+
+        //dispose material 
+        this.metaball.children.map((obj)=>{
+            obj.material.dispose()
+        })
+
+        // dispose objects
+        this.metaball.children.map((obj)=>{
+            obj.geometry.dispose()
+            obj.material.dispose()
+        })
+        this.metaball.geometry.dispose()
+        this.metaball.material.dispose()
+    }
 } 

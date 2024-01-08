@@ -27,5 +27,10 @@
 @tailwind utilities;
 
 *{
-    scroll-behavior: smooth;
+    scroll-behavior: smooth;   
 }
+
+.custom-progress-bar::-webkit-progress-value {
+    background-color: #484848;
+  }
+  
