@@ -190,8 +190,8 @@
             <img class="p-0.5 border-solid border-[1px] border-{config.default.estilos[index].icon} rounded-full" src="/material.png" alt="Material">
         </button>
 
-        <footer bind:this={footer} class="overflow-y-auto
-        lp:overflow-y-visible border-{config.default.estilos[index].icon} transition-height duration-1000 ease-in-out sticky px-8 lp:px-24 bottom-0 left-0 border-b-0 border-[1px] rounded-t-lg { isFooter ? "py-6 h-[75vh] lp:h-[85vh]" : "pt-6 h-[7.5vh]"}">
+        <footer bind:this={footer} class="{ isFooter ? "py-6 h-[75vh] lp:h-[85vh]" : "pt-6 h-[7.5vh]"} overflow-y-auto
+        lp:overflow-y-visible border-{config.default.estilos[index].icon} border-solid transition-height duration-1000 ease-in-out sticky px-8 lp:px-24 bottom-0 left-0 border-b-0 border-[1px] rounded-t-lg ">
             <a on:click={openFooter} href={'#'} class="flex items-center lp:hidden"><img bind:this={arrow} class="mx-auto bg-black py-1 px-6 rounded-3xl" src={`/arrow-${isFooter}.svg`} alt="hyperlink"></a>
 
             {#if currentSection == 0}
