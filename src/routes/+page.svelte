@@ -20,7 +20,7 @@
 	import Mission from '$lib/components/Mission.svelte';
     import Contact from '$lib/components/Contact.svelte';
 
-    let canvas, footer;
+    let canvas, footer, material;
     let index = 0;
     let progress = 0;
     let loaded = false;
@@ -40,6 +40,11 @@
 
     $: if (footer) {
         footer.style.backgroundColor = config.default.estilos[index].color;
+        footer.style.borderColor = config.default.estilos[index].icon;
+    }
+
+    $:if (material) {
+        material.style.borderColor = config.default.estilos[index].icon;
     }
 
     const scene = new THREE.Scene();
@@ -187,11 +192,12 @@
         <Main section={currentSection}/>
 
         <button class="fixed left-1/2 transform -translate-x-1/2 top-3/4 lp:hidden" on:click={updateMatcap}>
-            <img class="p-0.5 border-solid border-[1px] border-{config.default.estilos[index].icon} rounded-full" src="/material.png" alt="Material">
+            <img bind:this={material} class="p-0.5 border-solid border-[1px] border-{config.default.estilos[index].icon} rounded-full" src="/material.png" alt="Material">
         </button>
 
-        <footer bind:this={footer} class="{ isFooter ? "py-6 h-[75vh] lp:h-[85vh]" : "pt-6 h-[7.5vh]"} overflow-y-auto
-        lp:overflow-y-visible border-{config.default.estilos[index].icon} border-solid transition-height duration-1000 ease-in-out sticky px-8 lp:px-24 bottom-0 left-0 border-b-0 border-[1px] rounded-t-lg ">
+        <!-- <footer bind:this={footer} class="overflow-y-auto
+        lp:overflow-y-visible border-{config.default.estilos[index].icon} transition-height duration-1000 ease-in-out sticky px-8 lp:px-24 bottom-0 left-0 border-b-0 border-[1px] rounded-t-lg { isFooter ? "py-6 h-[75vh] lp:h-[85vh]" : "pt-6 h-[7.5vh]"}"> -->
+        <footer bind:this={footer} class={`overflow-y-auto lp:overflow-y-visible transition-height duration-1000 ease-in-out sticky px-8 lp:px-24 bottom-0 left-0 border-b-0 border-[1px] rounded-t-lg ${isFooter ? "py-6 h-[75vh] lp:h-[85vh]" : "pt-6 h-[7.5vh]"}`}>
             <a on:click={openFooter} href={'#'} class="flex items-center lp:hidden"><img bind:this={arrow} class="mx-auto bg-black py-1 px-6 rounded-3xl" src={`/arrow-${isFooter}.svg`} alt="hyperlink"></a>
 
             {#if currentSection == 0}

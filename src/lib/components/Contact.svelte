@@ -5,10 +5,14 @@
     const dispatch = createEventDispatcher();
     export let index;
 
-    let footer;
+    let footer, material;
 
     $:if (footer) {
         footer.style.backgroundColor = config.default.estilos[index].color;
+    }
+
+    $:if (material) {
+        material.style.borderColor = config.default.estilos[index].icon;
     }
 
     const updateMatcap = _ => {
@@ -31,7 +35,7 @@
     </div>
     <div class="flex items-center">
         <button on:click={handleButtonClick}>
-            <img class="p-0.5 border-solid border-[1px] border-{config.default.estilos[index].icon} rounded-full" src="/material.png" alt="Material">
+            <img bind:this={material} class="p-0.5 border-solid border-[1px] rounded-full" src="/material.png" alt="Material">
         </button>
     </div>
 </div>
