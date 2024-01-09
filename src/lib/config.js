@@ -15,16 +15,18 @@ export default
             "bg":"EFEFEF",
             "fontColor":"black",
             "icon": "black",
-            "logo": "black"
+            "logo": "black",
+            "arrow": "white"
         },
         {
             "name":"1",
             "texture_name":"matcap-gum.png",
-            "color":"#C9CEDE",
-            "bg":"C9CEDE",
-            "fontColor" : "black",
-            "icon": "black",
-            "logo": "black"
+            "color":"#B9C0D6",
+            "bg":"B9C0D6",
+            "fontColor" : "mustard",
+            "icon": "mustard",
+            "logo": "black",
+            "arrow": "black"
         },
         {
             "name":"2",
@@ -33,7 +35,8 @@ export default
             "bg":"646262",
             "fontColor" : "white",
             "icon": "white",
-            "logo": "white"
+            "logo": "white",
+            "arrow": "black",
         }
     ]
 }

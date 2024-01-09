@@ -16,12 +16,15 @@ export default {
             fontFamily: {
             'clash-display': ['Clash Display', 'sans-serif'],
             'neue-power': ['Neue Power Variable', 'sans-serif']
-        },
+            },
             transitionDuration: {
                 '2000': '2000ms',
             },
             transitionProperty: {
                 'height': 'height',
+            },
+            colors: {
+                'mustard': '#DBFF00'
             }
         },    
     },

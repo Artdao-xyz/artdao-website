@@ -29,9 +29,9 @@
 
 <div bind:this={footer} class="hidden lp:col-span-2 flex-none lp:flex lp:items-center justify-end lp:gap-6">
     <div class="flex items-center justify-between gap-6">
-        <a href={'https://twitter.com/Artdao_xyz'} target="_blank"><img class="" src={`/x-${config.default.estilos[index].icon}.svg`} alt="X Logo"></a> 
-        <a href={'https://www.instagram.com/artdao.xyz/'} target="_blank"><img src={`/instagram-${config.default.estilos[index].icon}.svg`} alt="Instagram Logo"></a> 
-        <a href={'#'} class='text-base underline font-medium flex gap-2'>Join our Discord<img src={`/link-arrow-${config.default.estilos[index].icon}.svg`} alt="Link Arrow"></a>
+        <a href={'https://twitter.com/Artdao_xyz'} target="_blank"><img class="" src={`/x-${config.default.estilos[index].logo}.svg`} alt="X Logo"></a> 
+        <a href={'https://www.instagram.com/artdao.xyz/'} target="_blank"><img src={`/instagram-${config.default.estilos[index].logo}.svg`} alt="Instagram Logo"></a> 
+        <a href={'#'} class='text-base text-{config.default.estilos[index].logo} underline font-medium flex gap-2'>Join our Discord<img src={`/link-arrow-${config.default.estilos[index].logo}.svg`} alt="Link Arrow"></a>
     </div>
     <div class="flex items-center">
         <button on:click={handleButtonClick}>

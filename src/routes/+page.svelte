@@ -37,6 +37,9 @@
     $: currentSection = 0;
     $: newSection = 0;
 
+    let fontColor = config.default.estilos[index].fontColor;
+
+
     $: if (canvas) {
         canvas.style.backgroundColor = config.default.estilos[index].color;
     }
@@ -215,7 +218,7 @@
 {#if loaded}
     <Header currentSection={currentSection} setSection={setSection} matcapIndex={index} />
     
-    <div class='text-{config.default.estilos[index].fontColor} font-clash-display font-normal uppercase mx-5 lp:mx-10 dp:max-w-[1440px] dp:mx-auto'>
+    <div class={`text-${config.default.estilos[index].fontColor} font-clash-display font-normal uppercase mx-5 lp:mx-10 dp:max-w-[1440px] dp:mx-auto`}>
     
         <Live source={live_assets}/>
         <Main on:footerUpdate={handleFooterUpdated} section={currentSection} isFooter={isFooter}/>
@@ -225,18 +228,18 @@
         </button>
 
 
-       <footer bind:this={footer} class={`transition-height duration-1000 ease-in-out sticky px-8 lp:px-24 bottom-0 left-0 border-b-0 border-[1px] rounded-t-lg ${isFooter ? "overflow-y-auto py-6 h-[70vh] lp:h-[80vh]" : "overflow-y-none pt-6 h-[7.5vh]"}`}>
-            <a on:click={openFooter} href={'#'} class="flex items-center lp:hidden"><img bind:this={arrow} class="mx-auto bg-black py-1 px-6 rounded-3xl" src={`/arrow-${isFooter}.svg`} alt="hyperlink"></a>
+       <footer bind:this={footer} class={`transition-height duration-1000 ease-in-out sticky px-8 pb-0 lp:px-24 bottom-0 left-0 border-b-0 border-[1px] rounded-t-lg ${isFooter ? "overflow-y-auto py-6 h-[70vh] lp:h-[75vh]" : "overflow-y-none pt-6 h-[7.5vh]"}`}>
+            <a on:click={openFooter} href={'#'} class="flex items-center lp:hidden"><img bind:this={arrow} class="mx-auto bg-{config.default.estilos[index].fontColor} py-1 px-6 rounded-3xl" src={`/arrow-${isFooter}-${config.default.estilos[index].arrow}.svg`} alt="hyperlink"></a>
 
             
             <div class="grid grid-cols-5 gap-4 items-center justify-between">
                 <a class="text-sm lp:text-xl mx-auto lp:mx-0 text-center lp:text-left font-medium tracking-wider leading-5 mt-12 lp:mt-0 mb-6 lp:mb-0 col-span-full lp:col-span-2 {isFooter ? '' : 'hidden lp:block'}" on:click={openFooter} href={"#"}><p bind:this={subheader}>{content}</p></a>
-                <a on:click={openFooter} href={'#'} class="hidden col-span-1 lp:inline-flex items-center"><img bind:this={arrow} class="mx-auto bg-black py-1 px-6 rounded-3xl" src={`/arrow-${isFooter}.svg`} alt="hyperlink" /></a>
+                <a on:click={openFooter} href={'#'} class="hidden col-span-1 lp:inline-flex items-center"><img bind:this={arrow} class="mx-auto bg-{config.default.estilos[index].fontColor} py-1 px-6 rounded-3xl" src={`/arrow-${isFooter}-${config.default.estilos[index].arrow}.svg`} alt="hyperlink" /></a>
                 <Contact on:matcapUpdate={handleMatcapUpdated} index={index} />
             </div>
             
             {#if currentSection == 0}
-                <Mission isFooter={isFooter}/>
+                <Mission index={index} isFooter={isFooter}/>
             {:else if currentSection == 1}
                 <Drops isFooter={isFooter}/>
             {:else if currentSection == 2}
