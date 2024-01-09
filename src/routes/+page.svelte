@@ -2,13 +2,14 @@
     import '/src/style.css';    
     import { fade } from 'svelte/transition';
     import { onDestroy, onMount } from 'svelte';
-
+    
     import * as THREE from 'three';
     import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
     import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
     
     import * as config from '$lib/config.js';
     import MetaSymbol from '$lib/MetaSymbol.js';
+    import TextScramble from '$lib/TextScramble.js';
 	
     import Header from '$lib/components/Header.svelte';
 	import Live from '$lib/components/Live.svelte';
@@ -26,7 +27,9 @@
     let loaded = false;
     let metaSymbol = null;
     let textures = [];
-    
+    let content = '';
+    let subheader;
+
     let live_sticker = '/goat-psipsi.png';
     let live_banner = '/drop-psipsikoko_main.png';
     let live_assets = [live_sticker, live_banner]
@@ -132,13 +135,12 @@
             renderer.setSize(sizes.width, sizes.height)
             renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
         };
-
         onscroll = (e) => {
             const scrollY = window.scrollY
-            newSection = Math.round(scrollY / sizes.height)
+            newSection = Math.min(3, Math.round(scrollY / sizes.height));
             if (newSection != currentSection) {
                 currentSection = newSection
-                }
+            }
         };    
 
         return () => {
@@ -166,13 +168,15 @@
     let arrow = true;
     const openFooter = _ => {
         if (isFooter) {
-            console.log(isFooter)
             isFooter = false;
         } else {
-            console.log(isFooter)
             isFooter = true;
         }
     }
+
+    const handleFooterUpdated = (e) => {
+        isFooter = e.detail.isFooter;
+    };
 
     const updateMatcap = _ => {
         index++;
@@ -180,69 +184,68 @@
         metaSymbol.changeTexture(index)        
     }
 
+    $: if (subheader) {
+        if (currentSection == 0) {
+            //set the content paragraph
+            content = 'By artits for artists'
+            new TextScramble(subheader, content);
+
+        } else if (currentSection == 1) {
+            //set the content paragraph
+            content = 'Artists driven drops on Fuel'
+            new TextScramble(subheader, content);
+
+
+        } else if (currentSection == 2) {
+            //set the content paragraph
+            content = 'Immersive global experiences'
+            new TextScramble(subheader, content);
+
+
+        } else if (currentSection == 3) {
+            //set the content paragraph
+            content = 'Between art and branding'
+            new TextScramble(subheader, content);
+        }
+    }
+
 </script>
 <!-- bg-black tb:bg-purple-500 lp:bg-green-600 dp:bg-blue-600  -->
-<canvas bind:this={canvas} class="fixed top-0 left-0 z-[-10]"></canvas>
+<canvas bind:this={canvas} class="fixed top-0 left-0 z-[-20]"></canvas>
 {#if loaded}
     <Header currentSection={currentSection} setSection={setSection} matcapIndex={index} />
     
     <div class='text-{config.default.estilos[index].fontColor} font-clash-display font-normal uppercase mx-5 lp:mx-10 dp:max-w-[1440px] dp:mx-auto'>
     
         <Live source={live_assets}/>
-        <Main section={currentSection}/>
+        <Main on:footerUpdate={handleFooterUpdated} section={currentSection} isFooter={isFooter}/>
 
         <button class="fixed left-1/2 transform -translate-x-1/2 top-3/4 lp:hidden" on:click={updateMatcap}>
             <img bind:this={material} class="p-0.5 border-solid border-[1px] border-{config.default.estilos[index].icon} rounded-full" src="/material.png" alt="Material">
         </button>
 
-        <!-- <footer bind:this={footer} class="overflow-y-auto
-        lp:overflow-y-visible border-{config.default.estilos[index].icon} transition-height duration-1000 ease-in-out sticky px-8 lp:px-24 bottom-0 left-0 border-b-0 border-[1px] rounded-t-lg { isFooter ? "py-6 h-[75vh] lp:h-[85vh]" : "pt-6 h-[7.5vh]"}"> -->
-        <footer bind:this={footer} class={`overflow-y-auto lp:overflow-y-visible transition-height duration-1000 ease-in-out sticky px-8 lp:px-24 bottom-0 left-0 border-b-0 border-[1px] rounded-t-lg ${isFooter ? "py-6 h-[75vh] lp:h-[85vh]" : "pt-6 h-[7.5vh]"}`}>
-            <a on:click={openFooter} href={'#'} class="flex items-center lp:hidden"><img bind:this={arrow} class="mx-auto bg-black py-1 px-6 rounded-3xl" src={`/arrow-${isFooter}.svg`} alt="hyperlink"></a>
 
+        <a on:click={openFooter} href={"#"}><footer bind:this={footer} class={`transition-height duration-1000 ease-in-out sticky px-8 lp:px-24 bottom-0 left-0 border-b-0 border-[1px] rounded-t-lg ${isFooter ? "overflow-y-auto py-6 [70vh] lp:h-[80vh]" : "overflow-y-none pt-6 h-[7.5vh]"}`}>
+            <a href={'#'} class="flex items-center lp:hidden"><img bind:this={arrow} class="mx-auto bg-black py-1 px-6 rounded-3xl" src={`/arrow-${isFooter}.svg`} alt="hyperlink"></a>
+
+            
+            <div class="grid grid-cols-5 gap-4 items-center justify-between">
+                <p bind:this={subheader} class="text-sm lp:text-xl mx-auto lp:mx-0 text-center lp:text-left font-medium tracking-wider leading-5 mt-12 lp:mt-0 mb-6 lp:mb-0 col-span-full lp:col-span-2 {isFooter ? '' : 'hidden lp:block'}">{content}</p>
+                <a href={'#'} class="hidden col-span-1 lp:inline-flex items-center"><img bind:this={arrow} class="mx-auto bg-black py-1 px-6 rounded-3xl" src={`/arrow-${isFooter}.svg`} alt="hyperlink" /></a>
+                <Contact on:matcapUpdate={handleMatcapUpdated} index={index} />
+            </div>
+            
             {#if currentSection == 0}
-
-                <div class="lp:flex lp:items-center lp:justify-between" in:fade={{ delay: 450, duration: 750 }} out:fade={{ delay: 250, duration: 150 }} >
-                    <p class="text-sm lp:text-xl text-center font-medium tracking-wider leading-5 mt-12 lp:mt-0 mb-6 lp:mb-0 {isFooter ? "" : "hidden lp:block" }">By artists for artists</p>
-                    <a on:click={openFooter} href={'#'} class="hidden lp:flex items-center"><img bind:this={arrow} class="mx-auto bg-black py-1 px-6 rounded-3xl" src={`/arrow-${isFooter}.svg`} alt="hyperlink"></a>
-                    <Contact on:matcapUpdate={handleMatcapUpdated} index={index}/>
-                </div>
-                <!-- {#if isFooter} -->
-                    <Mission isFooter={isFooter}/>
-                <!-- {/if} -->
+                <Mission isFooter={isFooter}/>
             {:else if currentSection == 1}
-            
-                <div class="lp:flex lp:items-center lp:justify-between" in:fade={{ delay: 450, duration: 750 }} out:fade={{ delay: 250, duration: 150 }} >
-                    <p class="text-sm lp:text-xl text-center font-medium tracking-wider leading-5 mt-12 lp:mt-0 mb-6 lp:mb-0 {isFooter ? "" : "hidden lp:block" }">Artists drive drops on fuel</p>
-                    <a on:click={openFooter} href={'#'} class="hidden lp:flex items-center"><img bind:this={arrow} class="mx-auto bg-black py-1 px-6 rounded-3xl" src={`/arrow-${isFooter}.svg`} alt="hyperlink"></a>
-                    <Contact on:matcapUpdate={handleMatcapUpdated} index={index}/>
-                </div>
-                <!-- {#if isFooter} -->
-                    <Drops isFooter={isFooter}/>
-                <!-- {/if} -->
+                <Drops isFooter={isFooter}/>
             {:else if currentSection == 2}
-            
-                <div class="lp:flex lp:items-center lp:justify-between" in:fade={{ delay: 450, duration: 750 }} out:fade={{ delay: 250, duration: 150 }} >
-                    <p class="text-sm lp:text-xl text-center font-medium tracking-wider leading-5 mt-12 lp:mt-0 mb-6 lp:mb-0 {isFooter ? "" : "hidden lp:block" }">Immersive global experiences</p>
-                    <a on:click={openFooter} href={'#'} class="hidden lp:flex items-center"><img bind:this={arrow} class="mx-auto bg-black py-1 px-6 rounded-3xl" src={`/arrow-${isFooter}.svg`} alt="hyperlink"></a>
-                    <Contact on:matcapUpdate={handleMatcapUpdated} index={index}/>
-                </div>
-                <!-- {#if isFooter} -->
-                    <Events isFooter={isFooter}/>
-                <!-- {/if} -->
-                
-            {:else if currentSection == 3}
-            
-                <div class="h-fit lp:flex lp:items-center lp:justify-between" in:fade={{ delay: 450, duration: 750 }} out:fade={{ delay: 250, duration: 150 }} >
-                    <p class="text-sm lp:text-xl text-center font-medium tracking-wider leading-5 mt-12 lp:mt-0 mb-6 lp:mb-0 {isFooter ? "" : "hidden lp:block" } ">Between art and branding</p>
-                    <a on:click={openFooter} href={'#'} class="hidden  lp:flex items-center"><img bind:this={arrow} class="mx-auto bg-black py-1 px-6 rounded-3xl" src={`/arrow-${isFooter}.svg`} alt="hyperlink"></a>
-                    <Contact on:matcapUpdate={handleMatcapUpdated} index={index}/>
-                </div>
-                <!-- {#if isFooter} -->
-                    <Studio isFooter={isFooter}/>
-                <!-- {/if} -->
+                <Events isFooter={isFooter}/>
+            {:else}
+                <Studio isFooter={isFooter}/>
             {/if}
-        </footer>
+
+        </footer></a>
     </div>
 {/if}
 

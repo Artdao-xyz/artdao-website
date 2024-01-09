@@ -5,7 +5,7 @@
 </script>
 
 <a href={"#"}>
-    <div class="overflow-y-auto w-4/5 h-full flex flex-col mx-auto mt-8 hover:cursor-pointer">
+    <div class="w-4/5 h-4/5 mt-0 lp:mt-8 mb-4 lp:mb-0 flex flex-col mx-auto hover:cursor-pointer">
         <div class="h-full w-full">
             <img class="h-full w-full object-cover rounded-t-xl" src={banner} alt="Drop">
         </div>

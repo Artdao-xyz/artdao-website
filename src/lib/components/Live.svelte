@@ -44,10 +44,10 @@
 
 </script>
 
-<div class="hidden transition-all duration-300 ease-in-out fixed lp:flex h-[100px] w-[500px] top-1/4 bg-black rounded-l-2xl shadow-xl z-10 items-center {isLive ? "right-[0px]" : "right-[-380px]"}">
+<div class="hidden transition-all duration-300 ease-in-out fixed lp:flex h-[100px] w-[500px] top-1/8 bg-black rounded-l-2xl shadow-xl z-10 items-center {isLive ? "right-[0px]" : "right-[-380px]"}">
     <div class="flex flex-col h-full w-[160px] gap-0">
         <div class="h-2/3 mx-auto">
-            <a on:click={() => openLive()} href={"#"}><img class="relative -top-9" src={source[0]} alt="Banner"></a>
+            <a on:mouseenter={openLive} href={"#"}><img class="relative -top-9" src={source[0]} alt="Banner"></a>
         </div>
 
         {#if state == 'coming'}
@@ -66,7 +66,7 @@
     </div>
 
     <div class="h-full w-full ">
-        <a href="https://www.psipsikoko.com/" target="_blank"><img class="h-full w-full" src={source[1]} alt="Banner Psisikoko"></a>
+        <a on:mouseleave={openLive} href="https://www.psipsikoko.com/" target="_blank"><img class="h-full w-full" src={source[1]} alt="Banner Psisikoko"></a>
     </div>
 </div>
 

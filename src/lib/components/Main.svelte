@@ -1,30 +1,40 @@
 <script>
-        import { fade } from 'svelte/transition';
+    import { createEventDispatcher } from 'svelte';
+    import TextScramble from '$lib/TextScramble.js';
 
     export let section;
+    export let isFooter;
+
+    let content = '';
+    let h1;
+
+    const dispatch = createEventDispatcher();
+    
+    const handleFooterClick = () => {
+        isFooter = false;
+        dispatch('footerUpdate', { isFooter });
+    }
+
+    $: if (h1) {    
+        if (section == 0) {
+            content = 'A new age\nof culture';
+            new TextScramble(h1, content);
+        } else if (section == 1) {
+            content = 'Bringing visionary\nart to life';
+            new TextScramble(h1, content);
+        } else if (section == 2) {
+            content = 'Between the global\n& Hyperlocal';
+            new TextScramble(h1, content);
+        } else if (section == 3) {
+            content = 'Artist driven\ndesign';
+            new TextScramble(h1, content);
+        }
+    }
 
   </script>
 
-<main>
-    <section class="min-h-[100vh] p-5 flex justify-center lp:justify-start" >
-            {#if section == 0}
-                <h1 class="fixed mt-16 lp:mt-0 font-neue-power inline-block text-3xl text-center lp:text-left lp:text-5xl font-bold tracking-wider whitespace-pre-line"><span in:fade={{ delay: 450, duration: 2000 }} out:fade={{ delay: 250, duration: 150 }}>A new age<br>of culture</span></h1>
-            {/if}
+<a on:click={handleFooterClick} class='cursor-default' href={"#"}><main>
+    <section class="h-[400vh] p-5 flex justify-center lp:justify-start" >
+        <h1 bind:this={h1} class="fixed w-fit h-fit mt-16 lp:mt-0 font-neue-power inline-block text-2xl text-center lp:text-left lp:text-5xl font-bold tracking-wider whitespace-pre-line"> </h1>
     </section>
-    <section class="min-h-[100vh] p-5 flex justify-center lp:justify-start">
-            {#if section == 1}
-            <h1 class="fixed mt-24 top-[10%] lp:top-[4%] font-neue-power block text-3xl text-center lp:text-left lp:text-5xl font-bold tracking-wider  whitespace-pre-line"><span in:fade={{ delay: 450, duration: 2000 }} out:fade={{ delay: 250, duration: 150 }}>Bringing visionary<br>art to life</span></h1>
-            {/if}
-    </section>
-    <section class="min-h-[100vh] p-5 flex justify-center lp:justify-start">
-            {#if section == 2}
-            <h1 class="fixed mt-24 top-[10%] lp:top-[4%] font-neue-power block text-3xl text-center lp:text-left lp:text-5xl font-bold tracking-wider whitespace-pre-line"><span in:fade={{ delay: 450, duration: 2000 }} out:fade={{ delay: 250, duration: 150 }}>Between the global<br>& Hyperlocal</span></h1>
-            {/if}
-    </section>
-    <section class="min-h-[100vh] p-5 flex justify-center lp:justify-start">
-            {#if section == 3}
-            <h1 class="fixed mt-24 top-[10%] lp:top-[4%] font-neue-power block text-3xl text-center lp:text-left lp:text-5xl font-bold tracking-wider whitespace-pre-line"><span in:fade={{ delay: 450, duration: 2000 }} out:fade={{ delay: 250, duration: 150 }}>Artist driven<br>design</span></h1>
-            {/if}
-    </section>
-      
-</main>
+</main></a>

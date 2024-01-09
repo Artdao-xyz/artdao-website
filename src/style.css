@@ -33,4 +33,8 @@
 .custom-progress-bar::-webkit-progress-value {
     background-color: #484848;
   }
+
+.grid-container {
+grid-template-columns: 1.25fr 0.75fr 1fr; /* Equal-width columns */
+}
   

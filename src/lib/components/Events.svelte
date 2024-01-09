@@ -39,7 +39,7 @@
 </script>
 
 {#if isFooter}
-    <div class="h-full lp:flex lp:flex-col lp:justify-center"
+    <div class="h-full lp:flex lp:flex-col lp:justify-center mb-6"
         in:fade={{ delay: 450, duration: 750 }}
         out:fade={{ delay: 250, duration: 150 }}>
         

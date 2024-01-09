@@ -12,8 +12,11 @@
 
 </script>
 
-{#if isFooter}
-    <div class="h-full lp:flex lp:flex-col lp:justify-center"
+<!-- if is footer and section is 1 -->
+{#if isFooter }
+
+    <!-- {#if section = 1} -->
+    <div class="overflow-y-auto h-full lp:flex lp:flex-col lp:justify-center"
         in:fade={{ delay: 450, duration: 750 }}
         out:fade={{ delay: 250, duration: 150 }}>
         
@@ -23,5 +26,4 @@
         </div>
     </div>
 {/if}
-
-
+<!-- {/if} -->
