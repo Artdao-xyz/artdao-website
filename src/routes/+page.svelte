@@ -187,7 +187,7 @@
     $: if (subheader) {
         if (currentSection == 0) {
             //set the content paragraph
-            content = 'By artits for artists'
+            content = 'By artists for artists'
             new TextScramble(subheader, content);
 
         } else if (currentSection == 1) {
@@ -225,13 +225,13 @@
         </button>
 
 
-        <a on:click={openFooter} href={"#"}><footer bind:this={footer} class={`transition-height duration-1000 ease-in-out sticky px-8 lp:px-24 bottom-0 left-0 border-b-0 border-[1px] rounded-t-lg ${isFooter ? "overflow-y-auto py-6 [70vh] lp:h-[80vh]" : "overflow-y-none pt-6 h-[7.5vh]"}`}>
-            <a href={'#'} class="flex items-center lp:hidden"><img bind:this={arrow} class="mx-auto bg-black py-1 px-6 rounded-3xl" src={`/arrow-${isFooter}.svg`} alt="hyperlink"></a>
+       <footer bind:this={footer} class={`transition-height duration-1000 ease-in-out sticky px-8 lp:px-24 bottom-0 left-0 border-b-0 border-[1px] rounded-t-lg ${isFooter ? "overflow-y-auto py-6 h-[70vh] lp:h-[80vh]" : "overflow-y-none pt-6 h-[7.5vh]"}`}>
+            <a on:click={openFooter} href={'#'} class="flex items-center lp:hidden"><img bind:this={arrow} class="mx-auto bg-black py-1 px-6 rounded-3xl" src={`/arrow-${isFooter}.svg`} alt="hyperlink"></a>
 
             
             <div class="grid grid-cols-5 gap-4 items-center justify-between">
-                <p bind:this={subheader} class="text-sm lp:text-xl mx-auto lp:mx-0 text-center lp:text-left font-medium tracking-wider leading-5 mt-12 lp:mt-0 mb-6 lp:mb-0 col-span-full lp:col-span-2 {isFooter ? '' : 'hidden lp:block'}">{content}</p>
-                <a href={'#'} class="hidden col-span-1 lp:inline-flex items-center"><img bind:this={arrow} class="mx-auto bg-black py-1 px-6 rounded-3xl" src={`/arrow-${isFooter}.svg`} alt="hyperlink" /></a>
+                <a class="text-sm lp:text-xl mx-auto lp:mx-0 text-center lp:text-left font-medium tracking-wider leading-5 mt-12 lp:mt-0 mb-6 lp:mb-0 col-span-full lp:col-span-2 {isFooter ? '' : 'hidden lp:block'}" on:click={openFooter} href={"#"}><p bind:this={subheader}>{content}</p></a>
+                <a on:click={openFooter} href={'#'} class="hidden col-span-1 lp:inline-flex items-center"><img bind:this={arrow} class="mx-auto bg-black py-1 px-6 rounded-3xl" src={`/arrow-${isFooter}.svg`} alt="hyperlink" /></a>
                 <Contact on:matcapUpdate={handleMatcapUpdated} index={index} />
             </div>
             
@@ -245,7 +245,7 @@
                 <Studio isFooter={isFooter}/>
             {/if}
 
-        </footer></a>
+        </footer>
     </div>
 {/if}
 
