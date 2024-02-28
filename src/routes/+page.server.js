@@ -1,26 +1,26 @@
-import { API_ENDPOINT } from '$env/static/private';
+// import { API_ENDPOINT } from '$env/static/private';
 
-export const actions = {
-    default: async ({ request }) => {
-      const formData = await request.formData();
-      const email = formData.get('EMAIL'); 
+// export const actions = {
+//     default: async ({ request }) => {
+//       const formData = await request.formData();
+//       const email = formData.get('EMAIL'); 
       
-      const response = await fetch(API_ENDPOINT, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: new URLSearchParams({ EMAIL: email }),
-        // body: new URLSearchParams({ 'EMAIL': email }),
-      });
+//       const response = await fetch(process.env.API_ENDPOINT, {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/x-www-form-urlencoded',
+//         },
+//         body: new URLSearchParams({ EMAIL: email }),
+//         // body: new URLSearchParams({ 'EMAIL': email }),
+//       });
   
-      if (response.ok) {
-        console.log('Success');
-        return { success: true };
-    } else {
-          console.log('Error');
-        return { success: false, error: await response.text() };
-      }
-    },
-  };
+//       if (response.ok) {
+//         console.log('Success');
+//         return { success: true };
+//     } else {
+//           console.log('Error');
+//         return { success: false, error: await response.text() };
+//       }
+//     },
+//   };
   
