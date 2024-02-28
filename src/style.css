@@ -1,0 +1,28 @@
+@font-face {
+	font-family: 'ClashDisplay';
+	src: url('/fonts/ClashDisplay-Variable.woff2');
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'NeuePowerVariable';
+	src: url('/fonts/NeuePowerVariable-Ultra.woff2');
+	font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    scroll-behavior: smooth;   
+}
+
+.custom-progress-bar::-webkit-progress-value {
+    background-color: #484848;
+  }
+
+.grid-container {
+    grid-template-columns: 1.25fr 0.75fr 1fr;
+}
+  
