@@ -38,7 +38,7 @@
         </div>
         <button on:click={closeEvent}><img src={`/events/close-${estilos[index].secondary_media}.svg`} alt="Close"></button>
     </div>
-    <div class="w-fit h-fit">
+    <div class="w-screen lp:w-full h-fit">
         <img class="hidden lp:block h-full w-full object-cover" src={banner} alt="Drop">
         <img class="lp:hidden h-full w-full object-cover" src={banner_mobile} alt="Drop">
     </div>

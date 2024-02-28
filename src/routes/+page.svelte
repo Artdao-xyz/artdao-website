@@ -133,9 +133,11 @@
         onscroll = (e) => {
             const scrollY = window.scrollY
             newSection = Math.min(3, Math.round(scrollY / sizes.height));
-            if (newSection != currentSection) {
-                currentSection = newSection;
-                indexSectionStore.set(currentSection);
+            if (!isOpen) {
+                if (newSection != currentSection) {
+                    currentSection = newSection;
+                    indexSectionStore.set(currentSection);
+                }
             }
         };    
         
@@ -208,7 +210,7 @@
 
 
     </div>
-    <footer bind:this={footer} class={`bg-background border-primary transition-height z-30 duration-100 ease-in-out font-clash-display font-normal uppercase sticky px-8 lp:px-24 bottom-0 left-0 border-b-0 border-t-[1px] ${isOpen ? `overflow-y-auto py-6 h-[100vh]` : "overflow-y-none pt-5 lp:pt-8 h-[65px] tb:h-[75px] lp:h-[100px]"}`}>
+    <footer bind:this={footer} class={`bg-background border-primary transition-height z-30 duration-100 ease-in-out font-clash-display font-normal uppercase sticky px-8 lp:px-24 bottom-0 left-0 border-b-0 border-t-[1px] ${isOpen ? `overflow-y-auto py-6 h-dvh` : "overflow-y-none pt-5 lp:pt-8 h-[65px] tb:h-[75px] lp:h-[100px]"}`}>
          
      <a on:click={openFooter} href={'#'} class="flex items-center lp:hidden"><img bind:this={arrow} class="mx-auto bg-primary py-1 px-6 rounded-3xl" src={`/arrow-${isOpen}-${estilos[index].secondary_media}.svg`} alt="hyperlink"></a>
 

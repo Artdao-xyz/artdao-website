@@ -129,7 +129,6 @@
         isBuenosAiresOpen = false;
         isLisboaOpen = false;
     }
-
 </script>
 
 {#if isOpen}
@@ -137,11 +136,11 @@
     in:fade={{ delay: 50, duration: 150 }}
     out:fade={{ delay: 50, duration: 50 }} > -->
         
-    <a on:click={closeEvent} class="cursor-default" href={"#"}><img class="fixed lp:relative top-1/2 lp:top-0 -translate-y-1/2 lp:-translate-y-0 left-0 scale-[225%] lp:scale-100 object-contain mx-auto lp:h-full" src={`/events/map-${estilos[index].primary_media}.png`} alt="Map events"></a>
+    <a on:click={closeEvent} class="cursor-default overscroll-y-contain h-fit" href={"#"}><img class="fixed lp:relative top-1/2 lp:top-0 -translate-y-1/2 lp:-translate-y-0 left-0 scale-[225%] lp:scale-100 object-contain mx-auto lp:h-full" src={`/events/map-${estilos[index].primary_media}.png`} alt="Map events"></a>
 
     <div class="h-[80%] lp:h-auto w-fit mx-auto flex flex-col justify-center items-center gap-8">
 
-        <a href={"#"} class="relative lp:absolute bg-primary text-secondary lp:left-[25%] dp:left-[25%] lp:top-[45%] sp:top-[40%] dp:top-[40%] bg:top-[35%] bg:left-[25%] 2k:top-[38%] 2k:left-[25%] px-3 py-1 rounded-md shadow-md gap-3">
+        <a href={"#"} class="relative lp:absolute bg-primary text-secondary lp:left-[25%] dp:left-[25%] lp:top-[45%] sp:top-[40%] dp:top-[40%] bg:top-[35%] bg:left-[25%] 2k:top-[38%] 2k:left-[25%] px-3 py-1 rounded-sm shadow-md gap-3">
             <a on:click={openDenver} href={"#"}>
                 <p class="normal-case text-xl font-medium font-neue-power tracking-wide">Denver</p>
             </a>
@@ -154,7 +153,7 @@
             </div>
         </a>
         
-        <a href={"#"} class="relative lp:absolute bg-primary text-secondary lp:left-[27.5%] lp:top-[65%] sp:top-[60%] bg:top-[60%] bg:left-[30%] 2k:left-[28%] px-3 py-1.5 rounded-md shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide">
+        <a href={"#"} class="relative lp:absolute bg-primary text-secondary lp:left-[27.5%] lp:top-[65%] sp:top-[60%] bg:top-[60%] bg:left-[30%] 2k:left-[28%] px-3 py-1.5 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide">
             <a on:click={openBuenosAires} href={"#"}>
                 <p class="normal-case text-xl font-medium font-neue-power tracking-wide">Buenos Aires</p>
             </a>
@@ -172,7 +171,7 @@
             </div>
         </a>
         
-        <a href={"#"} class="relative lp:absolute bg-primary text-secondary lp:left-[30%] lp:top-[55%] sp:top-[50%] dp:left-[30%] dp:top-[50%] bg:top-[48%] bg:left-[28%] 2k:top-[48%] 2k:left-[28%] px-3 py-1 rounded-md shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide">
+        <a href={"#"} class="relative lp:absolute bg-primary text-secondary lp:left-[30%] lp:top-[55%] sp:top-[50%] dp:left-[30%] dp:top-[50%] bg:top-[48%] bg:left-[28%] 2k:top-[48%] 2k:left-[28%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide">
             <a on:click={openBogota} href={"#"}>
                 <p class="normal-case text-xl font-medium font-neue-power tracking-wide">Bogotá</p>
             </a>
@@ -185,7 +184,7 @@
             </div>
         </a>
 
-        <a href={"#"} class="relative lp:absolute bg-primary text-secondary lp:left-[38%] lp:top-[37%] dp:top-[35%] dp:left-[40%] bg:top-[35%] bg:left-[42%] 2k:top-[37%] 2k:left-[41%] px-3 py-1 rounded-md shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide">
+        <a href={"#"} class="relative lp:absolute bg-primary text-secondary lp:left-[38%] lp:top-[37%] dp:top-[35%] dp:left-[40%] bg:top-[35%] bg:left-[42%] 2k:top-[37%] 2k:left-[41%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide">
             <a on:click={openLisboa} href={"#"}>
                 <p class="normal-case text-xl font-medium font-neue-power tracking-wide">Lisbon</p>
             </a>
@@ -203,7 +202,7 @@
             </div>
         </a>
 
-        <a href={"#"} class="relative lp:absolute bg-primary text-secondary lp:left-[45%] lp:top-[35%] sp:top-[35%] dp:top-[31%] dp:left-[45%] bg:top-[30%] bg:left-[45%] 2k:top-[32%] 2k:left-[45%] px-3 py-1 rounded-md shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide">
+        <a href={"#"} class="relative lp:absolute bg-primary text-secondary lp:left-[45%] lp:top-[35%] sp:top-[35%] dp:top-[31%] dp:left-[45%] bg:top-[30%] bg:left-[45%] 2k:top-[32%] 2k:left-[45%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide">
             <a on:click={openParis} href={"#"}>
                 <p class="normal-case text-xl font-medium font-neue-power tracking-wide">Paris</p>
             </a>

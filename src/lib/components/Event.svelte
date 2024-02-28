@@ -47,7 +47,7 @@
             </div>
             <button on:click={closeEvent}><img src={`/events/close-${estilos[index].secondary_media}.svg`} alt="Close"></button>
         </div>
-        <div class="w-full h-full">
+        <div class="w-screen lp:w-full h-full">
             <img class="h-96 lp:h-full w-full lp:w-full object-cover" src={banner[bannerIndex]} alt="Drop">
             <!-- <button on:click={() => pickBanner(-1)}><img class="absolute left-0" src="/events/left-arrow-black.svg" alt="left arrow"></button>
             <button on:click={() => pickBanner(1)}><img class="absolute right-0" src="/events/right-arrow-black.svg" alt="right arrow"></button> -->

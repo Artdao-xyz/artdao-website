@@ -70,7 +70,7 @@
 </script>
 
 {#if isOpen}
-    <div class="flex w-[80%] text-primary flex-col gap-16 h-screen items-center justify-center mx-auto">
+    <div class="flex overflow-y-hidden w-[80%] text-primary flex-col gap-16 h-fit items-center justify-center mx-auto">
 
         <div class="hidden lp:block">
             <h1 class="font-neue-power text-8xl font-medium capitalize tracking-wide text-center">Artdao Studio</h1>

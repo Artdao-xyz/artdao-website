@@ -40,7 +40,7 @@
             <a href='/'><img src={`/artdao-logo-${estilos[index].primary_media}.svg`} alt="Artdao Logo"></a>
         </div>
         <div bind:this={hamburguer_menu}
-            class="bg-background nav-links opacity-0 lp:opacity-100 duration-1000 lp:duration-0 lp:static absolute lp:min-h-fit h-screen left-0 top-[-2200%] lp:h-auto lp:w-auto justify-center  w-full flex items-center px-5 ">
+            class="bg-background nav-links opacity-0 lp:opacity-100 duration-1000 lp:duration-0 lp:static absolute lp:min-h-fit h-dvh left-0 top-[-2200%] lp:h-auto lp:w-auto justify-center  w-full flex items-center px-5 ">
             <ul class="flex lp:flex-row flex-col  lp:items-center gap-8 ">
                 <li><a on:click={() => setSection(0)} class="{section == 0 ? 'flex lp:flex-col gap-4 lp:gap-0 items-center justify-between' : 'opacity-30 flex lp:flex-col gap-4 lp:gap-0 items-center justify-between'}" href={"#"}><img class=" lp:lp:mb-2" src={`/s1_${estilos[index].primary_media}.png`} alt="Section 1"><span class="{section == 0 ? '' : 'lp:invisible'}">Mission</span></a></li>        
             
