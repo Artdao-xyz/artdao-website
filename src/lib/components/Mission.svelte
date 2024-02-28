@@ -34,7 +34,7 @@
             Bridging the hyperlocal and global to create new mechanisms for the discovery, curation and proliferation of emergent artistry as it materialises across new terrains.
         </p>
 
-        <!-- <Subscribe/> -->
+        <Subscribe/>
     </div>
 
 {/if}
