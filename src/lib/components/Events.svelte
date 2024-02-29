@@ -128,6 +128,8 @@
         isParisOpen = false;
         isBuenosAiresOpen = false;
         isLisboaOpen = false;
+        isBotogaOpen = false;
+        isDenverOpen = false;
     }
 </script>
 
@@ -135,8 +137,10 @@
     <!-- <div class="h-full"
     in:fade={{ delay: 50, duration: 150 }}
     out:fade={{ delay: 50, duration: 50 }} > -->
+
+    <div class="h-dvh">
         
-    <a on:click={closeEvent} class="cursor-default overscroll-y-contain h-fit" href={"#"}><img class="fixed lp:relative top-1/2 lp:top-0 -translate-y-1/2 lp:-translate-y-0 left-0 scale-[225%] lp:scale-100 object-contain mx-auto lp:h-full" src={`/events/map-${estilos[index].primary_media}.png`} alt="Map events"></a>
+    <a on:click={closeEvent} class="cursor-default overscroll-y-contain h-fit" href={"#"}><img class="fixed lp:relative top-1/2 lp:top-0 -translate-y-1/2 lp:-translate-y-0 left-0 scale-[225%] lp:scale-100 object-contain mx-auto lp:h-full -z-10" src={`/events/map-${estilos[index].primary_media}.png`} alt="Map events"></a>
 
     <div class="h-[80%] lp:h-auto w-fit mx-auto flex flex-col justify-center items-center gap-8">
 
@@ -222,7 +226,7 @@
             <Event on:closeEvent={closeEvent} {banner} {what} {where} {info} {address}/>
         {/if}
     {/each}
-
+    </div>
     
 {/if}
 
