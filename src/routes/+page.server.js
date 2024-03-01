@@ -1,5 +1,9 @@
 import { API_ENDPOINT } from '$env/static/private';
 
+export const config = {
+    runtime: 'edge'
+}
+
 export const actions = {
     default: async ({ request }) => {
       const formData = await request.formData();

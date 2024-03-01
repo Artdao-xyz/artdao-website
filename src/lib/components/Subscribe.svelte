@@ -4,10 +4,6 @@
     import { onMount } from 'svelte';
     import { indexStyleStore } from '$lib/store.js';
 
-    export const config = {
-        runtime: 'edge'
-    }
-
     let index = 0;
 
     onMount(() => {
