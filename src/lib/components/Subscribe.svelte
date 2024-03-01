@@ -4,7 +4,7 @@
     import { onMount } from 'svelte';
     import { indexStyleStore } from '$lib/store.js';
 
-    // export const prerender = true;
+    export const prerender = true;
 
     let index = 0;
 
@@ -26,4 +26,5 @@
         <!-- /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */ -->
         <input type="text" name="b_d150dd71762335c56d7e5811c_6f099dd01d" tabindex="-1" value="">
     </div>
+    <input type="hidden" name="form-name" value="email">
 </form>
