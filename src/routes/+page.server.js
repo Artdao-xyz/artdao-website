@@ -1,11 +1,11 @@
-// import { API_ENDPOINT } from '$env/static/private';
+import { API_ENDPOINT } from '$env/static/private';
 
 export const actions = {
     default: async ({ request }) => {
       const formData = await request.formData();
       const email = formData.get('EMAIL'); 
       
-      const response = await fetch(process.env.API_ENDPOINT, {
+      const response = await fetch(process.env.API_ENDPOINT || API_ENDPOINT, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
