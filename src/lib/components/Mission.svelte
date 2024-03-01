@@ -27,11 +27,11 @@
         </p>
         <br>
         <p>
-            Developing symbiotic systems in which the creation and distribution of culture come together within new structures of organisation and ownership. 
+            To develop symbiotic systems in which the creation and distribution of culture come together within new structures of organisation and ownership. 
         </p>
         <br>
         <p>
-            Bridging the hyperlocal and global to create new mechanisms for the discovery, curation and proliferation of emergent artistry as it materialises across new terrains.
+            Bridging the global and hyperlocal to create new mechanisms for the discovery, curation and proliferation of emergent artistry as it materialises across new terrains.
         </p>
 
         <Subscribe/>

@@ -201,7 +201,7 @@
     
     <div class="text-primary font-clash-display font-normal uppercase mx-0 lp:mx-10 dp:max-w-[1440px] dp:mx-auto">
     
-        <Live source={live_assets}/>
+        <!-- <Live source={live_assets}/> -->
         <Main {isOpen}/>
 
         <!-- <button class="fixed left-1/2 transform -translate-x-1/2 top-3/4 lp:hidden" on:click={updateMatcap}>
