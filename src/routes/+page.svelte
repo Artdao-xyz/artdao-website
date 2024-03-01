@@ -44,7 +44,9 @@
     const scene = new THREE.Scene();
     const manager = new THREE.LoadingManager()
     const textureLoader = new THREE.TextureLoader(manager);
-
+    
+    export let form 
+    $: console.log(form)
     onMount (() => {
         
         /* SETTINGS */
