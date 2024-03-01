@@ -10,8 +10,8 @@ export const actions = {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: new URLSearchParams({ EMAIL: email }),
-        // body: new URLSearchParams({ 'EMAIL': email }),
+        // body: new URLSearchParams({ EMAIL: email }),
+        body: new URLSearchParams({ 'EMAIL': email }),
       });
   
       if (response.ok) {
