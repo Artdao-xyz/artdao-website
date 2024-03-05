@@ -11,10 +11,11 @@ export const actions = {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
-        // body: new URLSearchParams({ EMAIL: email }),
-        body: new URLSearchParams({ 'EMAIL': email }),
+        body: new URLSearchParams({ EMAIL: email }),
+        // body: new URLSearchParams({ 'EMAIL': email }),
       }).then((response) => {
-        console.log(response.data);
+        console.log('response', response.data);
+        console.log(JSON.stringify(response.data));
     }).catch((error) => {
         console.log(error);
     });
