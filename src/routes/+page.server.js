@@ -1,9 +1,5 @@
 import { API_ENDPOINT } from '$env/static/private';
 
-export const config = {
-    runtime: 'edge',
-} 
-
 export const actions = {
     default: async ({ request }) => {
       const formData = await request.formData();
@@ -15,8 +11,8 @@ export const actions = {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
-        // body: new URLSearchParams({ EMAIL: email }),
-        body: new URLSearchParams({ 'EMAIL': email }),
+        body: new URLSearchParams({ EMAIL: email }),
+        // body: new URLSearchParams({ 'EMAIL': email }),
       });
   
       if (response.ok) {
