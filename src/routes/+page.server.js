@@ -14,9 +14,9 @@ export const actions = {
         // body: new URLSearchParams({ EMAIL: email }),
         body: new URLSearchParams({ 'EMAIL': email }),
       }).then((response) => {
-        console.log('success');
+        console.log(response.data);
     }).catch((error) => {
-        console.log('error');
+        console.log(error);
     });
   }
 };
