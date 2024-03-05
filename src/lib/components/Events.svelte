@@ -188,7 +188,7 @@
             </div>
         </a>
 
-        <a href={"#"} class="relative lp:absolute bg-primary text-secondary lp:left-[38%] lp:top-[37%] dp:top-[35%] dp:left-[40%] bg:top-[35%] bg:left-[42%] 2k:top-[37%] 2k:left-[41%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide">
+        <a href={"#"} class="relative lp:absolute bg-primary text-secondary lp:left-[40%] lp:top-[45%] sp:top-[42%] dp:top-[42%] dp:left-[40%] bg:top-[35%] bg:left-[42%] 2k:top-[39%] 2k:left-[41%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide">
             <a on:click={openLisboa} href={"#"}>
                 <p class="normal-case text-xl font-medium font-neue-power tracking-wide">Lisbon</p>
             </a>
@@ -206,7 +206,7 @@
             </div>
         </a>
 
-        <a href={"#"} class="relative lp:absolute bg-primary text-secondary lp:left-[45%] lp:top-[35%] sp:top-[35%] dp:top-[31%] dp:left-[45%] bg:top-[30%] bg:left-[45%] 2k:top-[32%] 2k:left-[45%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide">
+        <a href={"#"} class="relative lp:absolute bg-primary text-secondary lp:left-[45%] lp:top-[42%] sp:top-[38%] dp:top-[38%] dp:left-[45%] bg:top-[30%] bg:left-[45%] 2k:top-[35%] 2k:left-[45%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide">
             <a on:click={openParis} href={"#"}>
                 <p class="normal-case text-xl font-medium font-neue-power tracking-wide">Paris</p>
             </a>

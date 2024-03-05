@@ -1,4 +1,5 @@
 import { API_ENDPOINT } from '$env/static/private';
+import fetch from 'node-fetch';
 
 export const actions = {
     default: async ({ request }) => {
@@ -11,8 +12,8 @@ export const actions = {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: new URLSearchParams({ EMAIL: email }),
-        // body: new URLSearchParams({ 'EMAIL': email }),
+        // body: new URLSearchParams({ EMAIL: email }),
+        body: new URLSearchParams({ 'EMAIL': email }),
       });
   
       if (response.ok) {

@@ -17,7 +17,8 @@
         navLinks.classList.toggle('opacity-100')
     }
     const setSection = (_section) => {
-        window.scrollTo(0, _section * (window.innerHeight + header.clientHeight * 2))
+        // window.scrollTo(0, _section * (window.innerHeight + header.clientHeight * 2))
+        window.scrollTo(0, _section * window.innerHeight)
     }
 
     onMount(() => {
