@@ -1,6 +1,7 @@
 {
 	"name": "artdao-website-svelte",
 	"version": "0.0.1",
+    "node": "16.x",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev --host",
