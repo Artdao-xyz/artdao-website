@@ -1,5 +1,7 @@
 import { API_ENDPOINT } from '$env/static/private';
 
+import fetch from 'node-fetch';
+
 export const actions = {
     default: async ({ request }) => {
       const formData = 'fromtheserver@gmail.com';
