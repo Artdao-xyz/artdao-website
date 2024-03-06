@@ -7,8 +7,11 @@
     // import { PUBLIC_API_ENDPOINT } from '$env/static/public';
     
     let index = 0;
+    let submitting = false;
+    let success = false;
 
     const handleSubmit = async (event) => {
+        submitting = true;
         event.preventDefault();
         const form = event.target;
         const formData = new FormData(form);
@@ -22,7 +25,12 @@
             }
         });
         const data = await response.json();
+        // @dev has shape { success : true }
         console.log(data);
+        if (data.success) {
+            success = true;
+        }
+        submitting = false;
     };
 
     onMount(() => {
@@ -35,6 +43,14 @@
 
 </script>
 
+{#if submitting}
+    submitting...
+{:else}
+{#if success}
+    <div class="bg-primary text-secondary flex items-center justify-between gap-4 p-4 rounded-lg mt-8 lp:mt-24">
+        <p class="font-medium text-xs lp:text-sm my-auto tracking-wider">Thank you for subscribing!</p>
+    </div>
+{/if}
 <form on:submit|preventDefault={handleSubmit} method="POST" action="/api/subscribe" id="subscribeForm" class="bg-primary text-secondary flex items-center justify-between gap-4 p-4 rounded-lg mt-8 lp:mt-24">
     <label for="email" class="self-start font-medium text-xs lp:text-sm my-auto tracking-wider">Subscribe</label>
     <input type="email" name="EMAIL" class="invalid bg-transparent font-normal flex-grow text-xs lp:text-base border-secondary border-b-[1px] outline-none" required value="">
@@ -44,3 +60,4 @@
         <input type="text" name="b_d150dd71762335c56d7e5811c_6f099dd01d" tabindex="-1" value="">
     </div>
 </form>
+{/if}
