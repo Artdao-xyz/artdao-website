@@ -16,6 +16,7 @@
 
 *{
     scroll-behavior: smooth;   
+    overscroll-behavior: none;
 }
 
 .custom-progress-bar::-webkit-progress-value {
