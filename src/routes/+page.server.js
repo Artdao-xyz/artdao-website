@@ -14,6 +14,8 @@ export const actions = {
           body
         })
 
+        console.log('response', response);
+
         if(response.status === 200) {
           return { success: true }
         } else {
