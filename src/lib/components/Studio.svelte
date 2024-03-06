@@ -1,6 +1,4 @@
 <script>
-    export let isOpen;
-	
     import { onMount } from 'svelte';
     import { indexStyleStore } from '$lib/store.js';
     import { estilos } from '$lib/config.js';

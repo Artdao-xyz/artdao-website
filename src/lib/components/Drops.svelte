@@ -1,6 +1,4 @@
 <script>
-    export let isOpen;
-	
     import { fade } from 'svelte/transition';
     import Drop from './Drop.svelte';
     import { onMount } from 'svelte';

@@ -76,10 +76,7 @@ export default class MetaSymbol {
         this.metaball.isolation = 60
        // this.modelToObject("../../model/ArtdaoSymbols_Luxi.fbx_1.fbx")
 
-
-
-                
-        document.onscroll = (e) => {
+        onscroll = (e) => {
 
             const newS = ((document.documentElement.scrollTop || document.body.scrollTop) / ((document.documentElement.scrollHeight || document.body.scrollHeight) - document.documentElement.clientHeight)) * 100;
 

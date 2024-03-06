@@ -1,6 +1,4 @@
-<script>
-    export let isOpen = false;
-    
+<script>  
     import { onMount } from 'svelte';
     import { indexStyleStore } from '$lib/store.js';
     import { fade } from 'svelte/transition';
