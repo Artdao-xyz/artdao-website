@@ -36,16 +36,16 @@
             <h1 class="text-2xl font-semibold">{who}</h1>
             <p class="text-xs font-semibold">{what}</p>
         </div>
-        <button on:click={closeEvent}><img src={`/events/close-${estilos[index].secondary_media}.svg`} alt="Close"></button>
+        <button on:click={closeEvent}><img loading="lazy" src={`/events/close-${estilos[index].secondary_media}.svg`} alt="Close"></button>
     </div>
     <div class="w-screen lp:w-full h-fit">
-        <img class="hidden lp:block h-full w-full object-cover" src={banner} alt="Drop">
-        <img class="lp:hidden h-full w-full object-cover" src={banner_mobile} alt="Drop">
+        <img loading="lazy" class="hidden lp:block h-full w-full object-cover" src={banner} alt="Drop">
+        <img loading="lazy" class="lp:hidden h-full w-full object-cover" src={banner_mobile} alt="Drop">
     </div>
     
     <div class="w-3/4 text-sm tb:text-xl lp:text-sm uppercase px-6 py-10 flex flex-col gap-2">
         <p class="font-semibold">{info}</p>
         <p class="text-sm">{date}</p>
-        <a href={link} target="_blank" class="underline flex items-center gap-2 underline-offset-2">{who} website <img src={`/link-arrow-${estilos[index].secondary_media}.svg`} alt="link"></a>
+        <a href={link} target="_blank" class="underline flex items-center gap-2 underline-offset-2">{who} website <img loading="lazy" src={`/link-arrow-${estilos[index].secondary_media}.svg`} alt="link"></a>
     </div>
 </div>

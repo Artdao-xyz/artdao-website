@@ -46,29 +46,29 @@
 <div class="hidden transition-all duration-300 ease-in-out fixed lp:flex h-[100px] w-[500px] top-1/4 bg-black rounded-l-2xl shadow-xl z-10 items-center {isLive ? "right-[0px]" : "right-[-380px]"}">
 
         <div class="h-full w-[120px] relative -top-6">
-            <a class="h-full" on:mouseenter={openLive} href={"#"}><img class="h-full mx-auto" src={source[0]} alt="Banner"></a>
+            <a class="h-full" on:mouseenter={openLive} href={"#"}><img loading="lazy" class="h-full mx-auto" src={source[0]} alt="Banner"></a>
             
             <div class="h-fit w-full flex justify-center items-center gap-2">
-                <img class="h-full" src={"/drops/coming-soon.svg"} alt="Drop coming soon">
+                <img loading="lazy" class="h-full" src={"/drops/coming-soon.svg"} alt="Drop coming soon">
                 <p class=" text-white justify-center text-[9px] text-center font-semibold uppercase tracking-wider">{`${countdown.weeks}w ${countdown.days}d ${countdown.hours}h`}</p>
             </div>
         </div>
 
 
     <div class="h-full w-[380px]">
-        <a on:mouseleave={openLive} href="https://www.psipsikoko.com/" target="_blank"><img src={source[1]} alt="Banner Psisikoko"></a>
+        <a on:mouseleave={openLive} href="https://www.psipsikoko.com/" target="_blank"><img loading="lazy" src={source[1]} alt="Banner Psisikoko"></a>
     </div>
 </div>
 
 <!-- MOBILE -->
 <div class="bg-black fixed left-0 top-20 w-screen h-[12vw] tb:h-[10vw] flex items-center justify-between lp:hidden">
     <div class="w-full h-full flex items-center justify-center gap-4 tb:gap-8">
-            <img class="h-fit scale-150 tb:scale-[400%]" src={"/drops/coming-soon.svg"} alt="">
+            <img loading="lazy" class="h-fit scale-150 tb:scale-[400%]" src={"/drops/coming-soon.svg"} alt="">
             <p class="text-white text-sm tb:text-lg font-semibold uppercase tracking-wider">{`${countdown.weeks}w ${countdown.days}d ${countdown.hours}h`}</p>
 
     </div>
     <div class="w-full h-full">
-        <a class="w-full h-full" href="https://www.psipsikoko.com/" target="_blank"><img class="w-full h-full object-cover object-right"  src={source[1]} alt="Banner Psisikoko"></a>
+        <a class="w-full h-full" href="https://www.psipsikoko.com/" target="_blank"><img loading="lazy" class="w-full h-full object-cover object-right"  src={source[1]} alt="Banner Psisikoko"></a>
     </div>
 </div>
 

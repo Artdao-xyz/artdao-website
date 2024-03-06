@@ -1,8 +1,11 @@
 <script>
     import { onMount } from 'svelte';
+    import { fade } from 'svelte/transition';
     import { estilos } from '$lib/config.js';
     import { indexStyleStore } from '$lib/store.js';
 	import Event from './Event.svelte';
+
+    export let isOpen = false;
 
     let selectedEvent = null;
     
@@ -133,7 +136,10 @@
 
 <div class="h-full">
     
-<a on:click={closeEvent} class="cursor-default overscroll-y-contain h-fit" href={"#"}><img class="fixed lp:relative top-1/2 lp:top-0 -translate-y-1/2 lp:-translate-y-0 left-0 scale-[225%] lp:scale-100 object-contain mx-auto lp:h-full -z-10" src={`/events/map-${estilos[index].primary_media}.png`} alt="Map events"></a>
+<a 
+    in:fade={{ delay: 50, duration: 150 }}
+    out:fade={{ delay: 50, duration: 50 }} 
+    on:click={closeEvent} class="cursor-default overscroll-y-contain h-fit" href={"#"}><img loading="lazy" class="fixed lp:relative top-1/2 lp:top-0 -translate-y-1/2 lp:-translate-y-0 left-0 scale-[225%] lp:scale-100 object-contain mx-auto lp:h-full -z-10" src={`/events/map-${estilos[index].primary_media}.png`} alt="Map events"></a>
 
 <div class="h-[80%] lp:h-auto w-fit mx-auto flex flex-col justify-center items-center gap-8">
 
@@ -145,7 +151,7 @@
             <hr class="border-secondary mt-2">
             <a on:click={()=>pickEvent(4)} href={"#"} class="flex justify-between items-center py-2 gap-36">
                 <p class="text-sm font-normal tracking-wide">ETH Denver</p>
-                <img src={`/events/events-pick-${estilos[index].secondary_media}.svg`} alt="pick event">
+                <img loading="lazy" src={`/events/events-pick-${estilos[index].secondary_media}.svg`} alt="pick event">
             </a>
         </div>
     </a>
@@ -158,12 +164,12 @@
             <hr class="border-secondary mt-2">
             <a on:click={()=>pickEvent(3)} href={"#"} class="flex justify-between items-center py-2 gap-36">
                 <p class="text-sm font-normal tracking-wide">Cero Uno</p>
-                <img src={`/events/events-pick-${estilos[index].secondary_media}.svg`} alt="pick event">
+                <img loading="lazy" src={`/events/events-pick-${estilos[index].secondary_media}.svg`} alt="pick event">
             </a>
             <hr class="border-secondary">
             <a on:click={()=>pickEvent(0)} href={"#"} class="flex justify-between items-center py-2 gap-36">
                 <p class="text-sm font-normal tracking-wide">Psipsikoko</p>
-                <img src={`/events/events-pick-${estilos[index].secondary_media}.svg`} alt="pick event">
+                <img loading="lazy" src={`/events/events-pick-${estilos[index].secondary_media}.svg`} alt="pick event">
             </a>
         </div>
     </a>
@@ -176,7 +182,7 @@
             <hr class="border-secondary mt-2">
             <a on:click={()=>pickEvent(5)} href={"#"} class="flex justify-between items-center py-2 gap-36">
                 <p class="text-sm font-normal tracking-wide">Schelling Point</p>
-                <img src={`/events/events-pick-${estilos[index].secondary_media}.svg`} alt="pick event">
+                <img loading="lazy" src={`/events/events-pick-${estilos[index].secondary_media}.svg`} alt="pick event">
             </a>
         </div>
     </a>
@@ -189,12 +195,12 @@
             <hr class="border-secondary mt-2">
             <a on:click={()=>pickEvent(2)} href={"#"} class="flex justify-between items-center py-2 gap-36">
                 <p class="text-sm font-normal tracking-wide">Intertwined</p>
-                <img src={`/events/events-pick-${estilos[index].secondary_media}.svg`} alt="pick event">
+                <img loading="lazy" src={`/events/events-pick-${estilos[index].secondary_media}.svg`} alt="pick event">
             </a>
             <hr class="border-secondary" >
             <a on:click={()=>pickEvent(4)} href={"#"} class="flex justify-between items-center py-2 gap-36">
                 <p class="text-sm font-normal tracking-wide">Underworld</p>
-                <img src={`/events/events-pick-${estilos[index].secondary_media}.svg`} alt="pick event">
+                <img loading="lazy" src={`/events/events-pick-${estilos[index].secondary_media}.svg`} alt="pick event">
             </a>
         </div>
     </a>
@@ -207,7 +213,7 @@
             <hr class="border-secondary mt-2">
             <a on:click={()=>pickEvent(1)} href={"#"} class="flex justify-between items-center py-2 gap-36">
                 <p class="text-sm font-normal tracking-wide">Non Places</p>
-                <img src={`/events/events-pick-${estilos[index].secondary_media}.svg`} alt="pick event">
+                <img loading="lazy" src={`/events/events-pick-${estilos[index].secondary_media}.svg`} alt="pick event">
             </a>
         </div>
     </a>

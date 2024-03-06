@@ -38,8 +38,6 @@
         pickedDrop = event.target.value;
     }
 
-    console.log('i exist')
-
 </script>
 
 <!-- if is footer and section is 1 -->

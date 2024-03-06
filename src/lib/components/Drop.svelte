@@ -25,8 +25,8 @@
 
 <a class="cursor-default" href={"#"}>
     <div class="text-secondary flex flex-col">
-        <img class="hidden lp:block rounded-t-md" src={banner} alt="Drop">
-        <img class="lp:hidden rounded-t-md" src={banner_mobile} alt="Drop">
+        <img loading="lazy" class="hidden lp:block rounded-t-md" src={banner} alt="Drop">
+        <img loading="lazy" class="lp:hidden rounded-t-md" src={banner_mobile} alt="Drop">
     
         <div class="bg-primary w-full p-5 flex items-center justify-between gap-1 rounded-b-md">
             <div class="flex flex-col w-2/3 lp:w-1/6 gap-2">
@@ -38,7 +38,7 @@
             </div>
             <p class="hidden lp:block text-base font-normal leading-none tracking-wider normal-case lp:w-1/2">{description}</p>
             <div class="">
-                <img class="ml-auto mr-0" src={hammer} alt="Hammer">
+                <img loading="lazy" class="ml-auto mr-0" src={hammer} alt="Hammer">
             </div>
         </div>
     </div>

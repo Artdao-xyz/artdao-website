@@ -210,30 +210,30 @@
         <Main {isOpen}/>
 
         <!-- <button class="fixed left-1/2 transform -translate-x-1/2 top-3/4 lp:hidden" on:click={updateMatcap}>
-            <img bind:this={material} class="p-0.5 border-[1px] rounded-full" src={`/material-${index}.png`} alt="Material">
+            <img loading="lazy" bind:this={material} class="p-0.5 border-[1px] rounded-full" src={`/material-${index}.png`} alt="Material">
         </button> -->
 
 
     </div>
     <footer bind:this={footer} class={`bg-background flex flex-col border-primary transition-height z-30 duration-100 ease-in-out font-clash-display font-normal uppercase sticky px-8 lp:px-24 bottom-0 left-0 border-b-0 border-t-[1px] ${isOpen ? `py-6 h-dvh` : "pt-5 lp:pt-8 h-[65px] tb:h-[75px] lp:h-[100px]"}`}>
          
-     <a on:click={openFooter} href={'#'} class="flex items-center lp:hidden"><img bind:this={arrow} class="mx-auto bg-primary py-1 px-6 rounded-3xl" src={`/arrow-${isOpen}-${estilos[index].secondary_media}.svg`} alt="hyperlink"></a>
+     <a on:click={openFooter} href={'#'} class="flex items-center lp:hidden"><img loading="lazy" bind:this={arrow} class="mx-auto bg-primary py-1 px-6 rounded-3xl" src={`/arrow-${isOpen}-${estilos[index].secondary_media}.svg`} alt="hyperlink"></a>
 
          
          <div class="grid grid-cols-5 gap-4 items-center justify-between">
              <a class="text-primary text-sm lp:text-lg mx-auto lp:mx-0 text-center lp:text-left font-semibold tracking-wider leading-5 mt-12 lp:mt-0 mb-6 lp:mb-0 col-span-full lp:col-span-2 {isOpen ? '' : 'hidden lp:block'}" on:click={openFooter} href={"#"}><p bind:this={subheader}>{content}</p></a>
-             <a on:click={openFooter} href={'#'} class="hidden col-span-1 lp:inline-flex items-center"><img bind:this={arrow} class="mx-auto bg-primary py-1 px-6 rounded-3xl" src={`/arrow-${isOpen}-${estilos[index].secondary_media}.svg`} alt="hyperlink" /></a>
+             <a on:click={openFooter} href={'#'} class="hidden col-span-1 lp:inline-flex items-center"><img loading="lazy" bind:this={arrow} class="mx-auto bg-primary py-1 px-6 rounded-3xl" src={`/arrow-${isOpen}-${estilos[index].secondary_media}.svg`} alt="hyperlink" /></a>
              <Contact/>
          </div>
          
          {#if currentSection == 0 && isOpen}
-             <Mission {isOpen}/>
+             <Mission/>
          {:else if currentSection == 1 && isOpen}
-             <Drops {isOpen}/>
+             <Drops/>
          {:else if currentSection == 2 && isOpen}
              <Events {isOpen}/>
         {:else if currentSection == 3 && isOpen}
-             <Studio {isOpen}/>
+             <Studio/>
          {/if}
 
      </footer>

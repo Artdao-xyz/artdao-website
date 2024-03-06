@@ -66,7 +66,7 @@
     <form on:submit|preventDefault={handleSubmit} method="POST" action="/api/subscribe" id="subscribeForm" class="bg-primary text-secondary flex items-center justify-between gap-4 p-4 rounded-lg mt-8 lp:mt-24">
         <label for="email" class="self-start font-medium text-xs lp:text-sm my-auto tracking-wider">Subscribe</label>
         <input type="email" name="EMAIL" class="invalid w-1/2 bg-transparent font-normal flex-grow text-base border-secondary border-b-[1px] outline-none" required value="">
-        <button type="submit" class="outline-none flex-none"><img src={`/arrow-subscribe-${estilos[index].secondary_media}.svg`} alt="Subscribe"></button>
+        <button type="submit" class="outline-none flex-none"><img loading="lazy" src={`/arrow-subscribe-${estilos[index].secondary_media}.svg`} alt="Subscribe"></button>
         <div aria-hidden="true" style="position: absolute; left: -5000px;">
             <!-- /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */ -->
             <input type="text" name="b_d150dd71762335c56d7e5811c_6f099dd01d" tabindex="-1" value="">
@@ -81,13 +81,13 @@
 
     {#if success}
         <p class="font-medium mx-auto text-xs lp:text-sm tracking-wider">Thank you for subscribing!</p>
-        <img src="/artdao-hammer.svg" alt="subscribed">
+        <img loading="lazy" src="/artdao-hammer.svg" alt="subscribed">
     {:else if memberExists}
         <p class="font-medium mx-auto text-xs lp:text-sm tracking-wider">You're already subscribed!</p>
-        <img src="/artdao-hammer.svg" alt="subscribed">
+        <img loading="lazy" src="/artdao-hammer.svg" alt="subscribed">
     {:else if error}
         <p class="font-medium mx-auto text-xs lp:text-sm tracking-wider">Something went wrong, please try again.</p>
-        <img src="/artdao-hammer.svg" alt="subscribed">
+        <img loading="lazy" src="/artdao-hammer.svg" alt="subscribed">
     {/if}
 </div>
 

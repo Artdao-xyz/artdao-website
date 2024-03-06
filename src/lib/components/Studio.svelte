@@ -1,5 +1,6 @@
 <script>
     import { onMount } from 'svelte';
+    import { fade } from 'svelte/transition';
     import { indexStyleStore } from '$lib/store.js';
     import { estilos } from '$lib/config.js';
 	import Project from './Project.svelte';
@@ -69,7 +70,10 @@
 </script>
 
 
-    <div class="flex w-[80%] text-primary flex-col gap-16 h-fit items-center justify-center mx-auto">
+    <div 
+        in:fade={{ delay: 50, duration: 150 }}
+        out:fade={{ delay: 50, duration: 50 }}     
+        class="flex w-[80%] text-primary flex-col gap-16 h-fit items-center justify-center mx-auto">
 
         <div class="hidden lp:block">
             <h1 class="font-neue-power text-8xl font-medium capitalize tracking-wide text-center lp:mt-28">Artdao Studio</h1>
@@ -82,7 +86,7 @@
 
                 <a href="mailto:hello@artdao.xyz" class="flex items-center justify-center gap-2">
                     <div class="text-primary text-base font-medium underline">get in touch</div>
-                    <img src={`/link-arrow-${estilos[index].primary_media}.svg`} alt="Link Arrow">
+                    <img loading="lazy" src={`/link-arrow-${estilos[index].primary_media}.svg`} alt="Link Arrow">
                 </a>
                 <hr class="hidden lp:block border-primary my-11">
         </div>
@@ -90,7 +94,7 @@
         
             <a on:click={()=>pickEvent(0)} href={"#"} class="group flex flex-col justify-center items-center">
                 <a href={"#"} class="lp:invisible group-hover:visible z-10">
-                    <img class="lp:-mb-8" src={projects[0].logo} alt="">
+                    <img loading="lazy" class="lp:-mb-8" src={projects[0].logo} alt="">
                 </a>
                 <a href={"#"}>
                     <h1 class="bg-primary text-secondary py-1 px-3 rounded-sm shadow-md tracking-wider normal-case">xyk Group</h1>
@@ -99,7 +103,7 @@
 
             <a on:click={()=>pickEvent(1)} href={"#"} class="group flex flex-col justify-center items-center">
                 <a href={"#"} class="lp:invisible group-hover:visible z-10">
-                    <img class="lp:-mb-2" src={projects[1].logo} alt="">
+                    <img loading="lazy" class="lp:-mb-2" src={projects[1].logo} alt="">
                 </a>
                 <a href={"#"}>
                     <h1 class="bg-primary text-secondary py-1 px-3 rounded-sm shadow-md tracking-wider normal-case">Lychee Protocol</h1>
@@ -108,7 +112,7 @@
 
             <a on:click={()=>pickEvent(2)} href={"#"} class="group flex flex-col justify-center items-center">
                 <a href={"#"} class="lp:invisible group-hover:visible z-10">
-                    <img class="lp:-mb-10" src={projects[2].logo} alt="">
+                    <img loading="lazy" class="lp:-mb-10" src={projects[2].logo} alt="">
                 </a>
                 <a href={"#"}>
                     <h1 class="bg-primary text-secondary py-1 px-3 rounded-sm shadow-md tracking- normal-case">Non\Places Exhibition</h1>
@@ -117,7 +121,7 @@
 
             <a on:click={()=>pickEvent(3)} href={"#"} class="group flex flex-col justify-center items-center">
                 <a href={"#"} class="lp:invisible group-hover:visible z-10">
-                    <img class="lp:-mb-4" src={projects[3].logo} alt="">
+                    <img loading="lazy" class="lp:-mb-4" src={projects[3].logo} alt="">
                 </a>
                 <a href={"#"}>
                     <h1 class="bg-primary text-secondary py-1 px-3 rounded-sm shadow-md tracking-wider normal-case">Tosta</h1>

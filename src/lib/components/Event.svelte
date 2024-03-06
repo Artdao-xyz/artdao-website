@@ -45,15 +45,15 @@
                 <h1 class="text-2xl font-semibold">{what}</h1>
                 <p class="text-xs font-semibold">{where}</p>
             </div>
-            <button on:click={closeEvent}><img src={`/events/close-${estilos[index].secondary_media}.svg`} alt="Close"></button>
+            <button on:click={closeEvent}><img loading="lazy" src={`/events/close-${estilos[index].secondary_media}.svg`} alt="Close"></button>
         </div>
         <div class="w-screen lp:w-full h-full">
-            <img class="h-96 lp:h-full w-full lp:w-full object-cover" src={banner[bannerIndex]} alt="Drop">
-            <!-- <button on:click={() => pickBanner(-1)}><img class="absolute left-0" src="/events/left-arrow-black.svg" alt="left arrow"></button>
-            <button on:click={() => pickBanner(1)}><img class="absolute right-0" src="/events/right-arrow-black.svg" alt="right arrow"></button> -->
+            <img loading="lazy" class="h-96 lp:h-full w-full lp:w-full object-cover" src={banner[bannerIndex]} alt="Drop">
+            <!-- <button on:click={() => pickBanner(-1)}><img loading="lazy" class="absolute left-0" src="/events/left-arrow-black.svg" alt="left arrow"></button>
+            <button on:click={() => pickBanner(1)}><img loading="lazy" class="absolute right-0" src="/events/right-arrow-black.svg" alt="right arrow"></button> -->
             <div class="flex items-center justify-between">
-                <button on:click={() => pickBanner(-1)}><img src={`/events/left-arrow-${estilos[index].secondary_media}.svg`} alt="left arrow"></button>
-                <button on:click={() => pickBanner(1)}><img src={`/events/right-arrow-${estilos[index].secondary_media}.svg`} alt="right arrow"></button>
+                <button on:click={() => pickBanner(-1)}><img loading="lazy" src={`/events/left-arrow-${estilos[index].secondary_media}.svg`} alt="left arrow"></button>
+                <button on:click={() => pickBanner(1)}><img loading="lazy" src={`/events/right-arrow-${estilos[index].secondary_media}.svg`} alt="right arrow"></button>
             </div>
         </div>
         
