@@ -3,7 +3,8 @@
     import { enhance } from '$app/forms';
     import { estilos } from '$lib/config.js';
     import { indexStyleStore } from '$lib/store.js';
-
+    import { env } from '$env/dynamic/public';
+    
     let index = 0;
 
     onMount(() => {
@@ -16,7 +17,7 @@
 
 </script>
 
-<form method="POST" name="email" action="https://xyz.us11.list-manage.com/subscribe/post?u=d150dd71762335c56d7e5811c&id=6f099dd01d&f_id=005aaae0f0" class="bg-primary text-secondary flex items-center justify-between gap-4 p-4 rounded-lg mt-8 lp:mt-24">
+<form method="POST" name="email" use:enhance action={env.PUBLIC_API_ENDPOINT} class="bg-primary text-secondary flex items-center justify-between gap-4 p-4 rounded-lg mt-8 lp:mt-24">
     <label for="email" class="self-start font-medium text-xs lp:text-sm my-auto tracking-wider">Subscribe</label>
     <input type="email" name="EMAIL" class="invalid bg-transparent font-normal flex-grow text-xs lp:text-base border-secondary border-b-[1px] outline-none" required value="">
     <button type="submit" class="outline-none flex-none"><img src={`/arrow-subscribe-${estilos[index].secondary_media}.svg`} alt="Subscribe"></button>
