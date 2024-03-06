@@ -26,12 +26,12 @@
 // };
 
 export const actions = {
-    default: async ({ request }) => {
+    default: async ({ request, fetch }) => {
         const formData = await request.formData();
         const email = formData.get('EMAIL'); 
         console.log('email', email);
     //   const response = await fetch(process.env.API_ENDPOINT || API_ENDPOINT, {
-      fetch('https://xyz.us11.list-manage.com/subscribe/post?u=d150dd71762335c56d7e5811c&id=6f099dd01d&f_id=005aaae0f0', {
+        await fetch('https://xyz.us11.list-manage.com/subscribe/post?u=d150dd71762335c56d7e5811c&id=6f099dd01d&f_id=005aaae0f0', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
