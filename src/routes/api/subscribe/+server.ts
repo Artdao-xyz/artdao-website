@@ -1,10 +1,9 @@
 import { json } from '@sveltejs/kit';
-import { MAILCHIMP_API_KEY, MAILCHIMP_LIST_ID } from '$env/static/private';
+import { MAILCHIMP_API_KEY } from '$env/static/private';
 
 const API_KEY = MAILCHIMP_API_KEY;
-const LIST_ID = MAILCHIMP_LIST_ID;
-const SERVER_PREFIX = 'usX'; // Replace 'usX' with your actual data center prefix
-const URL = `https://${SERVER_PREFIX}.api.mailchimp.com/3.0/lists/${LIST_ID}/members`;
+const LIST_ID = '6f099dd01d';
+const URL = `https://us11.api.mailchimp.com/3.0/lists/${LIST_ID}/members`;
 
 export async function POST({ request }) {
 	const { email } = await request.json();
@@ -22,6 +21,8 @@ export async function POST({ request }) {
 		},
 		body
 	});
+
+    console.log(response);
 
 	if (response.ok) {
 		return json({ success: true });
