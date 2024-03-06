@@ -133,12 +133,9 @@
     }
 </script>
 
-{#if isOpen}
-    <!-- <div class="h-full"
-    in:fade={{ delay: 50, duration: 150 }}
-    out:fade={{ delay: 50, duration: 50 }} > -->
 
-    <div class="h-dvh">
+
+    <div class="h-full">
         
     <a on:click={closeEvent} class="cursor-default overscroll-y-contain h-fit" href={"#"}><img class="fixed lp:relative top-1/2 lp:top-0 -translate-y-1/2 lp:-translate-y-0 left-0 scale-[225%] lp:scale-100 object-contain mx-auto lp:h-full -z-10" src={`/events/map-${estilos[index].primary_media}.png`} alt="Map events"></a>
 
@@ -188,7 +185,7 @@
             </div>
         </a>
 
-        <a href={"#"} class="relative lp:absolute bg-primary text-secondary lp:left-[40%] lp:top-[45%] sp:top-[42%] dp:top-[42%] dp:left-[40%] bg:top-[35%] bg:left-[42%] 2k:top-[39%] 2k:left-[41%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide">
+        <a href={"#"} class="relative lp:absolute bg-primary text-secondary lp:left-[40%] lp:top-[45%] sp:top-[42%] dp:top-[37%] dp:left-[40%] bg:top-[35%] bg:left-[42%] 2k:top-[35%] 2k:left-[41%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide">
             <a on:click={openLisboa} href={"#"}>
                 <p class="normal-case text-xl font-medium font-neue-power tracking-wide">Lisbon</p>
             </a>
@@ -206,7 +203,7 @@
             </div>
         </a>
 
-        <a href={"#"} class="relative lp:absolute bg-primary text-secondary lp:left-[45%] lp:top-[42%] sp:top-[38%] dp:top-[38%] dp:left-[45%] bg:top-[30%] bg:left-[45%] 2k:top-[35%] 2k:left-[45%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide">
+        <a href={"#"} class="relative lp:absolute bg-primary text-secondary lp:left-[45%] lp:top-[42%] sp:top-[38%] dp:top-[33%] dp:left-[45%] bg:top-[30%] bg:left-[45%] 2k:top-[30%] 2k:left-[45%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide">
             <a on:click={openParis} href={"#"}>
                 <p class="normal-case text-xl font-medium font-neue-power tracking-wide">Paris</p>
             </a>
@@ -228,5 +225,5 @@
     {/each}
     </div>
     
-{/if}
+
     

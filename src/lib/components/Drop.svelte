@@ -23,7 +23,7 @@
 
 </script>
 
-<a href={"#"}>
+<a class="cursor-default" href={"#"}>
     <div class="text-secondary flex flex-col">
         <img class="hidden lp:block rounded-t-md" src={banner} alt="Drop">
         <img class="lp:hidden rounded-t-md" src={banner_mobile} alt="Drop">

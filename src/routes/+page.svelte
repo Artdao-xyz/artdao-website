@@ -21,7 +21,6 @@
     import Contact from '$lib/components/Contact.svelte';
 
     import { indexSectionStore, indexStyleStore } from '$lib/store.js';
-	import Subscribe from '../lib/components/Subscribe.svelte';
 
     let canvas, footer, subheader, arrow;
     let index = 0;
@@ -162,14 +161,20 @@
     })
 
     const openFooter = _ => {
-        if (isOpen) {
-            document.body.style.overflowY = 'auto';
-            isOpen = false;
+        // if (isOpen) {
+        //     console.log('isClose the footer')
+        //     document.body.style.overflowY = 'auto';
+        //     isOpen = false;
             
-        } else {
-            document.body.style.overflowY = 'hidden';
-            isOpen = true;
-        }
+        // } else {
+        //     console.log('isOpen the footer')
+        //     // document.body.style.overflowY = 'hidden';
+        //     isOpen = true;
+        // }
+        
+        isOpen = !isOpen;
+        document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+        footer.style.overflow = isOpen ? 'auto' : 'hidden';
     }
 
     $: if (subheader) {
@@ -196,8 +201,6 @@
 </script>
 <canvas bind:this={canvas} class="bg-background fixed top-0 left-0 z-[-20]"></canvas>
 
-<!-- <svelte:body clas /> -->
-
 {#if loaded}
     <Header/>
     
@@ -212,7 +215,7 @@
 
 
     </div>
-    <footer bind:this={footer} class={`bg-background border-primary transition-height z-30 duration-100 ease-in-out font-clash-display font-normal uppercase sticky px-8 lp:px-24 bottom-0 left-0 border-b-0 border-t-[1px] ${isOpen ? `overflow-y-auto py-6 h-dvh` : "overflow-y-none pt-5 lp:pt-8 h-[65px] tb:h-[75px] lp:h-[100px]"}`}>
+    <footer bind:this={footer} class={`bg-background flex flex-col border-primary transition-height z-30 duration-100 ease-in-out font-clash-display font-normal uppercase sticky px-8 lp:px-24 bottom-0 left-0 border-b-0 border-t-[1px] ${isOpen ? `py-6 h-dvh` : "pt-5 lp:pt-8 h-[65px] tb:h-[75px] lp:h-[100px]"}`}>
          
      <a on:click={openFooter} href={'#'} class="flex items-center lp:hidden"><img bind:this={arrow} class="mx-auto bg-primary py-1 px-6 rounded-3xl" src={`/arrow-${isOpen}-${estilos[index].secondary_media}.svg`} alt="hyperlink"></a>
 
@@ -223,13 +226,13 @@
              <Contact/>
          </div>
          
-         {#if currentSection == 0}
+         {#if currentSection == 0 && isOpen}
              <Mission {isOpen}/>
-         {:else if currentSection == 1}
+         {:else if currentSection == 1 && isOpen}
              <Drops {isOpen}/>
-         {:else if currentSection == 2}
+         {:else if currentSection == 2 && isOpen}
              <Events {isOpen}/>
-         {:else}
+        {:else if currentSection == 3 && isOpen}
              <Studio {isOpen}/>
          {/if}
 

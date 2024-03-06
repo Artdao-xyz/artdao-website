@@ -40,13 +40,15 @@
         pickedDrop = event.target.value;
     }
 
+    console.log('i exist')
+
 </script>
 
 <!-- if is footer and section is 1 -->
-{#if isOpen }
+
 
     <!-- {#if section = 1} -->
-    <div class="overflow-y-hidden h-dvh lp:flex lp:flex-col lp:justify-start lp:mt-12"
+    <div class="lp:flex lp:flex-col lp:justify-start lp:my-auto"
         in:fade={{ delay: 50, duration: 150 }}
         out:fade={{ delay: 50, duration: 50 }} >
 
@@ -66,6 +68,7 @@
                 <Drop {banner} {banner_mobile} {name} {artists} {description} {hammer} indexDrop={index}/>
             {/if}
         {/each}
+
     </div>
-{/if}
+
 <!-- {/if} -->

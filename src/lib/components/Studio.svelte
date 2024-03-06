@@ -70,8 +70,8 @@
 
 </script>
 
-{#if isOpen}
-    <div class="flex overflow-y-hidden w-[80%] text-primary flex-col gap-16 h-fit items-center justify-center mx-auto">
+
+    <div class="flex w-[80%] text-primary flex-col gap-16 h-fit items-center justify-center mx-auto">
 
         <div class="hidden lp:block">
             <h1 class="font-neue-power text-8xl font-medium capitalize tracking-wide text-center lp:mt-28">Artdao Studio</h1>
@@ -136,4 +136,4 @@
 
     </div>
         <!-- <Project banner={projects[0].banner} who={projects[0].who} what={projects[0].what} info={projects[0].info} date={projects[0].date} link={projects[0].link} /> -->
-{/if}
+

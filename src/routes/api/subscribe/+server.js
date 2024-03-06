@@ -22,12 +22,12 @@ export async function POST({ request }) {
 		body
 	});
 
-    console.log(response);
+    // console.log(response);
 
 	if (response.ok) {
 		return json({ success: true });
 	} else {
 		const errorText = await response.text();
-		return json({ success: false, error: 'There was an error: ' + errorText });
+		return json({ success: false, error: errorText });
 	}
 }

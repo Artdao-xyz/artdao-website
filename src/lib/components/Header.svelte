@@ -3,13 +3,15 @@
     import { onMount } from 'svelte';
     import { indexSectionStore, indexStyleStore } from '$lib/store.js';
     import { Menu, Close } from 'svelte-ionicons';
+    import * as iosHeight from 'ios-inner-height'
 
     let index = 0;
     let section
     
     let header, hamburguer_menu
     let menu = false;
-    
+    let height = iosHeight() || window.innerHeight;
+
     const hideMenu = () => {
         const navLinks = document.querySelector('.nav-links')
         menu ? menu = false : menu = true
@@ -17,8 +19,9 @@
         navLinks.classList.toggle('opacity-100')
     }
     const setSection = (_section) => {
-        // window.scrollTo(0, _section * (window.innerHeight + header.clientHeight * 2))
-        window.scrollTo(0, _section * window.innerHeight)
+        let section = _section;
+        console.log(window.innerHeight)
+        window.scrollTo(0, section * height)
     }
 
     onMount(() => {
@@ -35,8 +38,8 @@
     
 </script>
 
-<header bind:this={header} class="bg-background text-primary font-clash-display uppercase font-semibold tracking-wide sticky top-0 left-0 max-w-screen p-4 lp:pt-6 lp:pb-0 z-30 dp:max-w-[1440px] dp:mx-auto">
-    <nav class="flex justify-between items-center w-mx-auto  ">
+<header bind:this={header} class=" bg-background text-primary font-clash-display uppercase font-semibold tracking-wide sticky top-0 left-0 max-w-screen p-4 lp:pt-6 lp:pb-0 z-30 dp:max-w-[1440px] dp:mx-auto">
+    <nav class="flex justify-between items-center w-mx-auto">
         <div class="lp:self-start">
             <a href='/'><img src={`/artdao-logo-${estilos[index].primary_media}.svg`} alt="Artdao Logo"></a>
         </div>
