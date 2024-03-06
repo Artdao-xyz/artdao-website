@@ -3,14 +3,14 @@
     import { onMount } from 'svelte';
     import { indexSectionStore, indexStyleStore } from '$lib/store.js';
     import { Menu, Close } from 'svelte-ionicons';
-    import * as iosHeight from 'ios-inner-height'
+    // import * as iosHeight from 'ios-inner-height'
 
     let index = 0;
     let section
     
     let header, hamburguer_menu
     let menu = false;
-    let height = iosHeight() || window.innerHeight;
+    let height = window.innerHeight;
 
     const hideMenu = () => {
         const navLinks = document.querySelector('.nav-links')
