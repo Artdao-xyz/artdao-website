@@ -39,7 +39,7 @@
 
     <!-- <a class="fixed h-fit w-fit left-0 bottom-0 lp:absolute lp:left-1/2 lp:top-1/2 lp:-translate-x-1/2 lp:-translate-y-1/2 inline-block mx-auto" href={"#"}> -->
 
-    <div class="fixed left-0 bottom-0 h-fit w-fit lp:left-1/2 lp:top-1/2 lp:-translate-x-1/2 lp:-translate-y-1/2 mx-auto bg-primary text-secondary flex flex-col lp:rounded-md tracking-wider">
+    <div class="fixed left-0 bottom-0 lp:left-1/2 lp:top-1/2 lp:-translate-x-1/2 lp:-translate-y-1/2 mx-auto bg-primary text-secondary flex flex-col lp:rounded-md tracking-wider">
         <div class="flex justify-between p-6">
             <div class="flex items-center gap-2">
                 <h1 class="text-2xl font-semibold">{what}</h1>

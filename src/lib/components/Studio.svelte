@@ -136,9 +136,9 @@
             {/if}
         {/each}
 
-        <a href="mailto:hello@artdao.xyz" class="flex mb-2 lp:hidden items-center justify-center gap-2">
-            <div class="text-primary text-base font-medium underline">get in touch</div>
-            <img loading="lazy" src={`/link-arrow-${estilos[index].primary_media}.svg`} alt="Link Arrow">
+        <a href="mailto:hello@artdao.xyz" class="flex lp:hidden items-center justify-center gap-2">
+            <p class="mb-8 text-primary text-base font-medium underline">get in touch</p>
+            <img class="mb-8" loading="lazy" src={`/link-arrow-${estilos[index].primary_media}.svg`} alt="Link Arrow">
         </a>
     </div>
     
