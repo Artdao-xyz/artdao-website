@@ -212,7 +212,7 @@
 
          
          <div class="grid grid-cols-5 gap-4 items-center justify-between">
-             <a class="text-primary text-sm lp:text-lg mx-auto lp:mx-0 text-center lp:text-left font-semibold tracking-wider leading-5 mt-12 lp:mt-0 mb-6 lp:mb-0 col-span-full lp:col-span-2 {isOpen ? '' : 'hidden lp:block'}" on:click={openFooter} href={"#"}><p bind:this={subheader}>{content}</p></a>
+             <a class="text-primary text-sm lp:text-lg mx-auto lp:mx-0 text-center lp:text-left font-semibold tracking-wider leading-5 mt-6 lp:mt-0 mb-6 lp:mb-0 col-span-full lp:col-span-2 text-nowrap {isOpen ? '' : 'hidden lp:block'}" on:click={openFooter} href={"#"}><p bind:this={subheader}>{content}</p></a>
              <a on:click={openFooter} href={'#'} class="hidden col-span-1 lp:inline-flex items-center"><img loading="lazy" bind:this={arrow} class="mx-auto bg-primary py-1 px-6 rounded-3xl" src={`/arrow-${isOpen}-${estilos[index].secondary_media}.svg`} alt="hyperlink" /></a>
              <Contact/>
          </div>
