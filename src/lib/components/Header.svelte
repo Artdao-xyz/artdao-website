@@ -1,33 +1,38 @@
 <script>
     import { estilos } from '$lib/config.js';
     import { onMount } from 'svelte';
-    import { indexSectionStore, indexStyleStore } from '$lib/store.js';
+    import { indexSectionStore, indexStyleStore, isOpenStore } from '$lib/store.js';
     import { Menu, Close } from 'svelte-ionicons';
-    // const heightFunction = require('ios-inner-height');
     import iosInnerHeight from '$lib/iosInnerHeight.js';
 
     let index = 0;
     let section
-
-    // console.log(iosInnerHeight())
-    
+    let isOpen = false;
     let header, hamburguer_menu
     let menu = false;
     let height = iosInnerHeight() || window.innerHeight;
 
     const hideMenu = () => {
         const navLinks = document.querySelector('.nav-links')
-        menu ? menu = false : menu = true
-        navLinks.classList.toggle('top-[0%]')
-        navLinks.classList.toggle('opacity-100')
+        navLinks.classList.remove('top-[0%]')
+        navLinks.classList.remove('opacity-100')
+        menu = false
     }
+
+    const showMenu = () => {
+        const navLinks = document.querySelector('.nav-links')
+        navLinks.classList.add('top-[0%]')
+        navLinks.classList.add('opacity-100')
+        menu = true
+    }
+
     const setSection = (_section) => {
         let section = _section;
         window.scrollTo(0, section * height)
     }
 
     onMount(() => {
-        const unsubscribe = indexStyleStore.subscribe(value => {
+        indexStyleStore.subscribe(value => {
             index = value;
         });
 
@@ -35,12 +40,16 @@
             section = value
         })
 
-        return unsubscribe;
+        isOpenStore.subscribe(value => {
+            if (value) {
+                hideMenu()
+            }
+        });
     });
     
 </script>
 
-<header bind:this={header} class=" bg-background text-primary font-clash-display uppercase font-semibold tracking-wide sticky top-0 left-0 max-w-screen p-4 lp:pt-6 lp:pb-0 z-30 dp:max-w-[1440px] dp:mx-auto">
+<header bind:this={header} class="bg-background text-primary font-clash-display uppercase font-semibold tracking-wide sticky top-0 left-0 max-w-screen p-4 lp:pt-6 lp:pb-0 z-30 dp:max-w-[1440px] dp:mx-auto">
     <nav class="flex justify-between items-center w-mx-auto">
         <div class="lp:self-start">
             <a href='/'><img loading="lazy" src={`/artdao-logo-${estilos[index].primary_media}.svg`} alt="Artdao Logo"></a>
@@ -65,7 +74,7 @@
             {#if menu}
                 <Close on:click={hideMenu} size="40" class="cursor-pointer outline-none z-20"/>
             {:else}
-                <Menu on:click={hideMenu} size="40" class="cursor-pointer outline-none z-20"/>
+                <Menu on:click={showMenu} size="40" class="cursor-pointer outline-none z-20"/>
             {/if}
         </div>
     </nav>

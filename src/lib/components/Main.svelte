@@ -1,12 +1,11 @@
-<script>
-    export let isOpen;
-    
+<script>  
     import { onMount } from 'svelte';
-    import { indexSectionStore } from '$lib/store.js'
+    import { indexSectionStore, isOpenStore } from '$lib/store.js'
     import TextScramble from '$lib/TextScramble.js';
 
     let section, h1;
     let content = '';
+    let isOpen = false;
     
     const handleFooterClick = () => {
         isOpen = false;
@@ -33,6 +32,10 @@
         indexSectionStore.subscribe(value => {
             section = value
         })
+
+        isOpenStore.subscribe(value => {
+            isOpen = value;
+        });
 
         content = 'A new age\nof culture';
         new TextScramble(h1, content);

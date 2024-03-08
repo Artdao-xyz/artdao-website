@@ -20,7 +20,7 @@
 	import Mission from '$lib/components/Mission.svelte';
     import Contact from '$lib/components/Contact.svelte';
 
-    import { indexSectionStore, indexStyleStore } from '$lib/store.js';
+    import { indexSectionStore, indexStyleStore, isOpenStore } from '$lib/store.js';
 
     let canvas, footer, subheader, arrow;
     let index = 0;
@@ -30,7 +30,6 @@
 
     let loaded = false;
     let isOpen = false;
-
     let metaSymbol = null;
     let textures = [];
     let content = '';
@@ -44,8 +43,6 @@
     const manager = new THREE.LoadingManager()
     const textureLoader = new THREE.TextureLoader(manager);
     
-    // export let form 
-    // $: console.log(form)
     onMount (() => {
         
         /* SETTINGS */
@@ -151,6 +148,10 @@
             }
         });
 
+        isOpenStore.subscribe(value => {
+            isOpen = value;
+        });
+
         // indexSectionStore.subscribe(value => {})
 
         return () => {
@@ -160,19 +161,9 @@
         }
     })
 
-    const openFooter = _ => {
-        // if (isOpen) {
-        //     console.log('isClose the footer')
-        //     document.body.style.overflowY = 'auto';
-        //     isOpen = false;
-            
-        // } else {
-        //     console.log('isOpen the footer')
-        //     // document.body.style.overflowY = 'hidden';
-        //     isOpen = true;
-        // }
-        
+    const openFooter = _ => {        
         isOpen = !isOpen;
+        isOpenStore.set(isOpen);
         document.body.style.overflow = isOpen ? 'hidden' : 'auto';
         footer.style.overflow = isOpen ? 'auto' : 'hidden';
     }
@@ -207,7 +198,7 @@
     <div class="text-primary font-clash-display font-normal uppercase mx-0 lp:mx-10 dp:max-w-[1440px] dp:mx-auto">
     
         <!-- <Live source={live_assets}/> -->
-        <Main {isOpen}/>
+        <Main/>
 
         <!-- <button class="fixed left-1/2 transform -translate-x-1/2 top-3/4 lp:hidden" on:click={updateMatcap}>
             <img loading="lazy" bind:this={material} class="p-0.5 border-[1px] rounded-full" src={`/material-${index}.png`} alt="Material">
@@ -231,7 +222,7 @@
          {:else if currentSection == 1 && isOpen}
              <Drops/>
          {:else if currentSection == 2 && isOpen}
-             <Events {isOpen}/>
+             <Events/>
         {:else if currentSection == 3 && isOpen}
              <Studio/>
          {/if}

@@ -73,11 +73,11 @@
     <div 
         in:fade={{ delay: 50, duration: 150 }}
         out:fade={{ delay: 50, duration: 50 }}     
-        class="flex w-[80%] text-primary flex-col gap-16 h-fit items-center justify-center mx-auto">
+        class="flex w-[80%] text-primary flex-col gap-16 h-full items-center justify-center mx-auto">
 
         <div class="hidden lp:block">
             <h1 class="font-neue-power text-8xl font-medium capitalize tracking-wide text-center lp:mt-28">Artdao Studio</h1>
-            <p class="text-center w-2/3 text-2xl font-semibold uppercase tracking-wide my-11 mx-auto">
+            <p class="text-center w-2/3 text-xl font-semibold uppercase tracking-wide my-11 mx-auto">
                 We bring together teams of world leading artists to develop original brand identities across fields of 3d, graphic design, and web development. 
                 <br>
                 <br>
@@ -97,7 +97,7 @@
                     <img loading="lazy" class="lp:-mb-8" src={projects[0].logo} alt="">
                 </a>
                 <a href={"#"}>
-                    <h1 class="bg-primary text-secondary py-1 px-3 rounded-sm shadow-md tracking-wider normal-case">xyk Group</h1>
+                    <h1 class="bg-primary text-secondary py-1 px-3 rounded-sm shadow-md tracking-wider normal-case text-nowrap">xyk Group</h1>
                 </a>
             </a>
 
@@ -106,7 +106,7 @@
                     <img loading="lazy" class="lp:-mb-2" src={projects[1].logo} alt="">
                 </a>
                 <a href={"#"}>
-                    <h1 class="bg-primary text-secondary py-1 px-3 rounded-sm shadow-md tracking-wider normal-case">Lychee Protocol</h1>
+                    <h1 class="bg-primary text-secondary py-1 px-3 rounded-sm shadow-md tracking-wider normal-case text-nowrap">Lychee Protocol</h1>
                 </a>
             </a>
 
@@ -115,7 +115,7 @@
                     <img loading="lazy" class="lp:-mb-10" src={projects[2].logo} alt="">
                 </a>
                 <a href={"#"}>
-                    <h1 class="bg-primary text-secondary py-1 px-3 rounded-sm shadow-md tracking- normal-case">Non\Places Exhibition</h1>
+                    <h1 class="bg-primary text-secondary py-1 px-3 rounded-sm shadow-md tracking- normal-case text-nowrap">Non\Places Exhibition</h1>
                 </a>
             </a>
 
@@ -124,7 +124,7 @@
                     <img loading="lazy" class="lp:-mb-4" src={projects[3].logo} alt="">
                 </a>
                 <a href={"#"}>
-                    <h1 class="bg-primary text-secondary py-1 px-3 rounded-sm shadow-md tracking-wider normal-case">Tosta</h1>
+                    <h1 class="bg-primary text-secondary py-1 px-3 rounded-sm shadow-md tracking-wider normal-case text-nowrap">Tosta</h1>
                 </a>
             </a>
         </div>
@@ -135,7 +135,9 @@
                 <Project on:closeEvent={closeEvent} {banner} {banner_mobile} {who} {what} {info} {date} {link}/>
             {/if}
         {/each}
-
     </div>
-        <!-- <Project banner={projects[0].banner} who={projects[0].who} what={projects[0].what} info={projects[0].info} date={projects[0].date} link={projects[0].link} /> -->
-
+    
+    <a href="mailto:hello@artdao.xyz" class="flex mt-16 lp:hidden items-center justify-center gap-2">
+        <div class="text-primary text-base font-medium underline">get in touch</div>
+        <img loading="lazy" src={`/link-arrow-${estilos[index].primary_media}.svg`} alt="Link Arrow">
+    </a>

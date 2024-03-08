@@ -37,9 +37,9 @@
 
 </script>
 
-    <a class="lp:absolute lp:left-1/2 lp:top-1/2 lp:-translate-x-1/2 lp:-translate-y-1/2 inline-block mx-auto" href={"#"}>
+    <!-- <a class="fixed h-fit w-fit left-0 bottom-0 lp:absolute lp:left-1/2 lp:top-1/2 lp:-translate-x-1/2 lp:-translate-y-1/2 inline-block mx-auto" href={"#"}> -->
 
-    <div class="absolute left-0 bottom-0 lp:relative bg-primary text-secondary flex flex-col lp:mx-auto lp:rounded-md tracking-wider">
+    <div class="fixed left-0 bottom-0 h-fit w-fit lp:left-1/2 lp:top-1/2 lp:-translate-x-1/2 lp:-translate-y-1/2 mx-auto bg-primary text-secondary flex flex-col lp:rounded-md tracking-wider">
         <div class="flex justify-between p-6">
             <div class="flex items-center gap-2">
                 <h1 class="text-2xl font-semibold">{what}</h1>
@@ -48,18 +48,16 @@
             <button on:click={closeEvent}><img loading="lazy" src={`/events/close-${estilos[index].secondary_media}.svg`} alt="Close"></button>
         </div>
         <div class="w-screen lp:w-full h-full">
-            <img loading="lazy" class="h-96 lp:h-full w-full lp:w-full object-cover" src={banner[bannerIndex]} alt="Drop">
-            <!-- <button on:click={() => pickBanner(-1)}><img loading="lazy" class="absolute left-0" src="/events/left-arrow-black.svg" alt="left arrow"></button>
-            <button on:click={() => pickBanner(1)}><img loading="lazy" class="absolute right-0" src="/events/right-arrow-black.svg" alt="right arrow"></button> -->
+            <img loading="lazy" class="h-82 lp:h-full w-full lp:w-full object-cover" src={banner[bannerIndex]} alt="Drop">
             <div class="flex items-center justify-between">
                 <button on:click={() => pickBanner(-1)}><img loading="lazy" src={`/events/left-arrow-${estilos[index].secondary_media}.svg`} alt="left arrow"></button>
                 <button on:click={() => pickBanner(1)}><img loading="lazy" src={`/events/right-arrow-${estilos[index].secondary_media}.svg`} alt="right arrow"></button>
             </div>
         </div>
         
-        <div class="w-3/4 text-sm tb:text-xl lp:text-sm uppercase px-6 py-10 flex flex-col gap-4">
+        <div class="w-3/4 text-sm tb:text-xl lp:text-sm uppercase px-6 py-4 lp:py-10 flex flex-col gap-4">
             <p class="font-semibold">{info}</p>
             <p class="text-xs">{address}</p>
         </div>
     </div>
-</a>
+<!-- </a> -->

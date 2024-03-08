@@ -2,13 +2,12 @@
     import { onMount } from 'svelte';
     import { fade } from 'svelte/transition';
     import { estilos } from '$lib/config.js';
-    import { indexStyleStore } from '$lib/store.js';
+    import { indexStyleStore, isOpenStore } from '$lib/store.js';
 	import Event from './Event.svelte';
 
-    export let isOpen = false;
-
     let selectedEvent = null;
-    
+    let isOpen = false;
+
     let events = [
         {
             banner: ['/events/psipsikoko/psipsikoko-1.png', '/events/psipsikoko/psipsikoko-2.png', '/events/psipsikoko/psipsikoko-3.png'],
@@ -35,7 +34,7 @@
             banner: ['/events/cerouno/cerouno-1.png', '/events/cerouno/cerouno-2.png', '/events/cerouno/cerouno-3.png', '/events/cerouno/cerouno-4.png'],
             what: "Cero uno",
             where: "Buenos Aires",
-            info: "exhibition/panels/After Party",
+            info: "exhibition/talks/After Party",
             address: "MARCH 31th/2023 ARTLAB, BUENOS AIRES"
         },
         {
@@ -46,11 +45,18 @@
             address: "MARCH 2th - 6th /2023 DENVER, COLORADO"
         },
         {
-            banner: ['/events/schelling-point/schellingpoint-1.png', '/events/schelling-point/schellingpoint-2.png', '/events/schelling-point/schellingpoint-3.png'],
-            what: "Schelling Point",
+            banner: ['/events/devcon/devcon-1.png', '/events/devcon/devcon-2.png', '/events/devcon/devcon-3.png'],
+            what: "DEVCON",
             where: "Bogotá",
-            info: "exhibition/CONFERENCES/TALKS",
+            info: "exhibition/mural/talks",
             address: "OCTOBER 11th-14th/2022 AGORA BOGOTÁ CONVENTION CENTER, BOGOTÁ"
+        },
+        {
+            banner: ['/events/nft-paris/nft-paris-1.jpg', '/events/nft-paris/nft-paris-2.jpg', '/events/nft-paris/nft-paris-3.jpg'],
+            what: "NFT Paris",
+            where: "Paris",
+            info: "Lukas Truniger Showcase",
+            address: "101 Rue Réaumur75002, Paris"
         }
     ]
     
@@ -62,11 +68,13 @@
     let isDenverOpen = false;
     
     onMount(() => {
-        const unsubscribe = indexStyleStore.subscribe(value => {
+        indexStyleStore.subscribe(value => {
             index = value;
         });
 
-        return unsubscribe;
+        isOpenStore.subscribe(value => {
+            isOpen = value;
+        });        
     });
 
     $: if (!isOpen) {
@@ -122,6 +130,11 @@
 
     const pickEvent = (event) => {
         selectedEvent = event;
+        isParisOpen = false;
+        isBuenosAiresOpen = false;
+        isLisboaOpen = false;
+        isBotogaOpen = false;
+        isDenverOpen = false;
     }
 
     const closeEvent = () => {
@@ -181,7 +194,7 @@
         <div class={`${isBotogaOpen ? 'block' : 'hidden' } h-full`}>
             <hr class="border-secondary mt-2">
             <a on:click={()=>pickEvent(5)} href={"#"} class="flex justify-between items-center py-2 gap-36">
-                <p class="text-sm font-normal tracking-wide">Schelling Point</p>
+                <p class="text-sm font-normal tracking-wide">DEVCON</p>
                 <img loading="lazy" src={`/events/events-pick-${estilos[index].secondary_media}.svg`} alt="pick event">
             </a>
         </div>
@@ -213,6 +226,11 @@
             <hr class="border-secondary mt-2">
             <a on:click={()=>pickEvent(1)} href={"#"} class="flex justify-between items-center py-2 gap-36">
                 <p class="text-sm font-normal tracking-wide">Non Places</p>
+                <img loading="lazy" src={`/events/events-pick-${estilos[index].secondary_media}.svg`} alt="pick event">
+            </a>
+            <hr class="border-secondary mt-2">
+            <a on:click={()=>pickEvent(6)} href={"#"} class="flex justify-between items-center py-2 gap-36">
+                <p class="text-sm font-normal tracking-wide">NFT Paris</p>
                 <img loading="lazy" src={`/events/events-pick-${estilos[index].secondary_media}.svg`} alt="pick event">
             </a>
         </div>

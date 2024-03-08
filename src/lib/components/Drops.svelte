@@ -44,7 +44,7 @@
 
 
     <!-- {#if section = 1} -->
-    <div class="lp:flex lp:flex-col lp:justify-start lp:my-auto"
+    <div class="h-full lp:flex lp:flex-col lp:justify-center"
         in:fade={{ delay: 50, duration: 150 }}
         out:fade={{ delay: 50, duration: 50 }} >
 
