@@ -22,7 +22,7 @@ export async function POST({ request }) {
 		body
 	});
 
-    // console.log(response);
+	// console.log(response);
 
 	if (response.ok) {
 		return json({ success: true });

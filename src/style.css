@@ -14,16 +14,15 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-    scroll-behavior: smooth;   
-    overscroll-behavior: none;
+* {
+	scroll-behavior: smooth;
+	overscroll-behavior: none;
 }
 
 .custom-progress-bar::-webkit-progress-value {
-    background-color: #484848;
-  }
+	background-color: #484848;
+}
 
 .grid-container {
-    grid-template-columns: 1.25fr 0.75fr 1fr;
+	grid-template-columns: 1.25fr 0.75fr 1fr;
 }
-  

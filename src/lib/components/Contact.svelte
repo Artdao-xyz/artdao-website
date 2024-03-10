@@ -1,34 +1,60 @@
 <script>
-    import { onMount } from 'svelte';
-    import { estilos } from '$lib/config.js';
-    import { indexStyleStore } from '$lib/store.js';
-    
-    let index = 0;
+	import { onMount } from 'svelte';
+	import { estilos } from '$lib/config.js';
+	import { indexStyleStore } from '$lib/store.js';
 
-    const updateMatcap = _ => {
-        index++;
-        index >= estilos.length ? index = 0 : null;
-        indexStyleStore.set(index);
-    }
+	let index = 0;
 
-    onMount(() => {
-        const unsubscribe = indexStyleStore.subscribe(value => {
-            index = value;
-        });
+	const updateMatcap = (_) => {
+		index++;
+		index >= estilos.length ? (index = 0) : null;
+		indexStyleStore.set(index);
+	};
 
-        return unsubscribe;
-    });
+	onMount(() => {
+		const unsubscribe = indexStyleStore.subscribe((value) => {
+			index = value;
+		});
+
+		return unsubscribe;
+	});
 </script>
 
 <div class="hidden lp:col-span-2 flex-none lp:flex lp:items-center justify-end lp:gap-6">
-    <div class="flex items-center justify-between gap-6">
-        <a href={'https://twitter.com/Artdao_xyz'} target="_blank"><img loading="lazy" class="" src={`/x-${estilos[index].primary_media}.svg`} alt="X Logo"></a> 
-        <a href={'https://www.instagram.com/artdao.xyz/'} target="_blank"><img loading="lazy" src={`/instagram-${estilos[index].primary_media}.svg`} alt="Instagram Logo"></a> 
-        <a href={'https://discord.gg/BV2ZNCSa'} class='text-base text-primary underline font-medium flex gap-2'>Join our Discord<img loading="lazy" src={`/link-arrow-${estilos[index].primary_media}.svg`} alt="Link Arrow"></a>
-    </div>
-    <div class="flex items-center">
-        <button on:click={updateMatcap}>
-            <img loading="lazy" class="border-primary border-solid border-[1px] p-0.5 rounded-full" src={`/matcap/material-${index}.png`} alt="Material">
-        </button>
-    </div>
+	<div class="flex items-center justify-between gap-6">
+		<a href={'https://twitter.com/Artdao_xyz'} target="_blank"
+			><img
+				loading="lazy"
+				class=""
+				src={`/x-${estilos[index].primary_media}.svg`}
+				alt="X Logo"
+			/></a
+		>
+		<a href={'https://www.instagram.com/artdao.xyz/'} target="_blank"
+			><img
+				loading="lazy"
+				src={`/instagram-${estilos[index].primary_media}.svg`}
+				alt="Instagram Logo"
+			/></a
+		>
+		<a
+			href={'https://discord.gg/BV2ZNCSa'}
+			class="text-base text-primary underline font-medium flex gap-2"
+			>Join our Discord<img
+				loading="lazy"
+				src={`/link-arrow-${estilos[index].primary_media}.svg`}
+				alt="Link Arrow"
+			/></a
+		>
+	</div>
+	<div class="flex items-center">
+		<button on:click={updateMatcap}>
+			<img
+				loading="lazy"
+				class="border-primary border-solid border-[1px] p-0.5 rounded-full"
+				src={`/matcap/material-${index}.png`}
+				alt="Material"
+			/>
+		</button>
+	</div>
 </div>
