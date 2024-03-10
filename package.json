@@ -27,7 +27,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"node-fetch": "^3.3.2",
 		"svelte-ionicons": "^0.7.2",
 		"three": "^0.158.0"
 	}
