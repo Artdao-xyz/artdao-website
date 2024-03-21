@@ -39,8 +39,9 @@
 		>
 		<a
 			href={'https://discord.gg/BV2ZNCSa'}
-			class="text-base text-primary underline font-medium flex gap-2"
-			>Join our Discord<img
+            target="_blank"
+			class="text-lg text-primary underline font-normal flex gap-2"
+			>our discord<img
 				loading="lazy"
 				src={`/link-arrow-${estilos[index].primary_media}.svg`}
 				alt="Link Arrow"

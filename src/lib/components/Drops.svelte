@@ -3,6 +3,8 @@
 	import Drop from './Drop.svelte';
 	import { onMount } from 'svelte';
 	import { indexStyleStore } from '$lib/store.js';
+    import Subscribe from './Subscribe.svelte';
+    import Contact from './Contact.svelte';
 
 	let index = 0;
 	let pickedDrop = '0';
@@ -40,15 +42,13 @@
 	};
 </script>
 
-<!-- if is footer and section is 1 -->
-
-<!-- {#if section = 1} -->
 <div
-	class="h-full lp:flex lp:flex-col lp:justify-center"
-	in:fade={{ delay: 50, duration: 150 }}
-	out:fade={{ delay: 50, duration: 50 }}
+	class="h-full flex flex-col justify-around gap-2"
+	in:fade={{ delay: 100, duration: 150 }}
+	out:fade={{ delay: 100, duration: 25 }}
 >
-	<div class="text-sm leading-none tracking-wide my-8 flex gap-3">
+
+	<div class="text-sm mx-8 leading-none tracking-wide flex gap-3">
 		<input
 			type="radio"
 			id="drop_0"
@@ -59,7 +59,7 @@
 		/>
 		<label
 			for="drop_0"
-			class="inline-block cursor-pointer bg-background text-primary px-3.5 py-2 rounded-sm shadow peer-checked/0:bg-primary peer-checked/0:text-secondary border-primary border-2"
+			class="inline-block cursor-pointer bg-background text-primary font-neue-power font-semibold p-1 leading-none tracking-wide rounded-sm shadow peer-checked/0:bg-primary peer-checked/0:text-secondary border-primary border-2"
 			>#000</label
 		>
 		<!--           
@@ -69,12 +69,19 @@
 		<!-- <input type="radio" id="drop_2" value="2" bind:group={pickedDrop} on:change={handleDropChange} class="hidden peer/2"/>
             <label for="drop_2" class="inline-block cursor-pointer bg-background text-primary px-3.5 py-2 rounded-sm shadow peer-checked/2:bg-primary peer-checked/2:text-secondary border-primary border-2">#002</label> -->
 	</div>
+    <div class="mx-8">
+        {#each drops as { banner, banner_mobile, name, artists, description, hammer }, index (index)}
+            {#if index == pickedDrop}
+                <Drop {banner} {banner_mobile} {name} {artists} {description} {hammer} indexDrop={index} />
+            {/if}
+        {/each}
+    </div>
 
-	{#each drops as { banner, banner_mobile, name, artists, description, hammer }, index (index)}
-		{#if index == pickedDrop}
-			<Drop {banner} {banner_mobile} {name} {artists} {description} {hammer} indexDrop={index} />
-		{/if}
-	{/each}
+
+<div class="hidden lp:flex items-center justify-between">
+    <Subscribe />
+    <Contact />
+</div>
 </div>
 
 <!-- {/if} -->

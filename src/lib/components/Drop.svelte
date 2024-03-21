@@ -21,18 +21,18 @@
 	});
 </script>
 
-<a class="cursor-default" href={'#'}>
+<a class="cursor-default z-30" href={'#'}>
 	<div class="text-secondary flex flex-col">
 		<img loading="lazy" class="hidden lp:block rounded-t-md" src={banner} alt="Drop" />
 		<img loading="lazy" class="lp:hidden rounded-t-md" src={banner_mobile} alt="Drop" />
 
-		<div class="bg-primary w-full p-5 flex items-center justify-between gap-1 rounded-b-md">
+		<div class="font-clash-display bg-primary w-full p-5 flex items-center justify-between gap-1 rounded-b-md">
 			<div class="flex flex-col w-2/3 lp:w-1/6 gap-2">
 				<div class="flex gap-2 items-center">
 					<p class="text-xl font-semibold lp:text-2xl uppercase">{name}</p>
 					<p class="text-xs">#00{indexDrop}</p>
 				</div>
-				<p class="text-sm lp:text-base font-medium leading-none tracking-wide">{artists}</p>
+				<p class="text-sm lp:text-base font-medium leading-none tracking-wide uppercase">{artists}</p>
 			</div>
 			<p
 				class="hidden lp:block text-base font-normal leading-none tracking-wider normal-case lp:w-1/2"

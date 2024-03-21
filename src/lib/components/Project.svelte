@@ -29,7 +29,7 @@
 </script>
 
 <div
-	class="fixed left-0 bottom-0 tb:h-fit lp:left-1/2 lp:top-1/2 lp:-translate-x-1/2 lp:-translate-y-1/2 bg-primary text-secondary lp:flex flex-col lp:mx-auto lp:rounded-md tracking-wider z-20"
+	class="fixed h-[80%] w-[95%] tb:w-fit tb:h-fit left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-secondary lp:flex flex flex-col justify-between lp:mx-auto lp:rounded-md tracking-wider z-30 uppercase"
 >
 	<div class="flex justify-between p-6">
 		<div class="flex items-center gap-2">
@@ -44,7 +44,7 @@
 			/></button
 		>
 	</div>
-	<div class="w-screen lp:w-full h-full">
+	<div class="w-full lp:w-full h-fit">
 		<img
 			loading="lazy"
 			class="hidden lp:block h-full w-full object-cover"
@@ -59,7 +59,7 @@
 		/>
 	</div>
 
-	<div class="w-3/4 text-sm tb:text-xl lp:text-sm uppercase px-6 py-4 lp:py-6 flex flex-col gap-2">
+	<div class="text-sm tb:text-xl lp:text-sm uppercase px-6 py-4 lp:py-6 flex flex-col gap-2">
 		<p class="font-semibold">{info}</p>
 		<p class="text-sm">{date}</p>
 		<a href={link} target="_blank" class="underline flex items-center gap-2 underline-offset-2"

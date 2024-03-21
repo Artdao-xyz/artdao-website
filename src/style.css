@@ -14,6 +14,11 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    width:100vw;
+    overflow-x: hidden;
+}
+
 * {
 	scroll-behavior: smooth;
 	overscroll-behavior: none;

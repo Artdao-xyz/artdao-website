@@ -81,7 +81,7 @@ export default class MetaSymbol {
 			//document.getElementById('scrollProgress').innerText = 'Progreso : ' + scrollPercent.toFixed(2)
 		};
 
-		//    this.goTo(1)
+		//    this.goTo(1)z
 	}
 
 	getMesh() {

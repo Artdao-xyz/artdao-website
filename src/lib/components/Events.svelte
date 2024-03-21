@@ -4,7 +4,9 @@
 	import { estilos } from '$lib/config.js';
 	import { indexStyleStore, isOpenStore } from '$lib/store.js';
 	import Event from './Event.svelte';
-
+    import Subscribe from './Subscribe.svelte';
+    import Contact from './Contact.svelte';
+    
 	let selectedEvent = null;
 	let isOpen = false;
 
@@ -171,12 +173,12 @@
 	};
 </script>
 
-<div class="h-full">
+<div class="h-full lp:flex lp:flex-col lp:justify-center">
 	<a
-		in:fade={{ delay: 50, duration: 150 }}
-		out:fade={{ delay: 50, duration: 50 }}
+	in:fade={{ delay: 100, duration: 150 }}
+	out:fade={{ delay: 100, duration: 25 }}
 		on:click={closeEvent}
-		class="cursor-default overscroll-y-contain h-fit"
+		class="cursor-default overscroll-y-contain h-fit flex-grow"
 		href={'#'}
 		><img
 			loading="lazy"
@@ -189,7 +191,7 @@
 	<div class="h-[80%] lp:h-auto w-fit mx-auto flex flex-col justify-center items-center gap-8">
 		<a
 			href={'#'}
-			class="relative lp:absolute bg-primary text-secondary lp:left-[25%] dp:left-[25%] lp:top-[45%] sp:top-[40%] dp:top-[40%] bg:top-[35%] bg:left-[25%] 2k:top-[38%] 2k:left-[25%] px-3 py-1 rounded-sm shadow-md gap-3"
+			class="relative lp:absolute bg-primary text-secondary lp:left-[25%] dp:left-[25%] lp:top-[45%] sp:top-[32%] dp:top-[40%] bg:top-[35%] bg:left-[25%] 2k:top-[38%] 2k:left-[25%] px-3 py-1 rounded-sm shadow-md gap-3"
 		>
 			<a on:click={openDenver} href={'#'}>
 				<p class="normal-case text-xl font-medium font-neue-power tracking-wide">Denver</p>
@@ -213,7 +215,7 @@
 
 		<a
 			href={'#'}
-			class="relative lp:absolute bg-primary text-secondary lp:left-[27.5%] lp:top-[65%] sp:top-[60%] bg:top-[60%] bg:left-[30%] 2k:left-[28%] px-3 py-1.5 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide"
+			class="relative lp:absolute bg-primary text-secondary lp:left-[27.5%] lp:top-[65%] sp:top-[55%] bg:top-[60%] bg:left-[30%] 2k:left-[28%] px-3 py-1.5 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide"
 		>
 			<a on:click={openBuenosAires} href={'#'}>
 				<p class="normal-case text-xl font-medium font-neue-power tracking-wide">Buenos Aires</p>
@@ -250,7 +252,7 @@
 
 		<a
 			href={'#'}
-			class="relative lp:absolute bg-primary text-secondary lp:left-[30%] lp:top-[55%] sp:top-[50%] dp:left-[30%] dp:top-[50%] bg:top-[48%] bg:left-[28%] 2k:top-[48%] 2k:left-[28%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide"
+			class="relative lp:absolute bg-primary text-secondary lp:left-[30%] lp:top-[55%] sp:left-[27%] sp:top-[45%] dp:left-[30%] dp:top-[50%] bg:top-[48%] bg:left-[28%] 2k:top-[48%] 2k:left-[28%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide"
 		>
 			<a on:click={openBogota} href={'#'}>
 				<p class="normal-case text-xl font-medium font-neue-power tracking-wide">Bogotá</p>
@@ -274,7 +276,7 @@
 
 		<a
 			href={'#'}
-			class="relative lp:absolute bg-primary text-secondary lp:left-[40%] lp:top-[45%] sp:top-[42%] dp:top-[37%] dp:left-[40%] bg:top-[35%] bg:left-[42%] 2k:top-[35%] 2k:left-[41%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide"
+			class="relative lp:absolute bg-primary text-secondary lp:left-[40%] lp:top-[45%] sp:top-[33%] dp:top-[37%] dp:left-[40%] bg:top-[35%] bg:left-[42%] 2k:top-[35%] 2k:left-[41%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide"
 		>
 			<a on:click={openLisboa} href={'#'}>
 				<p class="normal-case text-xl font-medium font-neue-power tracking-wide">Lisbon</p>
@@ -311,7 +313,7 @@
 
 		<a
 			href={'#'}
-			class="relative lp:absolute bg-primary text-secondary lp:left-[45%] lp:top-[42%] sp:top-[38%] dp:top-[33%] dp:left-[45%] bg:top-[30%] bg:left-[45%] 2k:top-[30%] 2k:left-[45%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide"
+			class="relative lp:absolute bg-primary text-secondary lp:left-[45%] lp:top-[42%] sp:top-[28%] dp:top-[33%] dp:left-[45%] bg:top-[30%] bg:left-[45%] 2k:top-[30%] 2k:left-[45%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide"
 		>
 			<a on:click={openParis} href={'#'}>
 				<p class="normal-case text-xl font-medium font-neue-power tracking-wide">Paris</p>
@@ -352,4 +354,9 @@
 			<Event on:closeEvent={closeEvent} {banner} {what} {where} {info} {address} />
 		{/if}
 	{/each}
+
+    <div class="hidden lp:flex items-center justify-between">
+        <Subscribe />
+        <Contact />
+    </div>
 </div>

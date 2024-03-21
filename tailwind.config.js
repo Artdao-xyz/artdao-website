@@ -27,8 +27,13 @@ export default {
 				mustard: '#DBFF00',
 				purple: '#8B9EFF',
 				'dark-grey': '#646262'
-			}
-		}
+			},
+            fontSize: {
+                '8xl' : ['7.5rem', {
+                    lineHeight: '1',
+                }],
+              }
+		},
 	},
 	plugins: [
 		require('tailwindcss-themer')({
@@ -37,8 +42,11 @@ export default {
 					colors: {
 						primary: 'black',
 						secondary: 'white',
-						background: 'white'
-					}
+						background: 'white',
+					},
+                    boxShadow: {
+                        'custom': '0 0 5px rgba(0, 0, 0, 0.5)',
+                    }
 				}
 			},
 			themes: [
@@ -48,8 +56,11 @@ export default {
 						colors: {
 							primary: '#DBFF00',
 							secondary: 'black',
-							background: '#8B9EFF'
-						}
+							background: '#8B9EFF',
+						},
+                        boxShadow: {
+                            'custom': '0 0 5px rgba(219, 255, 0, 0.75)',
+                        }
 					}
 				},
 				{
@@ -58,8 +69,11 @@ export default {
 						colors: {
 							primary: 'white',
 							secondary: 'black',
-							background: 'black'
-						}
+							background: 'black',
+						},
+                        boxShadow: {
+                            'custom': '0 0 5px rgba(255, 255, 255, 0.75)',
+                        }
 					}
 				}
 			]
