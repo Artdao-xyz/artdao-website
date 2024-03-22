@@ -125,7 +125,7 @@
             <hr class="border-primary my-4" />
         </div>
 
-	<div class="flex flex-col lp:grid lp:grid-cols-6 lp:grid-flow-col  gap-6 lp:gap-2 w-5/6 h-fit items-start lp:items-end justify-center lp:justify-start mb-4 lp:mb-0 lp:-mt-24"
+	<div class="flex flex-col lp:grid lp:grid-cols-6 lp:grid-flow-col  gap-6 lp:gap-2 w-5/6 h-fit items-start lp:items-end justify-center lp:justify-start mb-4 lp:mb-0 lp:-mt-24 lp:-ml-24"
 	>
 		<a
 			on:click={() => pickEvent(0)}
