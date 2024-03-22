@@ -125,12 +125,12 @@
             <hr class="border-primary my-4" />
         </div>
 
-	<div class="flex flex-col lp:flex-row gap-6 lp:gap-2 w-5/6 h-fit items-start lp:items-end justify-center lp:justify-between mb-4 lp:mb-0 lp:-mt-12"
+	<div class="flex flex-col lp:grid lp:grid-cols-6 lp:grid-flow-col  gap-6 lp:gap-2 w-5/6 h-fit items-start lp:items-end justify-center lp:justify-start mb-4 lp:mb-0 lp:-mt-24"
 	>
 		<a
 			on:click={() => pickEvent(0)}
 			href={'#'}
-			class="group flex flex-col justify-center items-center"
+			class="group col-span-1 flex flex-col justify-center items-center"
 		>
 			<a href={'#'} class="hidden lp:block lp:invisible group-hover:visible z-10">
 				<img loading="lazy" class="lp:-mb-8" src={projects[0].logo} alt="" />
@@ -145,10 +145,10 @@
 		<a
 			on:click={() => pickEvent(1)}
 			href={'#'}
-			class="group flex flex-col justify-center items-center"
+			class="group flex flex-col lp:col-span-1 justify-center items-center"
 		>
 			<a href={'#'} class="hidden lp:block lp:invisible group-hover:visible z-10">
-				<img loading="lazy" class="lp:-mb-2" src={projects[1].logo} alt="" />
+				<img loading="lazy" class="lp:-mb-4" src={projects[1].logo} alt="" />
 			</a>
 			<a href={'#'}>
 				<h1
@@ -160,10 +160,10 @@
 		<a
 			on:click={() => pickEvent(2)}
 			href={'#'}
-			class="group flex flex-col justify-center items-center"
+			class="group lp:col-span-1 flex flex-col justify-center items-center"
 		>
 			<a href={'#'} class="hidden lp:block lp:invisible group-hover:visible z-10">
-				<img loading="lazy" class="lp:-mb-10" src={projects[2].logo} alt="" />
+				<img loading="lazy" class="lp:-mb-12" src={projects[2].logo} alt="" />
 			</a>
 			<a href={'#'}>
 				<h1
@@ -175,10 +175,10 @@
 		<a
 			on:click={() => pickEvent(3)}
 			href={'#'}
-			class="group flex flex-col justify-center items-center"
+			class="group lp:col-span-1 flex flex-col justify-center items-center"
 		>
 			<a href={'#'} class="hidden lp:block lp:invisible group-hover:visible z-10">
-				<img loading="lazy" src={projects[3].logo} alt="" />
+				<img loading="lazy" class="lp:-mb-4" src={projects[3].logo} alt="" />
 			</a>
 			<a href={'#'}>
 				<h1
@@ -191,10 +191,10 @@
 		<a
 			on:click={() => pickEvent(4)}
 			href={'#'}
-			class="group flex flex-col justify-center items-center"
+			class="group flex flex-col lp:col-span-1 justify-center items-center"
 		>
 			<a href={'#'} class="hidden lp:block lp:invisible group-hover:visible z-10">
-				<img loading="lazy" class="" src={projects[4].logo} alt="" />
+				<img loading="lazy" class="lp:-mb-8" src={projects[4].logo} alt="" />
 			</a>
 			<a href={'#'}>
 				<h1
@@ -207,10 +207,10 @@
 		<a
 			on:click={() => pickEvent(5)}
 			href={'#'}
-			class="group flex flex-col justify-center items-center"
+			class="group lp:col-span-1 flex flex-col justify-center items-center"
 		>
 			<a href={'#'} class="hidden lp:block lp:invisible group-hover:visible z-10">
-				<img loading="lazy" class="" src={projects[5].logo} alt="" />
+				<img loading="lazy" class="lp:-mb-8" src={projects[5].logo} alt="" />
 			</a>
 			<a href={'#'}>
 				<h1
