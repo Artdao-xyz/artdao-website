@@ -43,12 +43,12 @@
 </script>
 
 <div
-	class="h-full flex flex-col justify-around gap-2"
+	class="h-full flex flex-col justify-start lp:justify-around gap-10 lp:gap-2"
 	in:fade={{ delay: 100, duration: 150 }}
 	out:fade={{ delay: 100, duration: 25 }}
 >
 
-	<div class="text-sm mx-8 leading-none tracking-wide flex gap-3">
+	<div class="text-sm mt-4 lp:mt-0 mx-8 leading-none tracking-wide flex gap-3">
 		<input
 			type="radio"
 			id="drop_0"
