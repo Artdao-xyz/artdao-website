@@ -81,8 +81,7 @@
 		{
 			banner: [
 				'/events/nft-paris/nft-paris-1.jpg',
-				'/events/nft-paris/nft-paris-2.jpg',
-				'/events/nft-paris/nft-paris-3.jpg'
+				'/events/nft-paris/nft-paris-2.jpg'
 			],
 			what: 'NFT Paris',
 			where: 'Paris',

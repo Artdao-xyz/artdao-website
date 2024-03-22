@@ -138,9 +138,7 @@
 			<a href={'#'}>
 				<h1
 					class="bg-primary text-secondary py-1 px-3 rounded-sm shadow-md tracking-wider normal-case text-nowrap"
-				>
-					xyk Group
-				</h1>
+				>xyk</h1>
 			</a>
 		</a>
 
@@ -155,9 +153,7 @@
 			<a href={'#'}>
 				<h1
 					class="bg-primary text-secondary py-1 px-3 rounded-sm shadow-md tracking-wider normal-case text-nowrap"
-				>
-					Lychee Protocol
-				</h1>
+				>Lychee</h1>
 			</a>
 		</a>
 
@@ -172,9 +168,7 @@
 			<a href={'#'}>
 				<h1
 					class="bg-primary text-secondary py-1 px-3 rounded-sm shadow-md tracking- normal-case text-nowrap"
-				>
-					Non\Places Exhibition
-				</h1>
+				>Non\Places</h1>
 			</a>
 		</a>
 

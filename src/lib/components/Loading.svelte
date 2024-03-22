@@ -18,7 +18,7 @@
 <!-- Loading GIF -->
 <div
 	bind:this={progressBarContainer}
-	class="bg-white absolute left-0 top-0 w-full h-full flex flex-col justify-center items-center gap-4 z-20"
+	class="bg-white absolute left-0 top-0 w-full h-full flex flex-col justify-center items-center gap-4 z-50"
 >
 	<label class="h-[25%]" for={progressBar}
 		><img loading="lazy" class="h-full" src="/loading.gif" alt="Loading gif" /></label
