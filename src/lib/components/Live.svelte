@@ -45,7 +45,7 @@
 </script>
 
 <div
-	class="transition-all duration-300 ease-in-out fixed scale-75 lp:scale-100 flex h-[100px] w-[500px] top-2/3 lp:top-1/4 bg-black rounded-l-2xl shadow-xl z-10 items-center {isLive
+	class="transition-all duration-300 ease-in-out fixed scale-75 lp:scale-100 flex h-[100px] w-[500px] top-1/4 bg-black rounded-l-2xl shadow-xl z-50 items-center {isLive
 		? 'right-[-65px] lp:right-[0px]'
 		: 'right-[-350px] lp:right-[-380px]'}"
 >

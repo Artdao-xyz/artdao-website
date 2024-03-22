@@ -22,6 +22,14 @@
 
 <div class="hidden lp:col-span-2 flex-none lp:flex lp:items-center justify-end lp:gap-6">
 	<div class="flex items-center justify-between gap-6">
+        <a href={'https://discord.com/invite/BV2ZNCSa'}
+        target="_blank"
+        ><img
+            loading="lazy"
+            src={`/discord-${estilos[index].primary_media}.svg`}
+            alt="Discord Logo"
+        /></a
+    >
 		<a href={'https://twitter.com/Artdao_xyz'} target="_blank"
 			><img
 				loading="lazy"
@@ -35,16 +43,6 @@
 				loading="lazy"
 				src={`/instagram-${estilos[index].primary_media}.svg`}
 				alt="Instagram Logo"
-			/></a
-		>
-		<a
-			href={'https://discord.gg/BV2ZNCSa'}
-            target="_blank"
-			class="text-lg text-primary underline font-normal flex gap-2"
-			>our discord<img
-				loading="lazy"
-				src={`/link-arrow-${estilos[index].primary_media}.svg`}
-				alt="Link Arrow"
 			/></a
 		>
 	</div>

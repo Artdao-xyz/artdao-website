@@ -125,8 +125,7 @@
             <hr class="border-primary my-4" />
         </div>
 
-	<div
-		class="flex flex-col lp:flex-row gap-6 lp:gap-16 w-5/6 h-fit items-start lp:items-end justify-center lp:justify-start mb-4 lp:mb-0 lp:-mt-12"
+	<div class="flex flex-col lp:flex-row gap-6 lp:gap-2 w-5/6 h-fit items-start lp:items-end justify-center lp:justify-between mb-4 lp:mb-0 lp:-mt-12"
 	>
 		<a
 			on:click={() => pickEvent(0)}
@@ -185,7 +184,7 @@
 			class="group flex flex-col justify-center items-center"
 		>
 			<a href={'#'} class="hidden lp:block lp:invisible group-hover:visible z-10">
-				<img loading="lazy" class="scale-150" src={projects[3].logo} alt="" />
+				<img loading="lazy" src={projects[3].logo} alt="" />
 			</a>
 			<a href={'#'}>
 				<h1

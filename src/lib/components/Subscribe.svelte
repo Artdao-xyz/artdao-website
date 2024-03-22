@@ -48,14 +48,39 @@
 			error = false;
 		}, 4000);
 	};
+    var input;
+        var submit;
 
 	onMount(() => {
 		const styleStore = indexStyleStore.subscribe((value) => {
 			index = value;
 		});
 
+        // document.addEventListener("DOMContentLoaded", function() {
+
+        onfocus = () => {
+            console.log('focus');
+            if (input.value.trim().length > 0) {
+                submit.style.visibility = "visible";
+                }
+            };
+
+        onkeyup = ()  => {
+
+            if (input.value.trim().length > 0) {
+                submit.style.visibility = "visible";
+            } else {
+                submit.style.visibility = "hidden";
+            }
+        };
+        // });
+
 		return styleStore;
 	});
+
+
+
+
 </script>
 
 
@@ -68,26 +93,23 @@
     method="POST"
     action="/api/subscribe"
     id="subscribeForm"
-    class="text-primary w-screen lp:w-1/3 flex items-center justify-center gap-2 rounded-lg"
+    class="text-primary w-screen lp:w-auto flex flex-col lp:flex-row items-center justify-center gap-2"
 >
     <label for="email" class="hidden self-start font-medium text-xs lp:text-sm my-auto tracking-wider"
         ></label
     >
     <input
+        bind:this={input}
         type="email"
         name="EMAIL"
-        class="peer w-5/6 invalid bg-transparent font-normal text-base border-primary border-b-[1px] outline-none leading-snug tracking-wide placeholder:opacity-85 placeholder:invert placeholder:tracking-wide"
+        class="peer inline-block w-[90%] lp:w-full invalid bg-transparent font-normal text-base outline-none leading-snug tracking-wide placeholder:opacity-85 placeholder:font-light placeholder:invert placeholder:tracking-wide border-primary border-b-[1px]"
         required
         value=""
         placeholder="Enter email to subscribe"
     />
-    <button type="submit" class="outline-none flex-none peer-focus:visible"
-        ><img
-            loading="lazy"
-            class="opacity-50"
-            src={`/arrow-subscribe-${estilos[index].primary_media}.svg`}
-            alt="Subscribe"
-        /></button
+    <button bind:this={submit}
+    type="submit" class="outline-none rounded-lg shadow py-2 px-3 text-sm font-medium flex-none invisible leading-snug tracking-wide"
+        >submit</button
     >
     <div aria-hidden="true" style="position: absolute; left: -5000px;">
         <!-- /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */ -->

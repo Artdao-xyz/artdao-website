@@ -89,7 +89,7 @@
     class="nav-links duration-1000 text-primary text-sm lp:duration-0 lp:static absolute lp:block lp:min-h-fit h-screen left-0 top-[-2200%] lp:h-auto w-screen lp:w-auto 
     bg-background opacity-0 lp:opacity-100 flex flex-col lp:flex-row justify-center lp:justify-end items-center font-semibold uppercase tracking-wide"
 >
-    <ul class="flex flex-grow lp:flex-row flex-col justify-center lp:justify-end items-center gap-8">
+    <ul class="flex flex-grow lp:flex-row flex-col justify-center lp:justify-end items-center gap-8 lp:gap-4">
         <li>
             <a
                 on:click={() => setSection(0)}
@@ -156,7 +156,15 @@
         <div class="lp:hidden">
             <Subscribe />
         </div>
-        <div class="flex items-center justify-center gap-4 lp:hidden">
+            <div class="flex items-center justify-center gap-4 lp:hidden">
+                <a href={'https://discord.com/invite/BV2ZNCSa'}
+                target="_blank"
+                ><img
+                    loading="lazy"
+                    src={`/discord-${estilos[index].primary_media}.svg`}
+                    alt="Discord Logo"
+                /></a
+            >
             <a href={'https://twitter.com/Artdao_xyz'} target="_blank"
                 ><img loading="lazy" src={`/x-${estilos[index].primary_media}.svg`} alt="X Logo" /></a
             >
@@ -165,14 +173,6 @@
                     loading="lazy"
                     src={`/instagram-${estilos[index].primary_media}.svg`}
                     alt="Instagram Logo"
-                /></a
-            >
-            <a href={'https://discord.com/invite/BV2ZNCSa'}
-                target="_blank"
-                ><img
-                    loading="lazy"
-                    src={`/discord-${estilos[index].primary_media}.svg`}
-                    alt="Discord Logo"
                 /></a
             >
         </div>

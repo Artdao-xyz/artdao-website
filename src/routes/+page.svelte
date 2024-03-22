@@ -199,7 +199,7 @@
 
 	<footer
 		bind:this={footer}
-		class={`bg-background transition-height duration-100 ease-in-out flex flex-col w-full lp:w-[95%] dp:max-w-[1440px] lp:mx-auto my-auto -translate-x-1/2 mx-auto font-clash-display font-normal z-20 fixed lp:px-8 bottom-0 left-1/2 shadow-custom  lp:rounded-t-2xl ${isOpen ? "py-6 h-dvh lp:h-[95%] bottom-1/2 translate-y-1/2 lp:rounded-2xl" : "pt-5 lp:pt-8 h-[10%]"}`}
+		class={`bg-background transition-height duration-100 ease-in-out flex flex-col w-full lp:w-[95%] dp:max-w-[1440px] lp:mx-auto my-auto -translate-x-1/2 mx-auto font-clash-display font-normal z-20 fixed lp:px-6 bottom-0 left-1/2 shadow-custom  lp:rounded-t-2xl ${isOpen ? "py-6 h-dvh lp:h-[95%] bottom-1/2 translate-y-1/2 lp:rounded-2xl" : "pt-5 lp:pt-8 h-[10%]"}`}
 	>
 
 		<div class="grid grid-cols-5 gap-4 items-center justify-between">

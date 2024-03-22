@@ -54,7 +54,7 @@
 			/></button
 		>
 	</div>
-	<div class="w-full h-fit">
+	<div class="w-fit h-fit">
 		<img
 			loading="lazy"
 			class="h-full w-full object-cover"
