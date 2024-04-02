@@ -87,6 +87,18 @@
 			where: 'Paris',
 			info: 'Lukas Truniger Showcase',
 			address: '101 Rue Réaumur75002, Paris'
+		},
+		{
+			banner: [
+				'/events/orb/orb-1.png',
+				'/events/orb/orb-2.png',
+				'/events/orb/orb-3.png',
+				'/events/orb/orb-4.png'
+			],
+			what: 'O.R.B',
+			where: 'São Paulo',
+			info: 'Exhibition',
+			address: 'MARCH 23th - APRIL 6th /2024 SÃO PAULO, BRAZIL'
 		}
 	];
 
@@ -96,6 +108,7 @@
 	let isParisOpen = false;
 	let isBotogaOpen = false;
 	let isDenverOpen = false;
+    let isSaoPauloOpen = false;
 
 	onMount(() => {
 		indexStyleStore.subscribe((value) => {
@@ -113,6 +126,7 @@
 		isParisOpen = false;
 		isBotogaOpen = false;
 		isDenverOpen = false;
+        isSaoPauloOpen = false;
 	}
 
 	const openLisboa = () => {
@@ -153,6 +167,15 @@
 		isBotogaOpen = false;
 	};
 
+    const openSaoPaulo = () => {
+        isSaoPauloOpen = isSaoPauloOpen ? false : true;
+        isBuenosAiresOpen = false;
+        isLisboaOpen = false;
+        isParisOpen = false;
+        isBotogaOpen = false;
+        isDenverOpen = false;
+    };
+
 	const pickEvent = (event) => {
 		selectedEvent = event;
 		isParisOpen = false;
@@ -169,6 +192,7 @@
 		isLisboaOpen = false;
 		isBotogaOpen = false;
 		isDenverOpen = false;
+        isSaoPauloOpen = false;
 	};
 </script>
 
@@ -214,7 +238,7 @@
 
 		<a
 			href={'#'}
-			class="relative lp:absolute bg-primary text-secondary lp:left-[27.5%] lp:top-[65%] sp:top-[55%] bg:top-[60%] bg:left-[30%] 2k:left-[28%] px-3 py-1.5 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide"
+			class="relative lp:absolute bg-primary text-secondary lp:left-[27.5%] lp:top-[65%] sp:top-[60%] bg:top-[60%] bg:left-[30%] 2k:left-[28%] px-3 py-1.5 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide"
 		>
 			<a on:click={openBuenosAires} href={'#'}>
 				<p class="normal-case text-xl font-medium font-neue-power tracking-wide">Buenos Aires</p>
@@ -338,6 +362,30 @@
 					class="flex justify-between items-center py-2 gap-36"
 				>
 					<p class="text-sm font-normal tracking-wide">NFT Paris</p>
+					<img
+						loading="lazy"
+						src={`/events/events-pick-${estilos[index].secondary_media}.svg`}
+						alt="pick event"
+					/>
+				</a>
+			</div>
+		</a>
+		
+        <a
+			href={'#'}
+			class="relative lp:absolute bg-primary text-secondary lp:left-[27.5%] lp:top-[65%] sp:top-[52%] bg:top-[54%] bg:left-[30%] 2k:left-[28%] px-3 py-1.5 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide"
+		>
+			<a on:click={openSaoPaulo} href={'#'}>
+				<p class="normal-case text-xl font-medium font-neue-power tracking-wide">São Paulo</p>
+			</a>
+			<div class={`${isSaoPauloOpen ? 'block' : 'hidden'} h-full`}>
+				<hr class="border-secondary mt-2" />
+				<a
+					on:click={() => pickEvent(7)}
+					href={'#'}
+					class="flex justify-between items-center py-2 gap-36"
+				>
+					<p class="text-sm font-normal tracking-wide">O.R.B</p>
 					<img
 						loading="lazy"
 						src={`/events/events-pick-${estilos[index].secondary_media}.svg`}

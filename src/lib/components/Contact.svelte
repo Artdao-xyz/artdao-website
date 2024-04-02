@@ -22,7 +22,7 @@
 
 <div class="hidden lp:col-span-2 flex-none lp:flex lp:items-center justify-end lp:gap-6">
 	<div class="flex items-center justify-between gap-6">
-        <a href={'https://discord.com/invite/BV2ZNCSa'}
+        <a href={'https://discord.gg/NTUZRU3ZNE'}
         target="_blank"
         ><img
             loading="lazy"
