@@ -66,16 +66,6 @@
 			// }
 		};
 
-        const url = new URL(window.location.href);
-		let sectionId = url.hash.substring(1); // Remove '#' from the hash
-
-		if (sectionId === 'studio') {
-            window.scrollTo(0, 3 * height);
-		} else if (sectionId === 'events') {
-            window.scrollTo(0, 2 * height);
-
-        }
-
 		indexStyleStore.subscribe((value) => {
 			index = value;
 		});
