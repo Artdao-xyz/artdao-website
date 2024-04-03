@@ -19,8 +19,9 @@
 			],
 			what: 'Psipsikoko',
 			where: 'Buenos Aires',
-			info: 'exhibition',
-			address: 'OCTOBER 26th-27th/2023 - AURA FABRICA, BUENOS AIRES'
+			info: 'Exhibition',
+			date: 'OCTOBER 26th-27th/2023',
+			address: 'AURA FABRICA, BUENOS AIRES'
 		},
 		{
 			banner: [
@@ -30,8 +31,9 @@
 			],
 			what: 'Non\\Places',
 			where: 'Paris',
-			info: 'exhibition/party',
-			address: 'JULY 18th-20th/2023 - 31 RUE HENRI CHEVREU, PARIS'
+			info: 'Exhibition/Party',
+			date: 'JULY 18th-20th/2023',
+			address: '31 RUE HENRI CHEVREU, PARIS'
 		},
 		{
 			banner: [
@@ -41,8 +43,9 @@
 			],
 			what: 'Intertwined',
 			where: 'NFC Lisbon',
-			info: 'exhibition/panels/After Party',
-			address: 'JUNE 6th-8th/2023 - Armazém souL, lisbon'
+			info: 'Exhibition/Talks/After Party',
+			date: 'JUNE 6th-8th/2023',
+			address: 'Armazém souL, lisbon'
 		},
 		{
 			banner: [
@@ -54,7 +57,8 @@
 			what: 'Cero uno',
 			where: 'Buenos Aires',
 			info: 'exhibition/talks/After Party',
-			address: 'MARCH 31th/2023 - ARTLAB, BUENOS AIRES'
+			date:'MARCH 31th/2023',
+			address: 'ARTLAB, BUENOS AIRES'
 		},
 		{
 			banner: [
@@ -64,8 +68,9 @@
 			],
 			what: 'ETH Denver',
 			where: 'Denver',
-			info: 'exhibition/workshops/AFTER party',
-			address: 'MARCH 2th - 6th /2023 - DENVER, COLORADO'
+			info: 'Exhibition',
+			date:'MARCH 2th-6th/2023',
+			address: 'DENVER, COLORADO'
 		},
 		{
 			banner: [
@@ -76,7 +81,8 @@
 			what: 'DEVCON',
 			where: 'Bogotá',
 			info: 'exhibition/mural/talks',
-			address: 'OCTOBER 11th-14th/2022 - AGORA BOGOTÁ CONVENTION CENTER, BOGOTÁ'
+			date:'OCTOBER 11th-14th/2022',
+			address: 'BOGOTÁ, COlOMBIA'
 		},
 		{
 			banner: [
@@ -86,7 +92,8 @@
 			what: 'NFT Paris',
 			where: 'Paris',
 			info: 'Lukas Truniger Showcase',
-			address: '101 Rue Réaumur 75002, Paris'
+			date: 'FEBRUARY 23rd/2023 101',
+			address: 'Rue Réaumur, Paris'
 		},
 		{
 			banner: [
@@ -98,7 +105,8 @@
 			what: 'O.R.B',
 			where: 'São Paulo',
 			info: 'Exhibition',
-			address: 'MARCH 23th - APRIL 6th /2024 SÃO PAULO, BRAZIL'
+			date:'MARCH 23rd-APRIL 6th /2024',
+			address: 'CAROÇO, SÃO PABLO,'
 		},
 		{
 			banner: [
@@ -110,7 +118,8 @@
 			what: 'Underworld',
 			where: 'Lisbon',
 			info: 'Exhibition/Party',
-			address: 'JULY 18th-20th/2023 31 RUE HENRI CHEVREU, PARIS'
+			date:'NOV 10th-16th/2023',
+			address: 'ARROZ ESTUDIOS, LISBON'
 		}
 	];
 
@@ -416,9 +425,9 @@
 		
 	</div>
 
-	{#each events as { banner, what, where, info, address }, index (index)}
+	{#each events as { banner, what, where, info, date, address }, index (index)}
 		{#if index === selectedEvent}
-			<Event on:closeEvent={closeEvent} {banner} {what} {where} {info} {address} />
+			<Event on:closeEvent={closeEvent} {banner} {what} {where} {info} {date} {address} />
 		{/if}
 	{/each}
 

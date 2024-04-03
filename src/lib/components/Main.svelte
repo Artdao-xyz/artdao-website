@@ -38,7 +38,8 @@
 
 		content = 'building for\n a new age\n of culture';
 		new TextScramble(h1, content);
-	});
+
+	})
 </script>
 
 <a on:click={handleFooterClick} class="cursor-default" href={'#'}>

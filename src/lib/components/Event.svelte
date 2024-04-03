@@ -3,6 +3,7 @@
 	export let what;
 	export let where;
 	export let info;
+	export let date;
 	export let address;
 
 	import { onMount, createEventDispatcher } from 'svelte';
@@ -78,8 +79,9 @@
             >
         </div>
 	</div>
-	<div class="w-3/4 text-sm tb:text-xl lp:text-sm uppercase px-6 py-4 lp:py-10 flex flex-col gap-4">
+	<div class="w-3/4 text-sm tb:text-xl lp:text-sm uppercase px-6 py-4 lp:py-6 flex flex-col gap-2">
 		<p class="font-semibold">{info}</p>
+		<p class="text-xs">{date}</p>
 		<p class="text-xs">{address}</p>
 	</div>
 </div>

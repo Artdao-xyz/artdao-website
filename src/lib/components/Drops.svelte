@@ -19,7 +19,7 @@
 
 	let drops = [
 		{
-			banner: '/drops/banner-psipsikoko.png',
+			banner: '/drops/banner-psipsikoko-comingsoon.png',
 			banner_mobile: '/drops/banner-psipsikoko-mobile.png',
 			name: 'Psipsikoko',
 			artists: 'Frenetik Void & Julian Brangold',

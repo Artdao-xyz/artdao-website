@@ -16,7 +16,7 @@
 			logo: '/studio/xyk-logo.png',
 			who: 'xyk',
 			what: 'group',
-			info: 'Branding Identity/web',
+			info: 'Identity/web',
 			date: '2023',
 			link: 'http://www.artdao.xyz'
 		},
@@ -26,7 +26,7 @@
 			logo: '/studio/lychee-logo.png',
 			who: 'lychee',
 			what: 'protocol',
-			info: 'Branding Identity/web',
+			info: 'Identity/web/Dapp',
 			date: '2023',
 			link: 'http://www.artdao.xyz'
 		},
@@ -36,7 +36,7 @@
 			logo: '/studio/nonplaces-logo.png',
 			who: 'non\\places',
 			what: 'exhibition',
-			info: 'Event branding/Physical Graphics',
+			info: 'Identity/Web',
 			date: '2023',
 			link: 'http://www.artdao.xyz'
 		},
@@ -46,7 +46,7 @@
 			logo: '/studio/tosta-logo.png',
 			who: 'tosta',
 			what: 'music',
-			info: 'logo design',
+			info: 'logo',
 			date: '2024',
 			link: 'http://www.artdao.xyz'
 		},
@@ -56,7 +56,7 @@
 			logo: '/studio/soar-logo.png',
 			who: 'SOAR',
 			what: 'finance',
-			info: 'identity & web/app design',
+			info: 'identity/web/dapp',
 			date: '2024',
 			link: '-'
 		},
@@ -66,7 +66,7 @@
 			logo: '/studio/arcade-logo.png',
 			who: 'arcade',
 			what: 'finance',
-			info: 'identity + game assets + web design',
+			info: 'identity/game design/web',
 			date: '2024',
 			link: '-'
 		}
