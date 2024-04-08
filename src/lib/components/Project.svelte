@@ -62,9 +62,14 @@
 	<div class="text-sm tb:text-xl lp:text-sm uppercase px-6 py-4 lp:py-6 flex flex-col gap-2">
 		<p class="font-semibold">{info}</p>
 		<p class="text-sm">{date}</p>
-		<a href={link} target="_blank" class="underline flex items-center gap-2 underline-offset-2"
-			>{who} website
-			<img loading="lazy" src={`/link-arrow-${estilos[index].secondary_media}.svg`} alt="link" /></a
-		>
+		{#if link != "-"}
+			<a href={link} target="_blank" class="underline flex items-center gap-2 underline-offset-2"
+				>{who} website
+				<img loading="lazy" src={`/link-arrow-${estilos[index].secondary_media}.svg`} alt="link" /></a
+			>
+		{:else}
+			<p class="font-semibold">-</p>
+		{/if}
 	</div>
+		
 </div>

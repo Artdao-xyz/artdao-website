@@ -18,7 +18,7 @@
 			what: 'group',
 			info: 'Identity/web',
 			date: '2023',
-			link: 'http://www.artdao.xyz'
+			link: 'https://xykgroup.com'
 		},
 		{
 			banner: '/studio/lychee.png',
@@ -28,7 +28,7 @@
 			what: 'protocol',
 			info: 'Identity/web/Dapp',
 			date: '2023',
-			link: 'http://www.artdao.xyz'
+			link: '-'
 		},
 		{
 			banner: '/studio/nonplaces.png',
@@ -38,7 +38,7 @@
 			what: 'exhibition',
 			info: 'Identity/Web',
 			date: '2023',
-			link: 'http://www.artdao.xyz'
+			link: '-'
 		},
 		{
 			banner: '/studio/tosta.png',
@@ -48,7 +48,7 @@
 			what: 'music',
 			info: 'logo',
 			date: '2024',
-			link: 'http://www.artdao.xyz'
+			link: '-'
 		},
 		{
 			banner: '/studio/soar.png',
@@ -135,7 +135,7 @@
             <hr class="border-primary my-4" />
         </div>
 
-	<div class="flex flex-col lp:grid lp:grid-cols-7 lp:grid-flow-col  gap-6 lp:gap-2 w-5/6 h-fit items-start lp:items-end justify-center lp:justify-start mb-4 lp:mb-0 lp:-mt-24 lp:-ml-24"
+	<div class="flex flex-col lp:grid lp:grid-cols-7	 lp:grid-flow-col  gap-6 lp:gap-2 w-5/6 h-fit items-start lp:items-end justify-center lp:justify-start mb-4 lp:mb-0 lp:-mt-24 lp:-ml-24"
 	>
 		<a
 			on:click={() => pickEvent(0)}
