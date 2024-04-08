@@ -43,6 +43,7 @@
         }else{
             window.scrollTo(0, _section * height);
         }
+        hideMenu();
 	};
 
     let currentSection = 0;

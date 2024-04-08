@@ -69,6 +69,16 @@
 			info: 'identity/game design/web',
 			date: '2024',
 			link: '-'
+		},
+		{
+			banner: '/studio/quarry.png',
+			banner_mobile: '/studio/quarry-mobile.png',
+			logo: '/studio/quarry-logo.png',
+			who: 'quarry',
+			what: 'app',
+			info: 'dapp',
+			date: '2024',
+			link: '-'
 		}
 	];
 
@@ -125,7 +135,7 @@
             <hr class="border-primary my-4" />
         </div>
 
-	<div class="flex flex-col lp:grid lp:grid-cols-6 lp:grid-flow-col  gap-6 lp:gap-2 w-5/6 h-fit items-start lp:items-end justify-center lp:justify-start mb-4 lp:mb-0 lp:-mt-24 lp:-ml-24"
+	<div class="flex flex-col lp:grid lp:grid-cols-7 lp:grid-flow-col  gap-6 lp:gap-2 w-5/6 h-fit items-start lp:items-end justify-center lp:justify-start mb-4 lp:mb-0 lp:-mt-24 lp:-ml-24"
 	>
 		<a
 			on:click={() => pickEvent(0)}
@@ -217,6 +227,22 @@
 					class="bg-primary text-secondary py-1 px-3 rounded-sm shadow-md tracking-wider normal-case text-nowrap"
 				>
                     ArcadeFi
+				</h1>
+			</a>
+		</a>
+		<a
+			on:click={() => pickEvent(6)}
+			href={'#'}
+			class="group lp:col-span-1 flex flex-col justify-center items-center"
+		>
+			<a href={'#'} class="hidden lp:block lp:invisible group-hover:visible z-10">
+				<img loading="lazy" class="lp:-mb-8" src={projects[6].logo} alt="" />
+			</a>
+			<a href={'#'}>
+				<h1
+					class="bg-primary text-secondary py-1 px-3 rounded-sm shadow-md tracking-wider normal-case text-nowrap"
+				>
+                    Quarry
 				</h1>
 			</a>
 		</a>
