@@ -48,7 +48,7 @@
 	out:fade={{ delay: 100, duration: 25 }}
 >
 
-	<div class="lp:mx-20 flex flex-col justify-between gap-8 lp:gap-2">
+	<div class="lp:mx-20 flex flex-col flex-grow justify-center gap-6 lp:gap-2">
 		<div class="text-sm leading-none tracking-wide flex gap-3">
 			<input
 				type="radio"
