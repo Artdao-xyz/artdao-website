@@ -108,7 +108,7 @@
         placeholder="Enter email to subscribe"
     />
     <button bind:this={submit}
-    type="submit" class="outline-none rounded-lg shadow-custom py-2 px-3 text-sm font-medium flex-none invisible leading-snug tracking-wide"
+    type="submit" class="outline-none rounded-lg shadow-custom py-1 px-2 text-sm font-medium flex-none invisible leading-snug tracking-wide"
         >submit</button
     >
     <div aria-hidden="true" style="position: absolute; left: -5000px;">

@@ -199,7 +199,7 @@
 
 	<footer
 		bind:this={footer}
-		class={`bg-background transition-height duration-100 ease-in-out flex flex-col w-full lp:w-[95%] dp:max-w-[1440px] lp:mx-auto my-auto -translate-x-1/2 mx-auto font-clash-display font-normal z-20 fixed lp:px-6 bottom-0 left-1/2 shadow-custom  lp:rounded-t-2xl ${isOpen ? "py-6 h-dvh lp:h-[95%] bottom-1/2 translate-y-1/2 lp:rounded-2xl" : "pt-5 lp:pt-8 h-[10%]"}`}
+		class={`bg-background transition-height duration-100 ease-in-out flex flex-col w-full lp:w-[95%] dp:max-w-[1440px] lp:mx-auto my-auto -translate-x-1/2 mx-auto font-clash-display font-normal z-20 fixed lp:px-6 bottom-0 left-1/2 shadow-custom  lp:rounded-t-2xl ${isOpen ? "p-4 h-dvh lp:h-[97%] bottom-1/2 translate-y-1/2 lp:rounded-2xl" : "pt-5 pb-0 lp:pt-8 h-[10%]"}`}
 	>
 
 		<div class="grid grid-cols-5 gap-4 items-center justify-between">
@@ -226,7 +226,7 @@
             <!-- DESKTOP -->
 
 			<a
-				class="self-start text-primary text-sm lp:text-xl mx-auto lp:mx-0 text-center lp:text-left tracking-wider leading-5 mt-6 lp:mt-0 mb-2 lp:mb-0 col-span-full lp:col-span-2 text-nowrap {isOpen
+				class="self-start text-primary text-lg lp:text-xl mx-auto lp:mx-0 text-center lp:text-left tracking-wider leading-5 mt-4 lp:mt-0 mb-2 lp:mb-0 col-span-full lp:col-span-2 text-nowrap {isOpen
 					? ''
 					: 'hidden lp:block'}"
 				on:click={openFooter}

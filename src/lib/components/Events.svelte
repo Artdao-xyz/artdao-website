@@ -229,7 +229,7 @@
 	in:fade={{ delay: 100, duration: 150 }}
 	out:fade={{ delay: 100, duration: 25 }}
 		on:click={closeEvent}
-		class="cursor-default overscroll-y-contain h-fit flex-grow"
+		class="cursor-default overscroll-y-contain h-fit flex-grow overflow-y-hidden"
 		href={'#'}
 		><img
 			loading="lazy"
@@ -242,7 +242,7 @@
 	<div class="h-[80%] lp:h-auto w-fit mx-auto flex flex-col justify-center items-center gap-8">
 		<a
 			href={'#'}
-			class="relative lp:absolute bg-primary text-secondary lp:left-[25%] lp:top-[35%] dp:left-[25%] lp:top-[45%] sp:top-[32%] dp:top-[35%] bg:top-[35%] bg:left-[25%] 2k:top-[38%] 2k:left-[25%] px-3 py-1 rounded-sm shadow-md gap-3"
+			class="relative lp:absolute bg-primary text-secondary lp:left-[18%] lp:top-[37%] sp:top-[35%] sp:left-[18%] dp:left-[19%] dp:top-[33%] bg:top-[35%] bg:left-[20%] 2k:top-[38%] 2k:left-[20%] px-3 py-1 rounded-sm shadow-md gap-3"
 		>
 			<a on:click={openDenver} href={'#'}>
 				<p class="normal-case text-xl font-medium font-neue-power tracking-wide">Denver</p>
@@ -303,7 +303,7 @@
 
 		<a
 		href={'#'}
-		class="relative lp:absolute bg-primary text-secondary lp:left-[32%] lp:top-[57%] sp:top-[57%] dp:top-[57%] dp:left-[32%] bg:top-[54%] bg:left-[32%] 2k:top-[54%] 2k:left-[32%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide"
+		class="relative lp:absolute bg-primary text-secondary lp:left-[32%] lp:top-[57%] sp:top-[56%] dp:top-[57%] dp:left-[32%] bg:top-[54%] bg:left-[32%] 2k:top-[54%] 2k:left-[32%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide"
 	>
 		<a on:click={openSaoPaulo} href={'#'}>
 			<p class="normal-case text-xl font-medium font-neue-power tracking-wide">São Paulo</p>
@@ -327,7 +327,7 @@
 
 		<a
 			href={'#'}
-			class="relative lp:absolute bg-primary text-secondary lp:left-[28%] lp:top-[49%] sp:left-[27%] sp:top-[45%] dp:left-[30%] dp:top-[50%] bg:top-[48%] bg:left-[28%] 2k:top-[48%] 2k:left-[28%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide"
+			class="relative lp:absolute bg-primary text-secondary lp:left-[28%] lp:top-[49%] sp:left-[27%] sp:top-[48%] dp:left-[27%] dp:top-[48%] bg:top-[48%] bg:left-[28%] 2k:top-[48%] 2k:left-[28%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide"
 		>
 			<a on:click={openBogota} href={'#'}>
 				<p class="normal-case text-xl font-medium font-neue-power tracking-wide">Bogotá</p>
