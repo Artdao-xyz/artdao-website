@@ -180,7 +180,7 @@
 				<a href={'#'} class="w-fit">
 					<h1
 						class="text-xl text-center bg-primary text-secondary py-1 px-3 rounded-sm shadow-md tracking-wider normal-case text-nowrap"
-					>Non/Places</h1>
+					>Non\Places</h1>
 				</a>
 			</div>
 		</a>
