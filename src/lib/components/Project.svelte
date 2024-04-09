@@ -29,7 +29,7 @@
 </script>
 
 <div
-	class="fixed h-[80%] w-[95%] tb:w-fit tb:h-fit left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-secondary lp:flex flex flex-col justify-between lp:mx-auto lp:rounded-md tracking-wider z-30 uppercase"
+	class="fixed h-[80%] w-[95%] tb:w-1/2 tb:h-fit left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-secondary lp:flex flex flex-col justify-between lp:mx-auto lp:rounded-md tracking-wider z-30 uppercase"
 >
 	<div class="flex justify-between p-6">
 		<div class="flex items-center gap-2">
