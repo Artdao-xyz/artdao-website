@@ -20,9 +20,6 @@
 	import Mission from '$lib/components/Mission.svelte';
 	import Contact from '$lib/components/Contact.svelte';
 
-	import smoothscroll from 'smoothscroll-polyfill';
-
-
 	import { indexSectionStore, indexStyleStore, isOpenStore } from '$lib/store.js';
 	import Control from '../lib/components/Control.svelte';
 
