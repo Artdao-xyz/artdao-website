@@ -37,9 +37,9 @@
             document.body.style.overflow = 'auto';
             window.scrollTo(0, _section * height);
 
-            setTimeout(() => {
-                document.body.style.overflow = 'hidden';
-            }, 750);
+            // setTimeout(() => {
+            //     document.body.style.overflow = 'hidden';
+            // }, 750);
         }else{
             window.scrollTo(0, _section * height);
         }
