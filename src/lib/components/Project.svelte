@@ -29,7 +29,7 @@
 </script>
 
 <div
-	class="fixed h-[80%] w-[95%] tb:w-fit tb:h-fit left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-secondary lp:flex flex flex-col justify-between lp:mx-auto lp:rounded-md tracking-wider z-30 uppercase"
+	class="fixed h-[80%] w-[95%] tb:w-1/2 tb:h-fit left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-secondary lp:flex flex flex-col justify-between lp:mx-auto lp:rounded-md tracking-wider z-30 uppercase"
 >
 	<div class="flex justify-between p-6">
 		<div class="flex items-center gap-2">
@@ -62,9 +62,14 @@
 	<div class="text-sm tb:text-xl lp:text-sm uppercase px-6 py-4 lp:py-6 flex flex-col gap-2">
 		<p class="font-semibold">{info}</p>
 		<p class="text-sm">{date}</p>
-		<a href={link} target="_blank" class="underline flex items-center gap-2 underline-offset-2"
-			>{who} website
-			<img loading="lazy" src={`/link-arrow-${estilos[index].secondary_media}.svg`} alt="link" /></a
-		>
+		{#if link != "-"}
+			<a href={link} target="_blank" class="underline flex items-center gap-2 underline-offset-2"
+				>{who} website
+				<img loading="lazy" src={`/link-arrow-${estilos[index].secondary_media}.svg`} alt="link" /></a
+			>
+		{:else}
+			<p class="font-semibold">-</p>
+		{/if}
 	</div>
+		
 </div>

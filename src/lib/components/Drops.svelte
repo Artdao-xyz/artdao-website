@@ -19,7 +19,7 @@
 
 	let drops = [
 		{
-			banner: '/drops/banner-psipsikoko.png',
+			banner: '/drops/banner-psipsikoko-comingsoon.png',
 			banner_mobile: '/drops/banner-psipsikoko-mobile.png',
 			name: 'Psipsikoko',
 			artists: 'Frenetik Void & Julian Brangold',
@@ -43,33 +43,33 @@
 </script>
 
 <div
-	class="h-full flex flex-col justify-start lp:justify-around gap-10 lp:gap-2"
+	class="h-full flex flex-col justify-center lp:justify-between overflow-y-hidden z-20"
 	in:fade={{ delay: 100, duration: 150 }}
 	out:fade={{ delay: 100, duration: 25 }}
 >
 
-	<div class="text-sm mt-4 lp:mt-0 mx-8 leading-none tracking-wide flex gap-3">
-		<input
-			type="radio"
-			id="drop_0"
-			value="0"
-			bind:group={pickedDrop}
-			on:change={handleDropChange}
-			class="hidden peer/0"
-		/>
-		<label
-			for="drop_0"
-			class="inline-block cursor-pointer bg-background text-primary font-neue-power font-semibold p-1 leading-none tracking-wide rounded-sm shadow peer-checked/0:bg-primary peer-checked/0:text-secondary border-primary border-2"
-			>#000</label
-		>
-		<!--           
-            <input type="radio" id="drop_1" value="1" bind:group={pickedDrop} on:change={handleDropChange} class="hidden peer/1"/>
-            <label for="drop_1" class="inline-block cursor-pointer bg-background text-primary px-3.5 py-2 rounded-sm shadow peer-checked/1:bg-primary peer-checked/1:text-secondary border-primary border-2">#001</label> -->
-
-		<!-- <input type="radio" id="drop_2" value="2" bind:group={pickedDrop} on:change={handleDropChange} class="hidden peer/2"/>
-            <label for="drop_2" class="inline-block cursor-pointer bg-background text-primary px-3.5 py-2 rounded-sm shadow peer-checked/2:bg-primary peer-checked/2:text-secondary border-primary border-2">#002</label> -->
-	</div>
-    <div class="mx-8">
+	<div class="lp:mx-20 flex flex-col flex-grow justify-center gap-6 lp:gap-2">
+		<div class="text-sm leading-none tracking-wide flex gap-3">
+			<input
+				type="radio"
+				id="drop_0"
+				value="0"
+				bind:group={pickedDrop}
+				on:change={handleDropChange}
+				class="hidden peer/0"
+			/>
+			<label
+				for="drop_0"
+				class="inline-block cursor-pointer bg-background text-primary font-neue-power font-semibold p-1 leading-none tracking-wide rounded-sm shadow peer-checked/0:bg-primary peer-checked/0:text-secondary border-primary border-2"
+				>#000</label
+			>
+			<!--           
+				<input type="radio" id="drop_1" value="1" bind:group={pickedDrop} on:change={handleDropChange} class="hidden peer/1"/>
+				<label for="drop_1" class="inline-block cursor-pointer bg-background text-primary px-3.5 py-2 rounded-sm shadow peer-checked/1:bg-primary peer-checked/1:text-secondary border-primary border-2">#001</label> -->
+	
+			<!-- <input type="radio" id="drop_2" value="2" bind:group={pickedDrop} on:change={handleDropChange} class="hidden peer/2"/>
+				<label for="drop_2" class="inline-block cursor-pointer bg-background text-primary px-3.5 py-2 rounded-sm shadow peer-checked/2:bg-primary peer-checked/2:text-secondary border-primary border-2">#002</label> -->
+		</div>
         {#each drops as { banner, banner_mobile, name, artists, description, hammer }, index (index)}
             {#if index == pickedDrop}
                 <Drop {banner} {banner_mobile} {name} {artists} {description} {hammer} indexDrop={index} />
@@ -78,10 +78,10 @@
     </div>
 
 
-<div class="hidden lp:flex items-center justify-between">
-    <Subscribe />
-    <Contact />
-</div>
+	<div class="hidden lp:flex items-center justify-between">
+		<Subscribe />
+		<Contact />
+	</div>
 </div>
 
 <!-- {/if} -->
