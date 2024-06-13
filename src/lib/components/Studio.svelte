@@ -24,7 +24,7 @@
 			banner: '/studio/lychee.png',
 			banner_mobile: '/studio/lychee-mobile.png',
 			logo: '/studio/lychee-logo.png',
-			who: 'lychee',
+			who: 'Lychee',
 			what: 'protocol',
 			info: 'Identity/web/Dapp',
 			date: '2023',
@@ -34,7 +34,7 @@
 			banner: '/studio/nonplaces.png',
 			banner_mobile: '/studio/nonplaces-mobile.png',
 			logo: '/studio/nonplaces-logo.png',
-			who: 'non\\places',
+			who: 'Non\\Places',
 			what: 'exhibition',
 			info: 'Identity/Web',
 			date: '2023',
@@ -44,7 +44,7 @@
 			banner: '/studio/tosta.png',
 			banner_mobile: '/studio/tosta-mobile.png',
 			logo: '/studio/tosta-logo.png',
-			who: 'tosta',
+			who: 'Tosta',
 			what: 'music',
 			info: 'logo',
 			date: '2024',
@@ -54,7 +54,7 @@
 			banner: '/studio/soar.png',
 			banner_mobile: '/studio/soar-mobile.png',
 			logo: '/studio/soar-logo.png',
-			who: 'SOAR',
+			who: 'SoarFi',
 			what: 'finance',
 			info: 'identity/web/dapp',
 			date: '2024',
@@ -64,7 +64,7 @@
 			banner: '/studio/arcade.png',
 			banner_mobile: '/studio/arcade-mobile.png',
 			logo: '/studio/arcade-logo.png',
-			who: 'arcade',
+			who: 'ArcadeFi',
 			what: 'finance',
 			info: 'identity/game design/web',
 			date: '2024',
@@ -74,11 +74,21 @@
 			banner: '/studio/quarry.png',
 			banner_mobile: '/studio/quarry-mobile.png',
 			logo: '/studio/quarry-logo.png',
-			who: 'quarry',
+			who: 'Quarry',
 			what: 'app',
 			info: 'dapp',
 			date: '2024',
 			link: '-'
+		},
+		{
+			banner: '/studio/srchers.png',
+			banner_mobile: '/studio/srchers-mobile.png',
+			logo: '/studio/srchers-logo.svg',
+			who: 'SRCHERS',
+			what: 'fashionweb',
+			info: 'web',
+			date: '2024',
+			link: 'srchers.com'
 		}
 	];
 
@@ -134,120 +144,23 @@
             </div>
             <hr class="border-primary my-4" />
 			
-		<div class="flex flex-col lp:flex-row gap-6 lp:gap-6 h-fit w-full items-start lp:items-end justify-center lp:justify-normal mb-4 lp:mb-0 lp:mt-8"
-		>
-			<button
-			on:click={() => pickEvent(0)}
-		
-			class="group flex flex-col justify-center items-center"
-		>
-			<div class="h-fit relative">
-				<button class="hidden lp:block lp:invisible group-hover:visible z-10 mx-auto w-full">
-					<img loading="lazy" class="absolute -top-12 left-0 w-full object-cover scale-150" src={projects[0].logo} alt="" />
-				</button>
-				<button class="w-fit">
-					<h1
-						class="text-xl text-center bg-primary text-secondary py-1 px-3 rounded-sm shadow-md tracking-wider normal-case text-nowrap"
-					>xyk</h1>
-				</button>
-			</div>
-		</button>
-		<button
-			on:click={() => pickEvent(1)}
-		
-			class="group flex flex-col justify-center items-center"
-		>
+		<div class="flex flex-col lp:flex-row gap-6 lp:gap-6 h-fit w-full items-start lp:items-end justify-center lp:justify-normal mb-4 lp:mb-0 lp:mt-8">
+
+		{#each projects as { who, logo }, index}
+			<button on:click={pickEvent.bind(null, index)}
+			class="group flex flex-col justify-center items-center">
 			<div class="w-fit relative">
 				<button class="hidden lp:block lp:invisible group-hover:visible z-10 mx-auto w-full">
-					<img loading="lazy" class="absolute -top-10 left-0 w-full object-cover scale-150" src={projects[1].logo} alt="" />
+					<img loading="lazy" class="absolute -top-5 -translate-y-1/2 left-1/2 -translate-x-1/2 w-fit object-cover" src={logo} alt="" />
 				</button>
 				<button class="w-fit">
 					<h1
 						class="text-xl text-center bg-primary text-secondary py-1 px-3 rounded-sm shadow-md tracking-wider normal-case text-nowrap"
-					>Lychee</h1>
+					>{who}</h1>
 				</button>
 			</div>
-		</button>
-		<button
-			on:click={() => pickEvent(2)}
-		
-			class="group flex flex-col justify-center items-center"
-		>
-			<div class="w-fit relative">
-				<button class="hidden lp:block lp:invisible group-hover:visible z-10 mx-auto w-full">
-					<img loading="lazy" class="absolute -top-24 left-0 w-full object-cover" src={projects[2].logo} alt="" />
-				</button>
-				<button class="w-fit">
-					<h1
-						class="text-xl text-center bg-primary text-secondary py-1 px-3 rounded-sm shadow-md tracking-wider normal-case text-nowrap"
-					>Non\Places</h1>
-				</button>
-			</div>
-		</button>
-		<button
-			on:click={() => pickEvent(3)}
-		
-			class="group flex flex-col justify-center items-center"
-		>
-			<div class="w-fit relative">
-				<button class="hidden lp:block lp:invisible group-hover:visible z-10 mx-auto w-full">
-					<img loading="lazy" class="absolute -top-6 left-0 w-full object-cover scale-150" src={projects[3].logo} alt="" />
-				</button>
-				<button class="w-fit">
-					<h1
-						class="text-xl text-center bg-primary text-secondary py-1 px-3 rounded-sm shadow-md tracking-wider normal-case text-nowrap"
-					>Tosta</h1>
-				</button>
-			</div>
-		</button>
-		<button
-			on:click={() => pickEvent(4)}
-		
-			class="group flex flex-col justify-center items-center"
-		>
-			<div class="w-fit relative">
-				<button class="hidden lp:block lp:invisible group-hover:visible z-10 mx-auto w-full">
-					<img loading="lazy" class="absolute -top-20 left-0 w-full object-cover" src={projects[4].logo} alt="" />
-				</button>
-				<button class="w-fit">
-					<h1
-						class="text-xl text-center bg-primary text-secondary py-1 px-3 rounded-sm shadow-md tracking-wider normal-case text-nowrap"
-					>SoarFi</h1>
-				</button>
-			</div>
-		</button>
-		<button
-			on:click={() => pickEvent(5)}
-		
-			class="group flex flex-col justify-center items-center"
-		>
-			<div class="w-fit relative">
-				<button class="hidden lp:block lp:invisible group-hover:visible z-10 mx-auto w-full">
-					<img loading="lazy" class="absolute -top-10 left-0 w-full object-cover scale-150" src={projects[5].logo} alt="" />
-				</button>
-				<button class="w-fit">
-					<h1
-						class="text-xl text-center bg-primary text-secondary py-1 px-3 rounded-sm shadow-md tracking-wider normal-case text-nowrap"
-					>ArcadeFi</h1>
-				</button>
-			</div>
-		</button>
-		<button
-			on:click={() => pickEvent(6)}
-		
-			class="group flex flex-col justify-center items-center"
-		>
-			<div class="w-fit relative">
-				<button class="hidden lp:block lp:invisible group-hover:visible z-10 mx-auto w-full">
-					<img loading="lazy" class="absolute -top-20 left-0 w-full object-cover" src={projects[6].logo} alt="" />
-				</button>
-				<button class="w-fit">
-					<h1
-						class="text-xl text-center bg-primary text-secondary py-1 px-3 rounded-sm shadow-md tracking-wider normal-case text-nowrap"
-					>Quarry</h1>
-				</button>
-			</div>
-		</button>
+			</button>
+		{/each}
 	
 		</div>
     </div>

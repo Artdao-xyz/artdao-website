@@ -120,6 +120,32 @@
 			info: 'Exhibition/Party',
 			date:'NOV 10th-16th/2023',
 			address: 'ARROZ ESTUDIOS, LISBON'
+		},
+		{
+			banner: [
+				'/events/rave/rave-1.png',
+				'/events/rave/rave-2.png',
+				'/events/rave/rave-3.png',
+				'/events/rave/rave-4.png'
+			],
+			what: 'Rave',
+			where: 'Lisbon',
+			info: 'Exhibition/Party',
+			date:'MAY 5th /2024',
+			address: 'HIGHER GROUND, LISBON'
+		},
+		{
+			banner: [
+				'/events/artifice/artifice-1.png',
+				'/events/artifice/artifice-2.png',
+				'/events/artifice/artifice-3.png',
+				'/events/artifice/artifice-4.png'
+			],
+			what: 'Artifice',
+			where: 'Lisbon',
+			info: 'Exhibition/Party',
+			date:'MAY 28th - 30th /2024',
+			address: 'RnA Studio, LISBON'
 		}
 	];
 
@@ -239,20 +265,20 @@
 		/></button
 	>
 
-	<div class="h-[80%] lp:h-auto w-fit mx-auto flex flex-col justify-center items-center gap-8">
+	<div class="h-[80%] lp:h-auto w-fit mx-auto flex flex-col justify-center items-star gap-8">
 		<button
 			
-			class="relative lp:absolute bg-primary text-secondary lp:left-[18%] lp:top-[37%] sp:top-[35%] sp:left-[18%] dp:left-[19%] dp:top-[33%] bg:top-[35%] bg:left-[20%] 2k:top-[38%] 2k:left-[20%] px-3 py-1 rounded-sm shadow-md gap-3"
+			class="relative lp:absolute bg-primary text-secondary lp:left-[18%] lp:top-[37%] sp:top-[35%] sp:left-[18%] dp:left-[19%] dp:top-[33%] bg:top-[35%] bg:left-[20%] 2k:top-[38%] 2k:left-[20%] px-3 py-1 rounded-sm shadow-md gap-3 text-left"
 		>
 			<button on:click={openDenver} >
 				<p class="normal-case text-xl font-medium font-neue-power tracking-wide">Denver</p>
 			</button>
-			<div class={`${isDenverOpen ? 'block' : 'hidden'} h-full`}>
+			<div class={`${isDenverOpen ? 'block w-44' : 'hidden'} h-full`}>
 				<hr class="border-secondary mt-2" />
 				<button
-					on:click={() => pickEvent(4)}
+					on:click={pickEvent.bind(null, 4)}
 					
-					class="flex justify-between items-center py-2 gap-36"
+					class="flex justify-between items-center py-2 w-full"
 				>
 					<p class="text-sm font-normal tracking-wide">ETH Denver</p>
 					<img
@@ -266,17 +292,17 @@
 
 		<button
 			
-			class="relative lp:absolute bg-primary text-secondary lp:left-[30%] lp:top-[65%] sp:top-[65%] sp:left-[30%]  bg:top-[60%] bg:left-[30%] 2k:left-[30%] px-3 py-1.5 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide"
+			class="relative lp:absolute bg-primary text-secondary lp:left-[30%] lp:top-[65%] sp:top-[65%] sp:left-[30%]  bg:top-[60%] bg:left-[30%] 2k:left-[30%] px-3 py-1.5 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide text-left"
 		>
 			<button on:click={openBuenosAires} >
 				<p class="normal-case text-xl font-medium font-neue-power tracking-wide">Buenos Aires</p>
 			</button>
-			<div class={`${isBuenosAiresOpen ? 'block' : 'hidden'} h-full`}>
+			<div class={`${isBuenosAiresOpen ? 'block w-44' : 'hidden'} h-full`}>
 				<hr class="border-secondary mt-2" />
 				<button
-					on:click={() => pickEvent(3)}
+					on:click={pickEvent.bind(null, 3)}
 					
-					class="flex justify-between items-center py-2 gap-36"
+					class="flex justify-between items-center py-2 w-full"
 				>
 					<p class="text-sm font-normal tracking-wide">Cero Uno</p>
 					<img
@@ -287,9 +313,9 @@
 				</button>
 				<hr class="border-secondary" />
 				<button
-					on:click={() => pickEvent(0)}
+					on:click={pickEvent.bind(null, 0)}
 					
-					class="flex justify-between items-center py-2 gap-36"
+					class="flex justify-between items-center py-2 w-full"
 				>
 					<p class="text-sm font-normal tracking-wide">Psipsikoko</p>
 					<img
@@ -303,17 +329,17 @@
 
 		<button
 		
-		class="relative lp:absolute bg-primary text-secondary lp:left-[32%] lp:top-[57%] sp:top-[56%] dp:top-[57%] dp:left-[32%] bg:top-[54%] bg:left-[32%] 2k:top-[54%] 2k:left-[32%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide"
+		class="relative lp:absolute bg-primary text-secondary lp:left-[32%] lp:top-[57%] sp:top-[56%] dp:top-[57%] dp:left-[32%] bg:top-[54%] bg:left-[32%] 2k:top-[54%] 2k:left-[32%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide text-left"
 	>
 		<button on:click={openSaoPaulo} >
 			<p class="normal-case text-xl font-medium font-neue-power tracking-wide">São Paulo</p>
 		</button>
-		<div class={`${isSaoPauloOpen ? 'block' : 'hidden'} h-full`}>
+		<div class={`${isSaoPauloOpen ? 'block w-44' : 'hidden'} h-full`}>
 			<hr class="border-secondary mt-2" />
 			<button
-				on:click={() => pickEvent(7)}
+				on:click={pickEvent.bind(null, 7)}
 				
-				class="flex justify-between items-center py-2 gap-36"
+				class="flex justify-between items-center py-2 w-full"
 			>
 				<p class="text-sm font-normal tracking-wide">O.R.B</p>
 				<img
@@ -323,21 +349,21 @@
 				/>
 			</button>
 		</div>
-	</button>
+		</button>
 
 		<button
 			
-			class="relative lp:absolute bg-primary text-secondary lp:left-[28%] lp:top-[49%] sp:left-[27%] sp:top-[48%] dp:left-[27%] dp:top-[48%] bg:top-[48%] bg:left-[28%] 2k:top-[48%] 2k:left-[28%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide"
+			class="relative lp:absolute bg-primary text-secondary lp:left-[28%] lp:top-[49%] sp:left-[27%] sp:top-[48%] dp:left-[27%] dp:top-[48%] bg:top-[48%] bg:left-[28%] 2k:top-[48%] 2k:left-[28%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide text-left"
 		>
 			<button on:click={openBogota} >
 				<p class="normal-case text-xl font-medium font-neue-power tracking-wide">Bogotá</p>
 			</button>
-			<div class={`${isBotogaOpen ? 'block' : 'hidden'} h-full`}>
+			<div class={`${isBotogaOpen ? 'block w-44' : 'hidden'} h-full`}>
 				<hr class="border-secondary mt-2" />
 				<button
-					on:click={() => pickEvent(5)}
+					on:click={pickEvent.bind(null, 5)}
 					
-					class="flex justify-between items-center py-2 gap-36"
+					class="flex justify-between items-center py-2 w-full"
 				>
 					<p class="text-sm font-normal tracking-wide">DEVCON</p>
 					<img
@@ -351,17 +377,17 @@
 
 		<button
 			
-			class="relative lp:absolute bg-primary text-secondary lp:left-[40%] lp:top-[37%] sp:top-[33%] dp:top-[33%] dp:left-[40%] bg:top-[33%] bg:left-[42%] 2k:top-[35%] 2k:left-[40%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide"
+			class="relative lp:absolute bg-primary text-secondary lp:left-[40%] lp:top-[37%] sp:top-[33%] dp:top-[33%] dp:left-[40%] bg:top-[33%] bg:left-[42%] 2k:top-[35%] 2k:left-[40%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide text-left"
 		>
 			<button on:click={openLisboa} >
 				<p class="normal-case text-xl font-medium font-neue-power tracking-wide">Lisbon</p>
 			</button>
-			<div class={`${isLisboaOpen ? 'block' : 'hidden'} h-full`}>
+			<div class={`${isLisboaOpen ? 'block w-44' : 'hidden'} h-full`}>
 				<hr class="border-secondary mt-2" />
 				<button
-					on:click={() => pickEvent(2)}
+					on:click={pickEvent.bind(null, 2)}
 					
-					class="flex justify-between items-center py-2 gap-36"
+					class="flex justify-between items-center py-2 w-full"
 				>
 					<p class="text-sm font-normal tracking-wide">Intertwined</p>
 					<img
@@ -372,11 +398,37 @@
 				</button>
 				<hr class="border-secondary" />
 				<button
-					on:click={() => pickEvent(8)}
+					on:click={pickEvent.bind(null, 8)}
 					
-					class="flex justify-between items-center py-2 gap-36"
+					class="flex justify-between items-center py-2 w-full"
 				>
 					<p class="text-sm font-normal tracking-wide">Underworld</p>
+					<img
+						loading="lazy"
+						src={`/events/events-pick-${estilos[index].secondary_media}.svg`}
+						alt="pick event"
+					/>
+				</button>
+				<hr class="border-secondary" />
+				<button
+					on:click={pickEvent.bind(null, 9)}
+					
+					class="flex justify-between items-center py-2 w-full"
+				>
+					<p class="text-sm font-normal tracking-wide">Rave</p>
+					<img
+						loading="lazy"
+						src={`/events/events-pick-${estilos[index].secondary_media}.svg`}
+						alt="pick event"
+					/>
+				</button>
+				<hr class="border-secondary" />
+				<button
+					on:click={pickEvent.bind(null, 10)}
+					
+					class="flex w-full justify-between items-center py-2"
+				>
+					<p class="text-sm font-normal tracking-wide">Artifice</p>
 					<img
 						loading="lazy"
 						src={`/events/events-pick-${estilos[index].secondary_media}.svg`}
@@ -388,17 +440,17 @@
 
 		<button
 			
-			class="relative lp:absolute bg-primary text-secondary lp:left-[45%] lp:top-[30%] sp:top-[28%] dp:top-[27%] dp:left-[45%] bg:top-[27%] bg:left-[45%] 2k:top-[32%] 2k:left-[47%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide"
+			class="relative lp:absolute bg-primary text-secondary lp:left-[45%] lp:top-[30%] sp:top-[28%] dp:top-[27%] dp:left-[45%] bg:top-[27%] bg:left-[45%] 2k:top-[32%] 2k:left-[47%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide text-left"
 		>
 			<button on:click={openParis} >
 				<p class="normal-case text-xl font-medium font-neue-power tracking-wide">Paris</p>
 			</button>
-			<div class={`${isParisOpen ? 'block' : 'hidden'} h-full`}>
+			<div class={`${isParisOpen ? 'block w-44' : 'hidden'} h-full`}>
 				<hr class="border-secondary mt-2" />
 				<button
-					on:click={() => pickEvent(1)}
+					on:click={pickEvent.bind(null, 1)}
 					
-					class="flex justify-between items-center py-2 gap-36"
+					class="flex justify-between items-center py-2 w-full"
 				>
 					<p class="text-sm font-normal tracking-wide">Non Places</p>
 					<img
@@ -409,9 +461,9 @@
 				</button>
 				<hr class="border-secondary mt-2" />
 				<button
-					on:click={() => pickEvent(6)}
+					on:click={pickEvent.bind(null, 6)}
 					
-					class="flex justify-between items-center py-2 gap-36"
+					class="flex justify-between items-center py-2 w-full"
 				>
 					<p class="text-sm font-normal tracking-wide">NFT Paris</p>
 					<img
