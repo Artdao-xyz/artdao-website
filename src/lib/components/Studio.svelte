@@ -136,118 +136,118 @@
 			
 		<div class="flex flex-col lp:flex-row gap-6 lp:gap-6 h-fit w-full items-start lp:items-end justify-center lp:justify-normal mb-4 lp:mb-0 lp:mt-8"
 		>
-			<a
+			<button
 			on:click={() => pickEvent(0)}
-			href={'#'}
+		
 			class="group flex flex-col justify-center items-center"
 		>
 			<div class="h-fit relative">
-				<a href={'#'} class="hidden lp:block lp:invisible group-hover:visible z-10 mx-auto w-full">
+				<button class="hidden lp:block lp:invisible group-hover:visible z-10 mx-auto w-full">
 					<img loading="lazy" class="absolute -top-12 left-0 w-full object-cover scale-150" src={projects[0].logo} alt="" />
-				</a>
-				<a href={'#'} class="w-fit">
+				</button>
+				<button class="w-fit">
 					<h1
 						class="text-xl text-center bg-primary text-secondary py-1 px-3 rounded-sm shadow-md tracking-wider normal-case text-nowrap"
 					>xyk</h1>
-				</a>
+				</button>
 			</div>
-		</a>
-		<a
+		</button>
+		<button
 			on:click={() => pickEvent(1)}
-			href={'#'}
+		
 			class="group flex flex-col justify-center items-center"
 		>
 			<div class="w-fit relative">
-				<a href={'#'} class="hidden lp:block lp:invisible group-hover:visible z-10 mx-auto w-full">
+				<button class="hidden lp:block lp:invisible group-hover:visible z-10 mx-auto w-full">
 					<img loading="lazy" class="absolute -top-10 left-0 w-full object-cover scale-150" src={projects[1].logo} alt="" />
-				</a>
-				<a href={'#'} class="w-fit">
+				</button>
+				<button class="w-fit">
 					<h1
 						class="text-xl text-center bg-primary text-secondary py-1 px-3 rounded-sm shadow-md tracking-wider normal-case text-nowrap"
 					>Lychee</h1>
-				</a>
+				</button>
 			</div>
-		</a>
-		<a
+		</button>
+		<button
 			on:click={() => pickEvent(2)}
-			href={'#'}
+		
 			class="group flex flex-col justify-center items-center"
 		>
 			<div class="w-fit relative">
-				<a href={'#'} class="hidden lp:block lp:invisible group-hover:visible z-10 mx-auto w-full">
+				<button class="hidden lp:block lp:invisible group-hover:visible z-10 mx-auto w-full">
 					<img loading="lazy" class="absolute -top-24 left-0 w-full object-cover" src={projects[2].logo} alt="" />
-				</a>
-				<a href={'#'} class="w-fit">
+				</button>
+				<button class="w-fit">
 					<h1
 						class="text-xl text-center bg-primary text-secondary py-1 px-3 rounded-sm shadow-md tracking-wider normal-case text-nowrap"
 					>Non\Places</h1>
-				</a>
+				</button>
 			</div>
-		</a>
-		<a
+		</button>
+		<button
 			on:click={() => pickEvent(3)}
-			href={'#'}
+		
 			class="group flex flex-col justify-center items-center"
 		>
 			<div class="w-fit relative">
-				<a href={'#'} class="hidden lp:block lp:invisible group-hover:visible z-10 mx-auto w-full">
+				<button class="hidden lp:block lp:invisible group-hover:visible z-10 mx-auto w-full">
 					<img loading="lazy" class="absolute -top-6 left-0 w-full object-cover scale-150" src={projects[3].logo} alt="" />
-				</a>
-				<a href={'#'} class="w-fit">
+				</button>
+				<button class="w-fit">
 					<h1
 						class="text-xl text-center bg-primary text-secondary py-1 px-3 rounded-sm shadow-md tracking-wider normal-case text-nowrap"
 					>Tosta</h1>
-				</a>
+				</button>
 			</div>
-		</a>
-		<a
+		</button>
+		<button
 			on:click={() => pickEvent(4)}
-			href={'#'}
+		
 			class="group flex flex-col justify-center items-center"
 		>
 			<div class="w-fit relative">
-				<a href={'#'} class="hidden lp:block lp:invisible group-hover:visible z-10 mx-auto w-full">
+				<button class="hidden lp:block lp:invisible group-hover:visible z-10 mx-auto w-full">
 					<img loading="lazy" class="absolute -top-20 left-0 w-full object-cover" src={projects[4].logo} alt="" />
-				</a>
-				<a href={'#'} class="w-fit">
+				</button>
+				<button class="w-fit">
 					<h1
 						class="text-xl text-center bg-primary text-secondary py-1 px-3 rounded-sm shadow-md tracking-wider normal-case text-nowrap"
 					>SoarFi</h1>
-				</a>
+				</button>
 			</div>
-		</a>
-		<a
+		</button>
+		<button
 			on:click={() => pickEvent(5)}
-			href={'#'}
+		
 			class="group flex flex-col justify-center items-center"
 		>
 			<div class="w-fit relative">
-				<a href={'#'} class="hidden lp:block lp:invisible group-hover:visible z-10 mx-auto w-full">
+				<button class="hidden lp:block lp:invisible group-hover:visible z-10 mx-auto w-full">
 					<img loading="lazy" class="absolute -top-10 left-0 w-full object-cover scale-150" src={projects[5].logo} alt="" />
-				</a>
-				<a href={'#'} class="w-fit">
+				</button>
+				<button class="w-fit">
 					<h1
 						class="text-xl text-center bg-primary text-secondary py-1 px-3 rounded-sm shadow-md tracking-wider normal-case text-nowrap"
 					>ArcadeFi</h1>
-				</a>
+				</button>
 			</div>
-		</a>
-		<a
+		</button>
+		<button
 			on:click={() => pickEvent(6)}
-			href={'#'}
+		
 			class="group flex flex-col justify-center items-center"
 		>
 			<div class="w-fit relative">
-				<a href={'#'} class="hidden lp:block lp:invisible group-hover:visible z-10 mx-auto w-full">
+				<button class="hidden lp:block lp:invisible group-hover:visible z-10 mx-auto w-full">
 					<img loading="lazy" class="absolute -top-20 left-0 w-full object-cover" src={projects[6].logo} alt="" />
-				</a>
-				<a href={'#'} class="w-fit">
+				</button>
+				<button class="w-fit">
 					<h1
 						class="text-xl text-center bg-primary text-secondary py-1 px-3 rounded-sm shadow-md tracking-wider normal-case text-nowrap"
 					>Quarry</h1>
-				</a>
+				</button>
 			</div>
-		</a>
+		</button>
 	
 		</div>
     </div>

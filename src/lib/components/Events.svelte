@@ -225,33 +225,33 @@
 </script>
 
 <div class="h-full lp:flex lp:flex-col lp:justify-center">
-	<a
+	<button
 	in:fade={{ delay: 100, duration: 150 }}
 	out:fade={{ delay: 100, duration: 25 }}
 		on:click={closeEvent}
 		class="cursor-default overscroll-y-contain h-fit flex-grow overflow-y-hidden"
-		href={'#'}
+		
 		><img
 			loading="lazy"
 			class="fixed lp:relative top-1/2 lp:top-0 -translate-y-1/2 lp:-translate-y-0 left-0 scale-[225%] lp:scale-100 object-contain mx-auto lp:h-full -z-10"
 			src={`/events/map-${estilos[index].primary_media}.png`}
 			alt="Map events"
-		/></a
+		/></button
 	>
 
 	<div class="h-[80%] lp:h-auto w-fit mx-auto flex flex-col justify-center items-center gap-8">
-		<a
-			href={'#'}
+		<button
+			
 			class="relative lp:absolute bg-primary text-secondary lp:left-[18%] lp:top-[37%] sp:top-[35%] sp:left-[18%] dp:left-[19%] dp:top-[33%] bg:top-[35%] bg:left-[20%] 2k:top-[38%] 2k:left-[20%] px-3 py-1 rounded-sm shadow-md gap-3"
 		>
-			<a on:click={openDenver} href={'#'}>
+			<button on:click={openDenver} >
 				<p class="normal-case text-xl font-medium font-neue-power tracking-wide">Denver</p>
-			</a>
+			</button>
 			<div class={`${isDenverOpen ? 'block' : 'hidden'} h-full`}>
 				<hr class="border-secondary mt-2" />
-				<a
+				<button
 					on:click={() => pickEvent(4)}
-					href={'#'}
+					
 					class="flex justify-between items-center py-2 gap-36"
 				>
 					<p class="text-sm font-normal tracking-wide">ETH Denver</p>
@@ -260,22 +260,22 @@
 						src={`/events/events-pick-${estilos[index].secondary_media}.svg`}
 						alt="pick event"
 					/>
-				</a>
+				</button>
 			</div>
-		</a>
+		</button>
 
-		<a
-			href={'#'}
+		<button
+			
 			class="relative lp:absolute bg-primary text-secondary lp:left-[30%] lp:top-[65%] sp:top-[65%] sp:left-[30%]  bg:top-[60%] bg:left-[30%] 2k:left-[30%] px-3 py-1.5 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide"
 		>
-			<a on:click={openBuenosAires} href={'#'}>
+			<button on:click={openBuenosAires} >
 				<p class="normal-case text-xl font-medium font-neue-power tracking-wide">Buenos Aires</p>
-			</a>
+			</button>
 			<div class={`${isBuenosAiresOpen ? 'block' : 'hidden'} h-full`}>
 				<hr class="border-secondary mt-2" />
-				<a
+				<button
 					on:click={() => pickEvent(3)}
-					href={'#'}
+					
 					class="flex justify-between items-center py-2 gap-36"
 				>
 					<p class="text-sm font-normal tracking-wide">Cero Uno</p>
@@ -284,11 +284,11 @@
 						src={`/events/events-pick-${estilos[index].secondary_media}.svg`}
 						alt="pick event"
 					/>
-				</a>
+				</button>
 				<hr class="border-secondary" />
-				<a
+				<button
 					on:click={() => pickEvent(0)}
-					href={'#'}
+					
 					class="flex justify-between items-center py-2 gap-36"
 				>
 					<p class="text-sm font-normal tracking-wide">Psipsikoko</p>
@@ -297,22 +297,22 @@
 						src={`/events/events-pick-${estilos[index].secondary_media}.svg`}
 						alt="pick event"
 					/>
-				</a>
+				</button>
 			</div>
-		</a>
+		</button>
 
-		<a
-		href={'#'}
+		<button
+		
 		class="relative lp:absolute bg-primary text-secondary lp:left-[32%] lp:top-[57%] sp:top-[56%] dp:top-[57%] dp:left-[32%] bg:top-[54%] bg:left-[32%] 2k:top-[54%] 2k:left-[32%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide"
 	>
-		<a on:click={openSaoPaulo} href={'#'}>
+		<button on:click={openSaoPaulo} >
 			<p class="normal-case text-xl font-medium font-neue-power tracking-wide">São Paulo</p>
-		</a>
+		</button>
 		<div class={`${isSaoPauloOpen ? 'block' : 'hidden'} h-full`}>
 			<hr class="border-secondary mt-2" />
-			<a
+			<button
 				on:click={() => pickEvent(7)}
-				href={'#'}
+				
 				class="flex justify-between items-center py-2 gap-36"
 			>
 				<p class="text-sm font-normal tracking-wide">O.R.B</p>
@@ -321,22 +321,22 @@
 					src={`/events/events-pick-${estilos[index].secondary_media}.svg`}
 					alt="pick event"
 				/>
-			</a>
+			</button>
 		</div>
-	</a>
+	</button>
 
-		<a
-			href={'#'}
+		<button
+			
 			class="relative lp:absolute bg-primary text-secondary lp:left-[28%] lp:top-[49%] sp:left-[27%] sp:top-[48%] dp:left-[27%] dp:top-[48%] bg:top-[48%] bg:left-[28%] 2k:top-[48%] 2k:left-[28%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide"
 		>
-			<a on:click={openBogota} href={'#'}>
+			<button on:click={openBogota} >
 				<p class="normal-case text-xl font-medium font-neue-power tracking-wide">Bogotá</p>
-			</a>
+			</button>
 			<div class={`${isBotogaOpen ? 'block' : 'hidden'} h-full`}>
 				<hr class="border-secondary mt-2" />
-				<a
+				<button
 					on:click={() => pickEvent(5)}
-					href={'#'}
+					
 					class="flex justify-between items-center py-2 gap-36"
 				>
 					<p class="text-sm font-normal tracking-wide">DEVCON</p>
@@ -345,22 +345,22 @@
 						src={`/events/events-pick-${estilos[index].secondary_media}.svg`}
 						alt="pick event"
 					/>
-				</a>
+				</button>
 			</div>
-		</a>
+		</button>
 
-		<a
-			href={'#'}
+		<button
+			
 			class="relative lp:absolute bg-primary text-secondary lp:left-[40%] lp:top-[37%] sp:top-[33%] dp:top-[33%] dp:left-[40%] bg:top-[33%] bg:left-[42%] 2k:top-[35%] 2k:left-[40%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide"
 		>
-			<a on:click={openLisboa} href={'#'}>
+			<button on:click={openLisboa} >
 				<p class="normal-case text-xl font-medium font-neue-power tracking-wide">Lisbon</p>
-			</a>
+			</button>
 			<div class={`${isLisboaOpen ? 'block' : 'hidden'} h-full`}>
 				<hr class="border-secondary mt-2" />
-				<a
+				<button
 					on:click={() => pickEvent(2)}
-					href={'#'}
+					
 					class="flex justify-between items-center py-2 gap-36"
 				>
 					<p class="text-sm font-normal tracking-wide">Intertwined</p>
@@ -369,11 +369,11 @@
 						src={`/events/events-pick-${estilos[index].secondary_media}.svg`}
 						alt="pick event"
 					/>
-				</a>
+				</button>
 				<hr class="border-secondary" />
-				<a
+				<button
 					on:click={() => pickEvent(8)}
-					href={'#'}
+					
 					class="flex justify-between items-center py-2 gap-36"
 				>
 					<p class="text-sm font-normal tracking-wide">Underworld</p>
@@ -382,22 +382,22 @@
 						src={`/events/events-pick-${estilos[index].secondary_media}.svg`}
 						alt="pick event"
 					/>
-				</a>
+				</button>
 			</div>
-		</a>
+		</button>
 
-		<a
-			href={'#'}
+		<button
+			
 			class="relative lp:absolute bg-primary text-secondary lp:left-[45%] lp:top-[30%] sp:top-[28%] dp:top-[27%] dp:left-[45%] bg:top-[27%] bg:left-[45%] 2k:top-[32%] 2k:left-[47%] px-3 py-1 rounded-sm shadow-md gap-3 normal-case text-xl font-medium font-neue-power tracking-wide"
 		>
-			<a on:click={openParis} href={'#'}>
+			<button on:click={openParis} >
 				<p class="normal-case text-xl font-medium font-neue-power tracking-wide">Paris</p>
-			</a>
+			</button>
 			<div class={`${isParisOpen ? 'block' : 'hidden'} h-full`}>
 				<hr class="border-secondary mt-2" />
-				<a
+				<button
 					on:click={() => pickEvent(1)}
-					href={'#'}
+					
 					class="flex justify-between items-center py-2 gap-36"
 				>
 					<p class="text-sm font-normal tracking-wide">Non Places</p>
@@ -406,11 +406,11 @@
 						src={`/events/events-pick-${estilos[index].secondary_media}.svg`}
 						alt="pick event"
 					/>
-				</a>
+				</button>
 				<hr class="border-secondary mt-2" />
-				<a
+				<button
 					on:click={() => pickEvent(6)}
-					href={'#'}
+					
 					class="flex justify-between items-center py-2 gap-36"
 				>
 					<p class="text-sm font-normal tracking-wide">NFT Paris</p>
@@ -419,9 +419,9 @@
 						src={`/events/events-pick-${estilos[index].secondary_media}.svg`}
 						alt="pick event"
 					/>
-				</a>
+				</button>
 			</div>
-		</a>
+		</button>
 		
 	</div>
 

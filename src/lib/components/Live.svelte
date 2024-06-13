@@ -50,8 +50,8 @@
 		: 'right-[-350px] lp:right-[-380px]'}"
 >
 	<div class="h-full w-[120px] relative -top-6">
-		<a class="h-full" on:click={openLive} on:mouseenter={openLive} href={'#'}
-			><img loading="lazy" class="h-full mx-auto" src={source[0]} alt="Banner" /></a
+		<button class="h-full" on:click={openLive} on:mouseenter={openLive}
+			><img loading="lazy" class="h-full mx-auto" src={source[0]} alt="Banner" /></button
 		>
 
 		<div class="h-fit w-full flex justify-center items-center gap-2">

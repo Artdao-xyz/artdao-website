@@ -1,6 +1,5 @@
 <script>
 	import { onMount } from 'svelte';
-	import { estilos } from '$lib/config.js';
 	import { indexStyleStore } from '$lib/store.js';
 	import { fade } from 'svelte/transition';
 
@@ -11,7 +10,7 @@
 	let memberExists = false;
 
 	const handleSubmit = async (event) => {
-        console.log('submitting', submitting);
+        // console.log('submitting', submitting);
 		submitting = true;
 		event.preventDefault();
 		const form = event.target;
@@ -27,21 +26,21 @@
 		});
 		const data = await response.json();
 		// @dev has shape { success : true }
-		console.log(data);
+		// console.log(data);
 		if (data.success) {
 			success = true;
 		} else {
 			const errorType = JSON.parse(data.error);
-			const errorTitle = errorType.title;
+			const errorTitle = errorType.message;
 			console.error(errorTitle);
-			if (errorTitle === 'Member Exists') {
+			if (errorTitle === 'Contact already exist') {
 				memberExists = true;
 			} else {
 				error = true;
 			}
 		}
 		submitting = false;
-		console.log(submitting);
+		// console.log(submitting);
 		setTimeout(() => {
 			success = false;
 			memberExists = false;
@@ -55,11 +54,8 @@
 		const styleStore = indexStyleStore.subscribe((value) => {
 			index = value;
 		});
-
-        // document.addEventListener("DOMContentLoaded", function() {
-
         onfocus = () => {
-            console.log('focus');
+            // console.log('focus');
             if (input.value.trim().length > 0) {
                 submit.style.visibility = "visible";
                 }
@@ -73,18 +69,12 @@
                 submit.style.visibility = "hidden";
             }
         };
-        // });
 
 		return styleStore;
 	});
-
-
-
-
 </script>
 
-
-<div class="flex flex-col lp:flex-row gap-2 lp:gap-0 items-center w-full justify-start">
+<div class="flex flex-col lp:flex-row gap-4 lp:gap-4 items-center w-full justify-start">
 
     <form
     in:fade={{ delay: 50, duration: 150 }}
@@ -95,17 +85,18 @@
     id="subscribeForm"
     class="text-primary w-screen lp:w-auto flex flex-col lp:flex-row items-center justify-center gap-2"
 >
-    <label for="email" class="hidden self-start font-medium text-xs lp:text-sm my-auto tracking-wider"
-        ></label
-    >
+
+<label for="email" class="hidden self-start font-medium text-xs lp:text-sm my-auto tracking-wider"
+></label
+>
     <input
-        bind:this={input}
-        type="email"
-        name="EMAIL"
-        class="peer inline-block w-[90%] lp:w-full invalid bg-transparent font-normal text-base outline-none leading-snug tracking-wide placeholder:opacity-85 placeholder:font-light placeholder:invert placeholder:tracking-wide border-primary border-b-[1px]"
-        required
-        value=""
-        placeholder="Enter email to subscribe"
+    bind:this={input}
+    type="email"
+    name="EMAIL"
+    class="peer inline-block w-[90%] lp:w-full invalid bg-transparent font-normal text-base outline-none leading-snug tracking-wide placeholder:opacity-85 placeholder:font-light placeholder:invert placeholder:tracking-wide border-primary border-b-[1px]"
+    required
+    value=""
+    placeholder="Enter email to subscribe"
     />
     <button bind:this={submit}
     type="submit" class="outline-none rounded-lg shadow-custom py-1 px-2 text-sm font-medium flex-none invisible leading-snug tracking-wide"
@@ -123,11 +114,7 @@
             class="text-primary normal-case font-medium italic flex items-center lp:gap-4 rounded-lg"
         >   
             {#if submitting}
-                <div
-                    class="text-primary text-center italic flex items-center justify-start gap-4 4"
-                >
-                    <p class="text-xs lp:text-sm mx-auto">🔨 submitting...</p>
-                </div>
+                <p class="text-xs lp:text-sm mx-auto tracking-wider">🔨 submitting...</p>
             {:else if success}
                 <p class="text-xs lp:text-sm tracking-wider">Thank you for subscribing!</p>
             {:else if memberExists}

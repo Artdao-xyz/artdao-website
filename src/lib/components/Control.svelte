@@ -30,7 +30,7 @@
 	};
 
 	const setSection = (_section) => {
-        console.log('setSection', _section);
+        // console.log('setSection', _section);
         currentSection = _section;
 
         if (isOpen) {
@@ -92,63 +92,59 @@
 >
     <ul class="flex flex-grow lp:flex-row flex-col justify-center lp:justify-end items-center gap-8 lp:gap-4">
         <li>
-            <a
-                on:click={() => setSection(0)}
-                class={section == 0
-                    ? 'flex lp:flex-col gap-4 lp:gap-0 items-center justify-between'
-                    : 'opacity-30 flex lp:flex-col gap-4 lp:gap-0 items-center justify-between'}
-                href={'#'}
+            <button
+                on:click={setSection.bind(null, 0)}
+                class={`uppercase flex gap-4 lp:gap-0 lp:flex-col items-center justify-between ${section == 0
+                    ? ''
+                    :'opacity-30'}`}
                 ><img
                     loading="lazy"
                     class=" lp:lp:mb-2"
                     src={`/s1_${estilos[index].primary_media}.png`}
                     alt="Section 1"
-                /><span class={section == 0 ? '' : 'lp:invisible'}>Mission</span></a
+                /><span class={section == 0 ? '' : 'lp:invisible'}>Mission</span></button
             >
         </li>
         <li>
-            <a
-                on:click={() => setSection(1)}
-                class={section == 1
-                    ? 'flex lp:flex-col gap-4 lp:gap-0 items-center justify-between'
-                    : 'opacity-30 flex lp:flex-col  gap-4 lp:gap-0 items-center justify-between'}
-                href={'#'}
+            <button
+                on:click={setSection.bind(null, 1)}
+                class={`uppercase flex gap-4 lp:gap-0 lp:flex-col items-center justify-between ${section == 1
+                    ? ''
+                    :'opacity-30'}`}
                 ><img
                     loading="lazy"
                     class=" lp:mb-2"
                     src={`/s2_${estilos[index].primary_media}.png`}
                     alt="Section 2"
-                /><span class={section == 1 ? '' : 'lp:invisible'}>drops</span></a
+                /><span class={section == 1 ? '' : 'lp:invisible'}>drops</span></button
             >
         </li>
         <li>
-            <a
-                on:click={() => setSection(2)}
-                class={section == 2
-                    ? 'flex lp:flex-col gap-4 lp:gap-0 items-center justify-between'
-                    : 'opacity-30 flex lp:flex-col gap-4 lp:gap-0 items-center justify-between'}
-                href={'#'}
+            <button
+                on:click={setSection.bind(null, 2)}
+                class={`uppercase flex gap-4 lp:gap-0 lp:flex-col items-center justify-between ${section == 2
+                    ? ''
+                    :'opacity-30'}`}
                 ><img
                     loading="lazy"
                     class=" lp:mb-2"
                     src={`/s3_${estilos[index].primary_media}.png`}
                     alt="Section 3"
-                /><span class={section == 2 ? '' : 'lp:invisible'}>Events</span></a
+                /><span class={section == 2 ? '' : 'lp:invisible'}>Events</span></button
             >
         </li>
         <li>
-            <a
-                on:click={() => setSection(3)}
-                class={section == 3
-                    ? 'flex lp:flex-col gap-4 lp:gap-0 items-center justify-between'
-                    : 'opacity-30 flex lp:flex-col gap-4 lp:gap-0 items-center justify-between'}
-                href={'#'}
+            <button
+                on:click={setSection.bind(null, 3)}
+                class={`uppercase flex gap-4 lp:gap-0 lp:flex-col items-center justify-between ${section == 3
+                    ? ''
+                    :'opacity-30'}`}
                 ><img
                     loading="lazy"
                     class=" lp:mb-2"
                     src={`/s4_${estilos[index].primary_media}.png`}
                     alt="Section 5"
-                /><span class={section == 3 ? '' : 'lp:invisible'}>Studio</span></a
+                /><span class={section == 3 ? '' : 'lp:invisible'}>Studio</span></button
             >
         </li>
     </ul>

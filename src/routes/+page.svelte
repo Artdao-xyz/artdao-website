@@ -207,7 +207,7 @@
             <!-- MOBILE -->
             <div class="lp:hidden invisible col-span-1">
             </div>
-            <a on:click={openFooter} href={'#'} 
+            <button on:click={openFooter}
             class="lp:hidden col-span-3">
                 <img
                 loading="lazy"
@@ -216,7 +216,7 @@
                 src={`/arrow-${isOpen}-${estilos[index].primary_media}.svg`}
                 alt="hyperlink"
                 />
-            </a>
+		</button>
             {#if isOpen}
                 <div class="lp:hidden col-span-1 z-30">
                     <Control />
@@ -225,21 +225,21 @@
 
             <!-- DESKTOP -->
 
-			<a
+			<button
 				class="self-start text-primary text-lg lp:text-xl mx-auto lp:mx-0 text-center lp:text-left tracking-wider leading-5 mt-4 lp:mt-0 mb-2 lp:mb-0 col-span-full lp:col-span-2 text-nowrap {isOpen
 					? ''
 					: 'hidden lp:block'}"
 				on:click={openFooter}
-				href={'#'}><p bind:this={subheader}>{content}</p></a
+				><p bind:this={subheader}>{content}</p></button
 			>
-			<a on:click={openFooter} href={'#'} class="hidden col-span-1 lp:inline-flex items-center self-start"
+			<button on:click={openFooter} class="hidden col-span-1 lp:inline-flex items-center self-start"
 				><img
 					loading="lazy"
 					bind:this={arrow}
 					class="mx-auto py-1 px-6 rounded-3xl"
 					src={`/arrow-${isOpen}-${estilos[index].primary_media}.svg`}
 					alt="hyperlink"
-				/></a
+				/></button
 			>
 
             <!-- <div class="flex items-center lp:hidden">

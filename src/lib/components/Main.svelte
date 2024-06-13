@@ -42,7 +42,7 @@
 	})
 </script>
 
-<a on:click={handleFooterClick} class="cursor-default" href={'#'}>
+<button on:click={handleFooterClick} class="cursor-default">
     <main >
 		<section bind:this={section} class="w-full h-[400vh] p-2 lp:p-5 flex justify-center lp:justify-start">
 			<!-- svelte-ignore a11y-missing-content -->
@@ -51,5 +51,5 @@
 				class="fixed lp:top-1/2 lp:-translate-y-1/2 w-5/6 h-fit lp:ml-16 font-neue-power inline-block text-5xl text-left font-medium tb:text-3xl lp:text-8xl dp:text-9xl uppercase leading-10 tracking-wider whitespace-pre-line"
 			></h1>
 		</section>
-	</main></a
+	</main></button
 >
