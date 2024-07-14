@@ -16,12 +16,11 @@ const preloadAssets = async (urls) => {
         progress.set((loadedAssets / nAssets) * 100);
     });
 
-
     const promises = urls.map((url) => new Promise((resolve, reject) => {
         const img = new Image();
         img.src = url;
         img.onload = () => {
-            resolve(img);
+            resolve(img.src);
             loadedAssets++;
             progress.set((loadedAssets / nAssets) * 100);
         };
