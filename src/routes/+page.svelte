@@ -98,7 +98,7 @@
 							? ''
 							: 'hidden lp:block'}"
 						on:click={openFooter}
-						><p bind:this={subheader}>{content}</p></button
+						><p class="truncate" bind:this={subheader}>{content}</p></button
 					>
 					<button on:click={openFooter} class="hidden col-span-1 lp:inline-flex items-center self-start"
 						><img
