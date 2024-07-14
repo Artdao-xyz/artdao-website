@@ -34,9 +34,7 @@ const preloadAssets = async (urls) => {
         images : images,
         textures : textures,
     }
-
-    console.log(assets)
-
+    
     return assets;
 }
 
