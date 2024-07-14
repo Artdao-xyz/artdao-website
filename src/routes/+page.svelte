@@ -83,7 +83,7 @@
 					<button on:click={openFooter}
 					class="lp:hidden col-span-3">
 						<img
-						loading="lazy"
+						
 						bind:this={arrow}
 						class="mx-auto py-1 px-6 rounded-3xl"
 						src={`/arrow-${$isOpenStore}-${estilos[index].primary_media}.svg`}
@@ -106,7 +106,7 @@
 					>
 					<button on:click={openFooter} class="hidden col-span-1 lp:inline-flex items-center self-start"
 						><img
-							loading="lazy"
+							
 							bind:this={arrow}
 							class="mx-auto py-1 px-6 rounded-3xl"
 							src={`/arrow-${$isOpenStore}-${estilos[index].primary_media}.svg`}

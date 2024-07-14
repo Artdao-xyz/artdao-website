@@ -136,7 +136,7 @@
                 <a href="mailto:hello@artdao.xyz" class="flex items-center gap-2">
                     <div class="text-primary text-base font-medium underline uppercase">get in touch</div>
                     <img
-                    loading="lazy"
+                    
                     src={`/link-arrow-${estilos[index].primary_media}.svg`}
                     alt="Link Arrow"
                     />
@@ -151,7 +151,7 @@
 			class="group flex flex-col justify-center items-center">
 			<div class="w-fit relative">
 				<button class="hidden lp:block lp:invisible group-hover:visible z-10 mx-auto w-full">
-					<img loading="lazy" class="absolute -top-5 -translate-y-1/2 left-1/2 -translate-x-1/2 w-fit object-cover" src={logo} alt="" />
+					<img  class="absolute -top-5 -translate-y-1/2 left-1/2 -translate-x-1/2 w-fit object-cover" src={logo} alt="" />
 				</button>
 				<button class="w-fit">
 					<h1

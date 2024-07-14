@@ -258,7 +258,7 @@
 		class="cursor-default overscroll-y-contain h-fit flex-grow overflow-y-hidden"
 		
 		><img
-			loading="lazy"
+			
 			class="fixed lp:relative top-1/2 lp:top-0 -translate-y-1/2 lp:-translate-y-0 left-0 scale-[225%] lp:scale-100 object-contain mx-auto lp:h-full -z-10"
 			src={`/events/map-${estilos[index].primary_media}.png`}
 			alt="Map events"
@@ -282,7 +282,7 @@
 				>
 					<p class="text-sm font-normal tracking-wide">ETH Denver</p>
 					<img
-						loading="lazy"
+						
 						src={`/events/events-pick-${estilos[index].secondary_media}.svg`}
 						alt="pick event"
 					/>
@@ -306,7 +306,7 @@
 				>
 					<p class="text-sm font-normal tracking-wide">Cero Uno</p>
 					<img
-						loading="lazy"
+						
 						src={`/events/events-pick-${estilos[index].secondary_media}.svg`}
 						alt="pick event"
 					/>
@@ -319,7 +319,7 @@
 				>
 					<p class="text-sm font-normal tracking-wide">Psipsikoko</p>
 					<img
-						loading="lazy"
+						
 						src={`/events/events-pick-${estilos[index].secondary_media}.svg`}
 						alt="pick event"
 					/>
@@ -343,7 +343,7 @@
 			>
 				<p class="text-sm font-normal tracking-wide">O.R.B</p>
 				<img
-					loading="lazy"
+					
 					src={`/events/events-pick-${estilos[index].secondary_media}.svg`}
 					alt="pick event"
 				/>
@@ -367,7 +367,7 @@
 				>
 					<p class="text-sm font-normal tracking-wide">DEVCON</p>
 					<img
-						loading="lazy"
+						
 						src={`/events/events-pick-${estilos[index].secondary_media}.svg`}
 						alt="pick event"
 					/>
@@ -391,7 +391,7 @@
 				>
 					<p class="text-sm font-normal tracking-wide">Intertwined</p>
 					<img
-						loading="lazy"
+						
 						src={`/events/events-pick-${estilos[index].secondary_media}.svg`}
 						alt="pick event"
 					/>
@@ -404,7 +404,7 @@
 				>
 					<p class="text-sm font-normal tracking-wide">Underworld</p>
 					<img
-						loading="lazy"
+						
 						src={`/events/events-pick-${estilos[index].secondary_media}.svg`}
 						alt="pick event"
 					/>
@@ -417,7 +417,7 @@
 				>
 					<p class="text-sm font-normal tracking-wide">Rave</p>
 					<img
-						loading="lazy"
+						
 						src={`/events/events-pick-${estilos[index].secondary_media}.svg`}
 						alt="pick event"
 					/>
@@ -430,7 +430,7 @@
 				>
 					<p class="text-sm font-normal tracking-wide">Artifice</p>
 					<img
-						loading="lazy"
+						
 						src={`/events/events-pick-${estilos[index].secondary_media}.svg`}
 						alt="pick event"
 					/>
@@ -454,7 +454,7 @@
 				>
 					<p class="text-sm font-normal tracking-wide">Non Places</p>
 					<img
-						loading="lazy"
+						
 						src={`/events/events-pick-${estilos[index].secondary_media}.svg`}
 						alt="pick event"
 					/>
@@ -467,7 +467,7 @@
 				>
 					<p class="text-sm font-normal tracking-wide">NFT Paris</p>
 					<img
-						loading="lazy"
+						
 						src={`/events/events-pick-${estilos[index].secondary_media}.svg`}
 						alt="pick event"
 					/>

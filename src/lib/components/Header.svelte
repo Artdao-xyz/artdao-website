@@ -24,7 +24,7 @@
 		<div class="lp:self-start">
 			<a href="/"
 				><img
-					loading="lazy"
+					
 					src={`/artdao-logo-${estilos[index].primary_media}.svg`}
 					alt="Artdao Logo"
 				/></a

@@ -49,7 +49,7 @@
 		</div>
 		<button on:click={closeEvent}
 			><img
-				loading="lazy"
+				
 				src={`/events/close-${estilos[index].secondary_media}.svg`}
 				alt="Close"
 			/></button
@@ -57,7 +57,7 @@
 	</div>
 	<div class="w-fit h-fit">
 		<img
-			loading="lazy"
+			
 			class="h-full w-full object-cover"
 			src={banner[bannerIndex]}
 			alt="Drop"
@@ -65,14 +65,14 @@
         <div class="w-full flex items-center justify-between">
             <button on:click={() => pickBanner(-1)}
                 ><img
-                    loading="lazy"
+                    
                     src={`/events/left-arrow-${estilos[index].secondary_media}.svg`}
                     alt="left arrow"
                 /></button
             >
             <button on:click={() => pickBanner(1)}
                 ><img
-                    loading="lazy"
+                    
                     src={`/events/right-arrow-${estilos[index].secondary_media}.svg`}
                     alt="right arrow"
                 /></button

@@ -98,7 +98,7 @@
                     ? ''
                     :'opacity-30'}`}
                 ><img
-                    loading="lazy"
+                    
                     class=" lp:lp:mb-2"
                     src={`/s1_${estilos[index].primary_media}.png`}
                     alt="Section 1"
@@ -112,7 +112,7 @@
                     ? ''
                     :'opacity-30'}`}
                 ><img
-                    loading="lazy"
+                    
                     class=" lp:mb-2"
                     src={`/s2_${estilos[index].primary_media}.png`}
                     alt="Section 2"
@@ -126,7 +126,7 @@
                     ? ''
                     :'opacity-30'}`}
                 ><img
-                    loading="lazy"
+                    
                     class=" lp:mb-2"
                     src={`/s3_${estilos[index].primary_media}.png`}
                     alt="Section 3"
@@ -140,7 +140,7 @@
                     ? ''
                     :'opacity-30'}`}
                 ><img
-                    loading="lazy"
+                    
                     class=" lp:mb-2"
                     src={`/s4_${estilos[index].primary_media}.png`}
                     alt="Section 5"
@@ -157,17 +157,17 @@
                 <a href={'https://discord.com/invite/BV2ZNCSa'}
                 target="_blank"
                 ><img
-                    loading="lazy"
+                    
                     src={`/discord-${estilos[index].primary_media}.svg`}
                     alt="Discord Logo"
                 /></a
             >
             <a href={'https://twitter.com/Artdao_xyz'} target="_blank"
-                ><img loading="lazy" src={`/x-${estilos[index].primary_media}.svg`} alt="X Logo" /></a
+                ><img  src={`/x-${estilos[index].primary_media}.svg`} alt="X Logo" /></a
             >
             <a href={'https://www.instagram.com/artdao.xyz/'} target="_blank"
                 ><img
-                    loading="lazy"
+                    
                     src={`/instagram-${estilos[index].primary_media}.svg`}
                     alt="Instagram Logo"
                 /></a
