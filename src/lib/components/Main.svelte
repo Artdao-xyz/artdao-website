@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { indexSectionStore, isOpenStore } from '$lib/store.js';
-	import TextScramble from '$lib/TextScramble.js';
+	import TextScramble from '$lib/utils/TextScramble.js';
 
 	let section, h1;
 	let content = '';
