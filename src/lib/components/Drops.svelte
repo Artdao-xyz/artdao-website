@@ -5,27 +5,17 @@
 	import { indexStyleStore } from '$lib/store.js';
     import Subscribe from './Subscribe.svelte';
     import Contact from './Contact.svelte';
-
-	let index = 0;
+	
 	let pickedDrop = '0';
-
-	onMount(() => {
-		const unsubscribe = indexStyleStore.subscribe((value) => {
-			index = value;
-		});
-
-		return unsubscribe;
-	});
-
 	let drops = [
 		{
-			banner: '/drops/banner-psipsikoko-comingsoon.png',
-			banner_mobile: '/drops/banner-psipsikoko-mobile.png',
+			banner: 'drops/psipsikoko/banner-psipsikoko-comingsoon.png',
+			banner_mobile: 'drops/psipsikoko/banner-psipsikoko-mobile.png',
 			name: 'Psipsikoko',
 			artists: 'Frenetik Void & Julian Brangold',
 			description:
 				'"PsiPsiKoko" is a fictional universe conceived by artists Julian Brangold and Frenetik Void. Born from a subversive approach to AI technology combined with mainstream content creation tools, this project serves as a unique reflection of our current digital landscape. It draws inspiration from the vast array of uncanny user-generated content that saturates the internet.',
-			hammer: '/drops/hammer-psipsikoko.png'
+			hammer: 'drops/psipsikoko/hammer-psipsikoko.png'
 		}
 		// {
 		//     banner: '/drops/banner-hyperescapismo.png',
@@ -70,7 +60,7 @@
 			<!-- <input type="radio" id="drop_2" value="2" bind:group={pickedDrop} on:change={handleDropChange} class="hidden peer/2"/>
 				<label for="drop_2" class="inline-block cursor-pointer bg-background text-primary px-3.5 py-2 rounded-sm shadow peer-checked/2:bg-primary peer-checked/2:text-secondary border-primary border-2">#002</label> -->
 		</div>
-        {#each drops as { banner, banner_mobile, name, artists, description, hammer }, index (index)}
+        {#each drops as { banner, banner_mobile, name, artists, description, hammer }, index}
             {#if index == pickedDrop}
                 <Drop {banner} {banner_mobile} {name} {artists} {description} {hammer} indexDrop={index} />
             {/if}
