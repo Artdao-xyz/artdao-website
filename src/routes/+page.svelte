@@ -17,14 +17,10 @@
 	import Metaball from '$lib/components/Metaball.svelte';
 
 	import { indexSectionStore, isOpenStore } from '$lib/store.js';
-
+	import images from '$lib/assets/images.js'
 	import preloadAssets from '$lib/utils/loader.js';
 
-	const images = [
-		'drops/banner-hyperescapismo-mobile.png',
-		'drops/banner-hyperescapismo.png',
-		'drops/banner-psipsikoko-mobile.png',
-	]
+
 	const preloadPromise = preloadAssets(images)
 
 	let footer, subheader, arrow;
@@ -127,7 +123,7 @@
 				{#if $indexSectionStore == 0 && $isOpenStore}
 					<Mission />
 				{:else if $indexSectionStore == 1 && $isOpenStore}
-					<Drops />
+					<Drops/>
 				{:else if $indexSectionStore == 2 && $isOpenStore}
 					<Events />
 				{:else if $indexSectionStore == 3 && $isOpenStore}
