@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { indexStyleStore } from '$lib/store.js';
-	import { estilos } from '$lib/config.js';
+	import { estilos } from '$lib/utils/config.js';
 	import Project from './Project.svelte';
     import Subscribe from './Subscribe.svelte';
     import Contact from './Contact.svelte';

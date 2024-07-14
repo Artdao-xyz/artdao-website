@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
-	import { estilos } from '$lib/config.js';
+	import { estilos } from '$lib/utils/config.js';
 	import { indexStyleStore, isOpenStore } from '$lib/store.js';
 	import Event from './Event.svelte';
     import Subscribe from './Subscribe.svelte';

@@ -7,7 +7,7 @@
 	export let address;
 
 	import { onMount, createEventDispatcher } from 'svelte';
-	import { estilos } from '$lib/config.js';
+	import { estilos } from '$lib/utils/config.js';
 	import { indexStyleStore } from '$lib/store.js';
 
 	const dispatch = createEventDispatcher();
