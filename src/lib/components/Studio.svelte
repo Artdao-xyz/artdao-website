@@ -144,7 +144,7 @@
             </div>
             <hr class="border-primary my-4" />
 			
-		<div class="flex flex-col lp:flex-row gap-6 lp:gap-6 h-fit w-full items-start lp:items-end justify-center lp:justify-normal mb-4 lp:mb-0 lp:mt-8">
+		<div class="flex flex-col lp:flex-row flex-wrap gap-6 lp:gap-6 h-fit w-full items-start lp:items-end justify-center lp:justify-normal mb-4 lp:mb-0 lp:mt-8">
 
 		{#each projects as { who, logo }, index}
 			<button on:click={pickEvent.bind(null, index)}
