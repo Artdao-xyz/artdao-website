@@ -1,8 +1,6 @@
 <script>
 	import { fade } from 'svelte/transition';
 	import Drop from './Drop.svelte';
-	import { onMount } from 'svelte';
-	import { indexStyle } from '$lib/store.js';
     import Subscribe from './Subscribe.svelte';
     import Contact from './Contact.svelte';
 	
@@ -67,11 +65,8 @@
         {/each}
     </div>
 
-
 	<div class="hidden lp:flex items-center justify-between">
 		<Subscribe />
 		<Contact />
 	</div>
 </div>
-
-<!-- {/if} -->
