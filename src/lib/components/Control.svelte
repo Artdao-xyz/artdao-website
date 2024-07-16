@@ -1,7 +1,7 @@
 <script>
 	import { estilos } from '$lib/utils/config.js';
 	import { onMount } from 'svelte';
-	import { indexSectionStore, indexStyle, isOpen } from '$lib/store.js';
+	import { indexSection, indexStyle, isOpen } from '$lib/store.js';
 	import { Menu, Close } from 'svelte-ionicons';
 	import iosInnerHeight from '$lib/utils/iosInnerHeight.js';
     import Subscribe from './Subscribe.svelte';
@@ -59,7 +59,7 @@
 			// if (!isOpen) {
 				if (newSection != currentSection) {
                     currentSection = newSection;
-                    indexSectionStore.set(currentSection);
+                    indexSection.set(currentSection);
 				}
 			// }
 		};
@@ -76,7 +76,7 @@
         <li>
             <button
                 on:click={setSection.bind(null, 0)}
-                class={`uppercase flex gap-4 lp:gap-0 lp:flex-col items-center justify-between ${$indexSectionStore == 0
+                class={`uppercase flex gap-4 lp:gap-0 lp:flex-col items-center justify-between ${$indexSection == 0
                     ? ''
                     :'opacity-30'}`}
                 ><img
@@ -84,13 +84,13 @@
                     class=" lp:lp:mb-2"
                     src={`/s1_${estilos[$indexStyle].primary_media}.png`}
                     alt="Section 1"
-                /><span class={$indexSectionStore == 0 ? '' : 'lp:invisible'}>Mission</span></button
+                /><span class={$indexSection == 0 ? '' : 'lp:invisible'}>Mission</span></button
             >
         </li>
         <li>
             <button
                 on:click={setSection.bind(null, 1)}
-                class={`uppercase flex gap-4 lp:gap-0 lp:flex-col items-center justify-between ${$indexSectionStore == 1
+                class={`uppercase flex gap-4 lp:gap-0 lp:flex-col items-center justify-between ${$indexSection == 1
                     ? ''
                     :'opacity-30'}`}
                 ><img
@@ -98,13 +98,13 @@
                     class=" lp:mb-2"
                     src={`/s2_${estilos[$indexStyle].primary_media}.png`}
                     alt="Section 2"
-                /><span class={$indexSectionStore == 1 ? '' : 'lp:invisible'}>drops</span></button
+                /><span class={$indexSection == 1 ? '' : 'lp:invisible'}>drops</span></button
             >
         </li>
         <li>
             <button
                 on:click={setSection.bind(null, 2)}
-                class={`uppercase flex gap-4 lp:gap-0 lp:flex-col items-center justify-between ${$indexSectionStore == 2
+                class={`uppercase flex gap-4 lp:gap-0 lp:flex-col items-center justify-between ${$indexSection == 2
                     ? ''
                     :'opacity-30'}`}
                 ><img
@@ -112,13 +112,13 @@
                     class=" lp:mb-2"
                     src={`/s3_${estilos[$indexStyle].primary_media}.png`}
                     alt="Section 3"
-                /><span class={$indexSectionStore == 2 ? '' : 'lp:invisible'}>Events</span></button
+                /><span class={$indexSection == 2 ? '' : 'lp:invisible'}>Events</span></button
             >
         </li>
         <li>
             <button
                 on:click={setSection.bind(null, 3)}
-                class={`uppercase flex gap-4 lp:gap-0 lp:flex-col items-center justify-between ${$indexSectionStore == 3
+                class={`uppercase flex gap-4 lp:gap-0 lp:flex-col items-center justify-between ${$indexSection == 3
                     ? ''
                     :'opacity-30'}`}
                 ><img
@@ -126,7 +126,7 @@
                     class=" lp:mb-2"
                     src={`/s4_${estilos[$indexStyle].primary_media}.png`}
                     alt="Section 5"
-                /><span class={$indexSectionStore == 3 ? '' : 'lp:invisible'}>Studio</span></button
+                /><span class={$indexSection == 3 ? '' : 'lp:invisible'}>Studio</span></button
             >
         </li>
     </ul>

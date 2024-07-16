@@ -1,7 +1,7 @@
 <script>
 	import { estilos } from '$lib/utils/config.js';
 	import { onMount } from 'svelte';
-	import { indexSectionStore, indexStyle, isOpen } from '$lib/store.js';
+	import { indexSection, indexStyle, isOpen } from '$lib/store.js';
 	import { Menu, Close } from 'svelte-ionicons';
 	import iosInnerHeight from '$lib/utils/iosInnerHeight.js';
 	import Control from './Control.svelte';

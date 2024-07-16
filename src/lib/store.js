@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store';
 
-export const indexSectionStore = writable(0);
+export const indexSection = writable(0);
 export const indexStyle = writable(0);
 export const isOpen = writable(false);
 export const openMenu = writable(false);

@@ -16,7 +16,7 @@
 	import Control from '$lib/components/Control.svelte';
 	import Metaball from '$lib/components/Metaball.svelte';
 
-	import { indexSectionStore, isOpen } from '$lib/store.js';
+	import { indexSection, isOpen } from '$lib/store.js';
 	import images from '$lib/assets/images.js'
 	import preloadAssets from '$lib/utils/loader.js';
 
@@ -47,7 +47,7 @@
 	]
 
 	$: if (subheader) {
-			new TextScramble(subheader, content[$indexSectionStore]);
+			new TextScramble(subheader, content[$indexSection]);
 	}
 </script>
 
@@ -120,13 +120,13 @@
 					{/if}
 				</div>
 		
-				{#if $indexSectionStore == 0 && $isOpen}
+				{#if $indexSection == 0 && $isOpen}
 					<Mission />
-				{:else if $indexSectionStore == 1 && $isOpen}
+				{:else if $indexSection == 1 && $isOpen}
 					<Drops/>
-				{:else if $indexSectionStore == 2 && $isOpen}
+				{:else if $indexSection == 2 && $isOpen}
 					<Events />
-				{:else if $indexSectionStore == 3 && $isOpen}
+				{:else if $indexSection == 3 && $isOpen}
 					<Studio />
 				{/if}
 			</footer>

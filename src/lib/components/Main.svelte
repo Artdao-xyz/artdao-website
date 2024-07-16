@@ -1,5 +1,5 @@
 <script>
-	import { indexSectionStore, isOpen } from '$lib/store.js';
+	import { indexSection, isOpen } from '$lib/store.js';
 	import TextScramble from '$lib/utils/TextScramble.js';
 
 	let h1;
@@ -15,7 +15,7 @@
 	};
 
 	$: if (h1) {
-		new TextScramble(h1, content[$indexSectionStore]);
+		new TextScramble(h1, content[$indexSection]);
 	}
 
 </script>
