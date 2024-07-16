@@ -6,10 +6,7 @@
 	import iosInnerHeight from '$lib/utils/iosInnerHeight.js';
     import Subscribe from './Subscribe.svelte';
 
-	let index = 0;
-	let section = 0 ;
-	let isOpen = false;
-	let header, hamburguer_menu;
+	let hamburguer_menu;
 	let menu = false;
 	let height = iosInnerHeight() || window.innerHeight;
 
@@ -33,7 +30,7 @@
         // console.log('setSection', _section);
         currentSection = _section;
 
-        if (isOpen) {
+        if ($isOpenStore) {
             document.body.style.overflow = 'auto';
             window.scrollTo(0, _section * height);
 
@@ -66,21 +63,6 @@
 				}
 			// }
 		};
-
-		indexStyleStore.subscribe((value) => {
-			index = value;
-		});
-
-		indexSectionStore.subscribe((value) => {
-            section = value;            
-		});
-
-		isOpenStore.subscribe((value) => {
-            isOpen = value;
-			if (value) {
-				// hideMenu();
-			}
-		});
 	});
 
 </script>
@@ -94,57 +76,57 @@
         <li>
             <button
                 on:click={setSection.bind(null, 0)}
-                class={`uppercase flex gap-4 lp:gap-0 lp:flex-col items-center justify-between ${section == 0
+                class={`uppercase flex gap-4 lp:gap-0 lp:flex-col items-center justify-between ${$indexSectionStore == 0
                     ? ''
                     :'opacity-30'}`}
                 ><img
                     
                     class=" lp:lp:mb-2"
-                    src={`/s1_${estilos[index].primary_media}.png`}
+                    src={`/s1_${estilos[$indexStyleStore].primary_media}.png`}
                     alt="Section 1"
-                /><span class={section == 0 ? '' : 'lp:invisible'}>Mission</span></button
+                /><span class={$indexSectionStore == 0 ? '' : 'lp:invisible'}>Mission</span></button
             >
         </li>
         <li>
             <button
                 on:click={setSection.bind(null, 1)}
-                class={`uppercase flex gap-4 lp:gap-0 lp:flex-col items-center justify-between ${section == 1
+                class={`uppercase flex gap-4 lp:gap-0 lp:flex-col items-center justify-between ${$indexSectionStore == 1
                     ? ''
                     :'opacity-30'}`}
                 ><img
                     
                     class=" lp:mb-2"
-                    src={`/s2_${estilos[index].primary_media}.png`}
+                    src={`/s2_${estilos[$indexStyleStore].primary_media}.png`}
                     alt="Section 2"
-                /><span class={section == 1 ? '' : 'lp:invisible'}>drops</span></button
+                /><span class={$indexSectionStore == 1 ? '' : 'lp:invisible'}>drops</span></button
             >
         </li>
         <li>
             <button
                 on:click={setSection.bind(null, 2)}
-                class={`uppercase flex gap-4 lp:gap-0 lp:flex-col items-center justify-between ${section == 2
+                class={`uppercase flex gap-4 lp:gap-0 lp:flex-col items-center justify-between ${$indexSectionStore == 2
                     ? ''
                     :'opacity-30'}`}
                 ><img
                     
                     class=" lp:mb-2"
-                    src={`/s3_${estilos[index].primary_media}.png`}
+                    src={`/s3_${estilos[$indexStyleStore].primary_media}.png`}
                     alt="Section 3"
-                /><span class={section == 2 ? '' : 'lp:invisible'}>Events</span></button
+                /><span class={$indexSectionStore == 2 ? '' : 'lp:invisible'}>Events</span></button
             >
         </li>
         <li>
             <button
                 on:click={setSection.bind(null, 3)}
-                class={`uppercase flex gap-4 lp:gap-0 lp:flex-col items-center justify-between ${section == 3
+                class={`uppercase flex gap-4 lp:gap-0 lp:flex-col items-center justify-between ${$indexSectionStore == 3
                     ? ''
                     :'opacity-30'}`}
                 ><img
                     
                     class=" lp:mb-2"
-                    src={`/s4_${estilos[index].primary_media}.png`}
+                    src={`/s4_${estilos[$indexStyleStore].primary_media}.png`}
                     alt="Section 5"
-                /><span class={section == 3 ? '' : 'lp:invisible'}>Studio</span></button
+                /><span class={$indexSectionStore == 3 ? '' : 'lp:invisible'}>Studio</span></button
             >
         </li>
     </ul>
@@ -158,17 +140,17 @@
                 target="_blank"
                 ><img
                     
-                    src={`/discord-${estilos[index].primary_media}.svg`}
+                    src={`/discord-${estilos[$indexStyleStore].primary_media}.svg`}
                     alt="Discord Logo"
                 /></a
             >
             <a href={'https://twitter.com/Artdao_xyz'} target="_blank"
-                ><img  src={`/x-${estilos[index].primary_media}.svg`} alt="X Logo" /></a
+                ><img  src={`/x-${estilos[$indexStyleStore].primary_media}.svg`} alt="X Logo" /></a
             >
             <a href={'https://www.instagram.com/artdao.xyz/'} target="_blank"
                 ><img
                     
-                    src={`/instagram-${estilos[index].primary_media}.svg`}
+                    src={`/instagram-${estilos[$indexStyleStore].primary_media}.svg`}
                     alt="Instagram Logo"
                 /></a
             >
