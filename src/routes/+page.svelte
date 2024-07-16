@@ -16,16 +16,14 @@
 	import Control from '$lib/components/Control.svelte';
 	import Metaball from '$lib/components/Metaball.svelte';
 
-	import { indexSection, isOpen } from '$lib/store.js';
+	import { indexStyle, indexSection, isOpen } from '$lib/store.js';
 	import images from '$lib/assets/images.js'
 	import preloadAssets from '$lib/utils/loader.js';
 
 
 	const preloadPromise = preloadAssets(images)
 
-	let footer, subheader, arrow;
-	let index = 0;
-
+	let footer, subheader;
 	// let live_sticker = '/live/live-psipsikoko-hammer.png';
 	// let live_banner = '/live/live-psipsikoko-banner.png';
 	let live_sticker = '/live/live-orb-sticker.png';
@@ -47,7 +45,7 @@
 	]
 
 	$: if (subheader) {
-			new TextScramble(subheader, content[$indexSection]);
+		new TextScramble(subheader, content[$indexSection]);
 	}
 </script>
 
@@ -79,10 +77,9 @@
 					<button on:click={openFooter}
 					class="lp:hidden col-span-3">
 						<img
-						
-						bind:this={arrow}
+					
 						class="mx-auto py-1 px-6 rounded-3xl"
-						src={`/arrow-${$isOpen}-${estilos[index].primary_media}.svg`}
+						src={`/arrow-${$isOpen}-${estilos[$indexStyle].primary_media}.svg`}
 						alt="hyperlink"
 						/>
 				</button>
@@ -102,10 +99,8 @@
 					>
 					<button on:click={openFooter} class="hidden col-span-1 lp:inline-flex items-center self-start"
 						><img
-							
-							bind:this={arrow}
 							class="mx-auto py-1 px-6 rounded-3xl"
-							src={`/arrow-${$isOpen}-${estilos[index].primary_media}.svg`}
+							src={`/arrow-${$isOpen}-${estilos[$indexStyle].primary_media}.svg`}
 							alt="hyperlink"
 						/></button
 					>
@@ -119,15 +114,17 @@
 						</div>
 					{/if}
 				</div>
-		
-				{#if $indexSection == 0 && $isOpen}
-					<Mission />
-				{:else if $indexSection == 1 && $isOpen}
-					<Drops/>
-				{:else if $indexSection == 2 && $isOpen}
-					<Events />
-				{:else if $indexSection == 3 && $isOpen}
-					<Studio />
+				
+				{#if $isOpen}
+					{#if $indexSection == 0}
+						<Mission />
+					{:else if $indexSection == 1}
+						<Drops/>
+					{:else if $indexSection == 2}
+						<Events />
+					{:else if $indexSection == 3}
+						<Studio />
+					{/if}
 				{/if}
 			</footer>
 		
