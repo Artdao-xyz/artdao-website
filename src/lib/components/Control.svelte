@@ -1,7 +1,7 @@
 <script>
 	import { estilos } from '$lib/utils/config.js';
 	import { onMount } from 'svelte';
-	import { indexSectionStore, indexStyleStore, isOpen } from '$lib/store.js';
+	import { indexSectionStore, indexStyle, isOpen } from '$lib/store.js';
 	import { Menu, Close } from 'svelte-ionicons';
 	import iosInnerHeight from '$lib/utils/iosInnerHeight.js';
     import Subscribe from './Subscribe.svelte';
@@ -82,7 +82,7 @@
                 ><img
                     
                     class=" lp:lp:mb-2"
-                    src={`/s1_${estilos[$indexStyleStore].primary_media}.png`}
+                    src={`/s1_${estilos[$indexStyle].primary_media}.png`}
                     alt="Section 1"
                 /><span class={$indexSectionStore == 0 ? '' : 'lp:invisible'}>Mission</span></button
             >
@@ -96,7 +96,7 @@
                 ><img
                     
                     class=" lp:mb-2"
-                    src={`/s2_${estilos[$indexStyleStore].primary_media}.png`}
+                    src={`/s2_${estilos[$indexStyle].primary_media}.png`}
                     alt="Section 2"
                 /><span class={$indexSectionStore == 1 ? '' : 'lp:invisible'}>drops</span></button
             >
@@ -110,7 +110,7 @@
                 ><img
                     
                     class=" lp:mb-2"
-                    src={`/s3_${estilos[$indexStyleStore].primary_media}.png`}
+                    src={`/s3_${estilos[$indexStyle].primary_media}.png`}
                     alt="Section 3"
                 /><span class={$indexSectionStore == 2 ? '' : 'lp:invisible'}>Events</span></button
             >
@@ -124,7 +124,7 @@
                 ><img
                     
                     class=" lp:mb-2"
-                    src={`/s4_${estilos[$indexStyleStore].primary_media}.png`}
+                    src={`/s4_${estilos[$indexStyle].primary_media}.png`}
                     alt="Section 5"
                 /><span class={$indexSectionStore == 3 ? '' : 'lp:invisible'}>Studio</span></button
             >
@@ -140,17 +140,17 @@
                 target="_blank"
                 ><img
                     
-                    src={`/discord-${estilos[$indexStyleStore].primary_media}.svg`}
+                    src={`/discord-${estilos[$indexStyle].primary_media}.svg`}
                     alt="Discord Logo"
                 /></a
             >
             <a href={'https://twitter.com/Artdao_xyz'} target="_blank"
-                ><img  src={`/x-${estilos[$indexStyleStore].primary_media}.svg`} alt="X Logo" /></a
+                ><img  src={`/x-${estilos[$indexStyle].primary_media}.svg`} alt="X Logo" /></a
             >
             <a href={'https://www.instagram.com/artdao.xyz/'} target="_blank"
                 ><img
                     
-                    src={`/instagram-${estilos[$indexStyleStore].primary_media}.svg`}
+                    src={`/instagram-${estilos[$indexStyle].primary_media}.svg`}
                     alt="Instagram Logo"
                 /></a
             >

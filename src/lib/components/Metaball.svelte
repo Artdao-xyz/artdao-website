@@ -4,7 +4,7 @@
     import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
 	import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 	import MetaSymbol from '$lib/assets/MetaSymbol.js';
-	import { indexStyleStore } from '$lib/store.js';
+	import { indexStyle } from '$lib/store.js';
 
     export let textures;
 
@@ -94,8 +94,8 @@
 
     $: {
         if (metaSymbol)   {    
-            metaSymbol.changeTexture($indexStyleStore);
-            document.body.className = themes[$indexStyleStore];
+            metaSymbol.changeTexture($indexStyle);
+            document.body.className = themes[$indexStyle];
         }
     }
 </script>

@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { estilos } from '$lib/utils/config.js';
-	import { indexStyleStore, isOpen } from '$lib/store.js';
+	import { indexStyle, isOpen } from '$lib/store.js';
 	import Event from './Event.svelte';
     import Subscribe from './Subscribe.svelte';
     import Contact from './Contact.svelte';
@@ -249,7 +249,7 @@
 		><img
 			
 			class="fixed lp:relative top-1/2 lp:top-0 -translate-y-1/2 lp:-translate-y-0 left-0 scale-[225%] lp:scale-100 object-contain mx-auto lp:h-full -z-10"
-			src={`/events/map-${estilos[$indexStyleStore].primary_media}.png`}
+			src={`/events/map-${estilos[$indexStyle].primary_media}.png`}
 			alt="Map events"
 		/></button
 	>
@@ -272,7 +272,7 @@
 					<p class="text-sm font-normal tracking-wide">ETH Denver</p>
 					<img
 						
-						src={`/events/events-pick-${estilos[$indexStyleStore].secondary_media}.svg`}
+						src={`/events/events-pick-${estilos[$indexStyle].secondary_media}.svg`}
 						alt="pick event"
 					/>
 				</button>
@@ -296,7 +296,7 @@
 					<p class="text-sm font-normal tracking-wide">Cero Uno</p>
 					<img
 						
-						src={`/events/events-pick-${estilos[$indexStyleStore].secondary_media}.svg`}
+						src={`/events/events-pick-${estilos[$indexStyle].secondary_media}.svg`}
 						alt="pick event"
 					/>
 				</button>
@@ -309,7 +309,7 @@
 					<p class="text-sm font-normal tracking-wide">Psipsikoko</p>
 					<img
 						
-						src={`/events/events-pick-${estilos[$indexStyleStore].secondary_media}.svg`}
+						src={`/events/events-pick-${estilos[$indexStyle].secondary_media}.svg`}
 						alt="pick event"
 					/>
 				</button>
@@ -333,7 +333,7 @@
 				<p class="text-sm font-normal tracking-wide">O.R.B</p>
 				<img
 					
-					src={`/events/events-pick-${estilos[$indexStyleStore].secondary_media}.svg`}
+					src={`/events/events-pick-${estilos[$indexStyle].secondary_media}.svg`}
 					alt="pick event"
 				/>
 			</button>
@@ -357,7 +357,7 @@
 					<p class="text-sm font-normal tracking-wide">DEVCON</p>
 					<img
 						
-						src={`/events/events-pick-${estilos[$indexStyleStore].secondary_media}.svg`}
+						src={`/events/events-pick-${estilos[$indexStyle].secondary_media}.svg`}
 						alt="pick event"
 					/>
 				</button>
@@ -381,7 +381,7 @@
 					<p class="text-sm font-normal tracking-wide">Intertwined</p>
 					<img
 						
-						src={`/events/events-pick-${estilos[$indexStyleStore].secondary_media}.svg`}
+						src={`/events/events-pick-${estilos[$indexStyle].secondary_media}.svg`}
 						alt="pick event"
 					/>
 				</button>
@@ -394,7 +394,7 @@
 					<p class="text-sm font-normal tracking-wide">Underworld</p>
 					<img
 						
-						src={`/events/events-pick-${estilos[$indexStyleStore].secondary_media}.svg`}
+						src={`/events/events-pick-${estilos[$indexStyle].secondary_media}.svg`}
 						alt="pick event"
 					/>
 				</button>
@@ -407,7 +407,7 @@
 					<p class="text-sm font-normal tracking-wide">Rave</p>
 					<img
 						
-						src={`/events/events-pick-${estilos[$indexStyleStore].secondary_media}.svg`}
+						src={`/events/events-pick-${estilos[$indexStyle].secondary_media}.svg`}
 						alt="pick event"
 					/>
 				</button>
@@ -420,7 +420,7 @@
 					<p class="text-sm font-normal tracking-wide">Artifice</p>
 					<img
 						
-						src={`/events/events-pick-${estilos[$indexStyleStore].secondary_media}.svg`}
+						src={`/events/events-pick-${estilos[$indexStyle].secondary_media}.svg`}
 						alt="pick event"
 					/>
 				</button>
@@ -444,7 +444,7 @@
 					<p class="text-sm font-normal tracking-wide">Non Places</p>
 					<img
 						
-						src={`/events/events-pick-${estilos[$indexStyleStore].secondary_media}.svg`}
+						src={`/events/events-pick-${estilos[$indexStyle].secondary_media}.svg`}
 						alt="pick event"
 					/>
 				</button>
@@ -457,7 +457,7 @@
 					<p class="text-sm font-normal tracking-wide">NFT Paris</p>
 					<img
 						
-						src={`/events/events-pick-${estilos[$indexStyleStore].secondary_media}.svg`}
+						src={`/events/events-pick-${estilos[$indexStyle].secondary_media}.svg`}
 						alt="pick event"
 					/>
 				</button>

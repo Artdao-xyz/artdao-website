@@ -8,12 +8,12 @@
 	export let indexDrop;
 
 	import { onMount } from 'svelte';
-	import { indexStyleStore } from '$lib/store.js';
+	import { indexStyle } from '$lib/store.js';
 
 	let index = 0;
 
 	onMount(() => {
-		const unsubscribe = indexStyleStore.subscribe((value) => {
+		const unsubscribe = indexStyle.subscribe((value) => {
 			index = value;
 		});
 

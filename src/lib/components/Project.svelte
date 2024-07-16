@@ -9,14 +9,14 @@
 
 	import { onMount, createEventDispatcher } from 'svelte';
 	import { estilos } from '$lib/utils/config.js';
-	import { indexStyleStore } from '$lib/store.js';
+	import { indexStyle } from '$lib/store.js';
 
 	const dispatch = createEventDispatcher();
 
 	let index = 0;
 
 	onMount(() => {
-		const unsubscribe = indexStyleStore.subscribe((value) => {
+		const unsubscribe = indexStyle.subscribe((value) => {
 			index = value;
 		});
 

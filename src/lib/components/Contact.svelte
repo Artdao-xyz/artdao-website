@@ -1,18 +1,18 @@
 <script>
 	import { onMount } from 'svelte';
 	import { estilos } from '$lib/utils/config.js';
-	import { indexStyleStore } from '$lib/store.js';
+	import { indexStyle } from '$lib/store.js';
 
 	let index = 0;
 
 	const updateMatcap = (_) => {
 		index++;
 		index >= estilos.length ? (index = 0) : null;
-		indexStyleStore.set(index);
+		indexStyle.set(index);
 	};
 
 	onMount(() => {
-		const unsubscribe = indexStyleStore.subscribe((value) => {
+		const unsubscribe = indexStyle.subscribe((value) => {
 			index = value;
 		});
 
