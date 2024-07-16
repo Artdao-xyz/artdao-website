@@ -4,16 +4,6 @@
 	import { fade } from 'svelte/transition';
 	import Subscribe from './Subscribe.svelte';
 	import Contact from './Contact.svelte';
-
-	let index = 0;
-
-	onMount(() => {
-		const unsubscribe = indexStyle.subscribe((value) => {
-			index = value;
-		});
-
-		return unsubscribe;
-	});
 </script>
 
 <div 
