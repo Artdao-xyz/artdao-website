@@ -1,50 +1,28 @@
 <script>
-	import { onMount } from 'svelte';
 	import { indexSectionStore, isOpenStore } from '$lib/store.js';
 	import TextScramble from '$lib/utils/TextScramble.js';
 
-	let section, h1;
-	let content = '';
-	let isOpen = false;
+	let h1;
+	let content = [
+		'Building for\na new age\nof culture',
+		'Bringing\n visionary\nart to life',
+		'Bridging\nthe global &\nHyperlocal',
+		'Artist driven\ndesign'
+	];
 
 	const handleFooterClick = () => {
-		isOpen = false;
+		isOpenStore.set(false);
 	};
 
 	$: if (h1) {
-		if (section == 0) {
-			content = 'building for\na new age\nof culture';
-			new TextScramble(h1, content);
-		} else if (section == 1) {
-			content = 'Bringing\n visionary\nart to life';
-			new TextScramble(h1, content);
-		} else if (section == 2) {
-			content = 'Bridging\nthe global &\nHyperlocal';
-			new TextScramble(h1, content);
-		} else if (section == 3) {
-			content = 'Artist driven\ndesign';
-			new TextScramble(h1, content);
-		}
+		new TextScramble(h1, content[$indexSectionStore]);
 	}
 
-	onMount(() => {
-		indexSectionStore.subscribe((value) => {
-			section = value;
-		});
-
-		isOpenStore.subscribe((value) => {
-			isOpen = value;
-		});
-
-		content = 'building for\n a new age\n of culture';
-		new TextScramble(h1, content);
-
-	})
 </script>
 
 <button on:click={handleFooterClick} class="cursor-default">
     <main >
-		<section bind:this={section} class="w-full h-[400vh] p-2 lp:p-5 flex justify-center lp:justify-start">
+		<section class="w-full h-[400vh] p-2 lp:p-5 flex justify-center lp:justify-start">
 			<!-- svelte-ignore a11y-missing-content -->
 			<h1
 				bind:this={h1}
