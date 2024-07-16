@@ -2,13 +2,13 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { estilos } from '$lib/utils/config.js';
-	import { indexStyleStore, isOpenStore } from '$lib/store.js';
+	import { indexStyleStore, isOpen } from '$lib/store.js';
 	import Event from './Event.svelte';
     import Subscribe from './Subscribe.svelte';
     import Contact from './Contact.svelte';
     
 	let selectedEvent = null;
-	
+
 	let events = [
 		{
 			banner: [
@@ -156,7 +156,7 @@
 	let isDenverOpen = false;
     let isSaoPauloOpen = false;
 
-	$: if ($isOpenStore) {
+	$: if ($isOpen) {
 		isLisboaOpen = false;
 		isBuenosAiresOpen = false;
 		isParisOpen = false;

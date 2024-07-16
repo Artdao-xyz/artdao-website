@@ -1,5 +1,5 @@
 <script>
-	import { indexSectionStore, isOpenStore } from '$lib/store.js';
+	import { indexSectionStore, isOpen } from '$lib/store.js';
 	import TextScramble from '$lib/utils/TextScramble.js';
 
 	let h1;
@@ -11,7 +11,7 @@
 	];
 
 	const handleFooterClick = () => {
-		isOpenStore.set(false);
+		isOpen.set(false);
 	};
 
 	$: if (h1) {

@@ -1,7 +1,7 @@
 <script>
 	import { estilos } from '$lib/utils/config.js';
 	import { onMount } from 'svelte';
-	import { indexSectionStore, indexStyleStore, isOpenStore } from '$lib/store.js';
+	import { indexSectionStore, indexStyleStore, isOpen } from '$lib/store.js';
 	import { Menu, Close } from 'svelte-ionicons';
 	import iosInnerHeight from '$lib/utils/iosInnerHeight.js';
     import Subscribe from './Subscribe.svelte';
@@ -30,7 +30,7 @@
         // console.log('setSection', _section);
         currentSection = _section;
 
-        if ($isOpenStore) {
+        if ($isOpen) {
             document.body.style.overflow = 'auto';
             window.scrollTo(0, _section * height);
 
