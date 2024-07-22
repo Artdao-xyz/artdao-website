@@ -8,15 +8,15 @@
 	export let link;
 
 	import { onMount, createEventDispatcher } from 'svelte';
-	import { estilos } from '$lib/config.js';
-	import { indexStyleStore } from '$lib/store.js';
+	import { estilos } from '$lib/utils/config.js';
+	import { indexStyle } from '$lib/store.js';
 
 	const dispatch = createEventDispatcher();
 
 	let index = 0;
 
 	onMount(() => {
-		const unsubscribe = indexStyleStore.subscribe((value) => {
+		const unsubscribe = indexStyle.subscribe((value) => {
 			index = value;
 		});
 
@@ -38,7 +38,7 @@
 		</div>
 		<button on:click={closeEvent}
 			><img
-				loading="lazy"
+				
 				src={`/events/close-${estilos[index].secondary_media}.svg`}
 				alt="Close"
 			/></button
@@ -46,13 +46,13 @@
 	</div>
 	<div class="w-full lp:w-full h-fit">
 		<img
-			loading="lazy"
+			
 			class="hidden lp:block h-full w-full object-cover"
 			src={banner}
 			alt="Drop"
 		/>
 		<img
-			loading="lazy"
+			
 			class="lp:hidden h-full w-full object-cover"
 			src={banner_mobile}
 			alt="Drop"
@@ -65,7 +65,7 @@
 		{#if link != "-"}
 			<a href={link} target="_blank" class="underline flex items-center gap-2 underline-offset-2"
 				>{who} website
-				<img loading="lazy" src={`/link-arrow-${estilos[index].secondary_media}.svg`} alt="link" /></a
+				<img  src={`/link-arrow-${estilos[index].secondary_media}.svg`} alt="link" /></a
 			>
 		{:else}
 			<p class="font-semibold">-</p>

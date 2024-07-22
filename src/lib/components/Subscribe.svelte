@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import { indexStyleStore } from '$lib/store.js';
+	import { indexStyle } from '$lib/store.js';
 	import { fade } from 'svelte/transition';
 
 	let index = 0;
@@ -51,7 +51,7 @@
         var submit;
 
 	onMount(() => {
-		const styleStore = indexStyleStore.subscribe((value) => {
+		const styleStore = indexStyle.subscribe((value) => {
 			index = value;
 		});
         onfocus = () => {

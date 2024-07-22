@@ -1,19 +1,9 @@
 <script>
 	import { onMount } from 'svelte';
-	import { indexStyleStore } from '$lib/store.js';
+	import { indexStyle } from '$lib/store.js';
 	import { fade } from 'svelte/transition';
 	import Subscribe from './Subscribe.svelte';
 	import Contact from './Contact.svelte';
-
-	let index = 0;
-
-	onMount(() => {
-		const unsubscribe = indexStyleStore.subscribe((value) => {
-			index = value;
-		});
-
-		return unsubscribe;
-	});
 </script>
 
 <div 
