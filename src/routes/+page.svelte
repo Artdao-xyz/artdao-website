@@ -51,7 +51,8 @@
 
 <svelte:head>
 	<title>Artdao</title>
-	<meta name="description" content="artists helping artists." />
+	<meta name="description" content="artists helping artists."/>
+	<meta name="google-site-verification" content="WI3Z_jERr-qBan3Ht8rXSUuy2RzrO_HhfFlzVd3DXaA" />
 </svelte:head>
 
 {#await preloadPromise}
