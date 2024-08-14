@@ -1,8 +1,8 @@
 <script>
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
-	import { indexStyleStore } from '$lib/store.js';
-	import { estilos } from '$lib/config.js';
+	import { indexStyle } from '$lib/store.js';
+	import { estilos } from '$lib/utils/config.js';
 	import Project from './Project.svelte';
     import Subscribe from './Subscribe.svelte';
     import Contact from './Contact.svelte';
@@ -93,7 +93,7 @@
 	];
 
 	onMount(() => {
-		const unsubscribe = indexStyleStore.subscribe((value) => {
+		const unsubscribe = indexStyle.subscribe((value) => {
 			index = value;
 		});
 
@@ -136,7 +136,7 @@
                 <a href="mailto:hello@artdao.xyz" class="flex items-center gap-2">
                     <div class="text-primary text-base font-medium underline uppercase">get in touch</div>
                     <img
-                    loading="lazy"
+                    
                     src={`/link-arrow-${estilos[index].primary_media}.svg`}
                     alt="Link Arrow"
                     />
@@ -144,14 +144,14 @@
             </div>
             <hr class="border-primary my-4" />
 			
-		<div class="flex flex-col lp:flex-row gap-6 lp:gap-6 h-fit w-full items-start lp:items-end justify-center lp:justify-normal mb-4 lp:mb-0 lp:mt-8">
+		<div class="flex flex-col lp:flex-row flex-wrap gap-6 lp:gap-6 h-fit w-full items-start lp:items-end justify-center lp:justify-normal mb-4 lp:mb-4">
 
 		{#each projects as { who, logo }, index}
 			<button on:click={pickEvent.bind(null, index)}
 			class="group flex flex-col justify-center items-center">
 			<div class="w-fit relative">
 				<button class="hidden lp:block lp:invisible group-hover:visible z-10 mx-auto w-full">
-					<img loading="lazy" class="absolute -top-5 -translate-y-1/2 left-1/2 -translate-x-1/2 w-fit object-cover" src={logo} alt="" />
+					<img  class="absolute -top-5 -translate-y-1/2 left-1/2 -translate-x-1/2 w-fit object-cover" src={logo} alt="" />
 				</button>
 				<button class="w-fit">
 					<h1

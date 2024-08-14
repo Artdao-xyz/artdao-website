@@ -2,12 +2,14 @@
 	font-family: 'ClashDisplay';
 	src: url('/fonts/ClashDisplay-Variable.woff2');
 	font-style: normal;
+	font-weight: 200 700;
 }
 
 @font-face {
 	font-family: 'NeuePowerVariable';
 	src: url('/fonts/NeuePowerVariable-Ultra.woff2');
 	font-style: normal;
+	font-weight: 200 700;
 }
 
 @tailwind base;

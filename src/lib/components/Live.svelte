@@ -51,11 +51,11 @@
 >
 	<div class="h-full w-[120px] relative -top-6">
 		<button class="h-full" on:click={openLive} on:mouseenter={openLive}
-			><img loading="lazy" class="h-full mx-auto" src={source[0]} alt="Banner" /></button
+			><img  class="h-full mx-auto" src={source[0]} alt="Banner" /></button
 		>
 
 		<div class="h-fit w-full flex justify-center items-center gap-2">
-			<img loading="lazy" class="h-full" src={'/live/live.svg'} alt="Drop coming soon" />
+			<img  class="h-full" src={'/live/live.svg'} alt="Drop coming soon" />
 			<p
 				class=" text-white justify-center text-[9px] text-center font-semibold uppercase tracking-wider"
 			>O.R.B  @  ZORA
@@ -70,7 +70,7 @@
 
 	<div class="h-full w-[380px]">
 		<a on:mouseleave={openLive} href="https://zora.co/collect/zora:0x6cfd003dade0b1c3f3620705082f341611f08655" target="_blank"
-			><img loading="lazy" src={source[1]} alt="Banner Psisikoko" /></a
+			><img  src={source[1]} alt="Banner Psisikoko" /></a
 		>
 	</div>
 </div>

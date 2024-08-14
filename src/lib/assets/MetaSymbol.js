@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { MarchingCubes } from 'three/addons/objects/MarchingCubes.js';
-import * as Symbols from '$lib/symbols.js';
-import { app } from '$lib/config.js';
+import * as Symbols from '$lib/assets/symbols.js';
+import { app } from '$lib/utils/config.js';
 
 export default class MetaSymbol {
 	constructor(_textures) {
