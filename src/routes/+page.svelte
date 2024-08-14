@@ -49,6 +49,11 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Artdao</title>
+	<meta name="description" content="artists helping artists." />
+</svelte:head>
+
 {#await preloadPromise}
 	<Loading/>
 {:then assets}
