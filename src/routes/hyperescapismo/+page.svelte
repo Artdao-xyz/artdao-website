@@ -57,7 +57,7 @@
         </div>
 
         <div class="self-center lp:self-start mt-2">
-            <a href="https://discord.gg/NTUZRU3ZNE" target="_blank" class="font-garamond text-xl uppercase font-semibold border-y border-y-white py-1">{$t("join")}</a>
+            <a href="https://calendly.com/tomas-pwa/hyperescapismo-drop?month=2024-09" target="_blank" class="font-garamond text-xl uppercase font-semibold border-y border-y-white py-1">{$t("join")}</a>
         </div>
     </div>
 </div>
