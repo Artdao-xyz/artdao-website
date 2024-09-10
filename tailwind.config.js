@@ -15,7 +15,11 @@ export default {
 				'clash-display':
 					"ClashDisplay, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
 				'neue-power':
-					"NeuePowerVariable, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+					"NeuePowerVariable, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
+				monda:
+					"MondaVariable, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
+				garamond:
+					"GaramondVariable, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
 			},
 			transitionDuration: {
 				2000: '2000ms'
