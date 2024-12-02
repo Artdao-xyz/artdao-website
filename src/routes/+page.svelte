@@ -19,6 +19,7 @@
 	import { indexStyle, indexSection, isOpen } from '$lib/store.js';
 	import images from '$lib/assets/images.js'
 	import preloadAssets from '$lib/utils/loader.js';
+	import Analytics from '../lib/components/Analytics.svelte';
 
 
 	const preloadPromise = preloadAssets(images)
@@ -54,6 +55,8 @@
 	<meta name="description" content="artists helping artists."/>
 	<meta name="google-site-verification" content="WI3Z_jERr-qBan3Ht8rXSUuy2RzrO_HhfFlzVd3DXaA" />
 </svelte:head>
+
+<Analytics/>
 
 {#await preloadPromise}
 	<Loading/>
